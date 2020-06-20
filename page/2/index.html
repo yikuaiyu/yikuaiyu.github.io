@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>H博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="编程博客">
+<meta name="keywords" content="c++ java mysql shell linux h博客 android docker git laravel php python javascript python">
+<meta property="og:type" content="website">
+<meta property="og:title" content="H博客">
+<meta property="og:url" content="https://blog.newtao.vip/page/2/index.html">
+<meta property="og:site_name" content="H博客">
+<meta property="og:description" content="编程博客">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="H博客">
+<meta name="twitter:description" content="编程博客">
+  
+    <link rel="alternate" href="/atom.xml" title="H博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<style>
+.breathe-div {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #2b92d4;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    margin:0px auto;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 10;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: breathe;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes breathe {
+    0% {
+        opacity: .4;
+        box-shadow: 0 1px 2px rgba(0, 147, 223, 0.4), 0 1px 1px rgba(0, 147, 223, 0.1) inset;
+    }
+
+    100% {
+        opacity: 1;
+        border: 1px solid rgba(59, 235, 235, 0.7);
+        box-shadow: 0 1px 30px #0093df, 0 1px 20px #0093df inset;
+    }
+}
+.breathe-point{position:absolute;left:50%; top:150px;}
+.breathe-div{position:absolute;left:-100px; top:-100px }
+</style>
+<body>
+  <div class="breathe-point">
+  <div class="breathe-div"></div>
+  </div>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">H博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">技术博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.newtao.vip"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="true-date" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/date/" class="article-date">
+  <time datetime="2020-04-28T09:15:29.527Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/date/">Date</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>javascript的日期操作很常用，但javascript的日期格式化很不友好，所以在此整理</li>
+<li>1 创建当前时间的date<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date()</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>Thu Jul 04 2019 20:27:41 GMT+0800 (中国标准时间)<br>1.2 创建指定时间戳Date</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const timestamp = 1531862653</span><br><span class="line">new Date(timestamp * 1000)</span><br></pre></td></tr></table></figure>
+
+<p>1.3 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">new Date(&apos;2018-07-22&apos;)</span><br><span class="line">new Date(&apos;2018-07&apos;) //July 1st 2018, 00:00:00</span><br><span class="line">new Date(&apos;2018&apos;) //Jan 1st 2018, 00:00:00</span><br><span class="line">new Date(&apos;07/22/2018&apos;)</span><br><span class="line">new Date(&apos;2018/07/22&apos;)</span><br><span class="line">new Date(&apos;2018/7/22&apos;)</span><br><span class="line">new Date(&apos;July 22, 2018&apos;)</span><br><span class="line">new Date(&apos;July 22, 2018 07:22:13&apos;)</span><br><span class="line">new Date(&apos;2018-07-22 07:22:13&apos;)</span><br><span class="line">new Date(&apos;2018-07-22T07:22:13&apos;)</span><br><span class="line">new Date(&apos;25 March 2018&apos;)</span><br><span class="line">new Date(&apos;25 Mar 2018&apos;)</span><br><span class="line">new Date(&apos;25 March, 2018&apos;)</span><br><span class="line">new Date(&apos;March 25, 2018&apos;)</span><br><span class="line">new Date(&apos;March 25 2018&apos;)</span><br><span class="line">new Date(&apos;March 2018&apos;) //Mar 1st 2018, 00:00:00</span><br><span class="line">new Date(&apos;2018 March&apos;) //Mar 1st 2018, 00:00:00</span><br><span class="line">new Date(&apos;2018 MARCH&apos;) //Mar 1st 2018, 00:00:00</span><br><span class="line">new Date(&apos;2018 march&apos;) //Mar 1st 2018, 00:00:00</span><br></pre></td></tr></table></figure>
+
+<p>1.4 Date.parse 返回的是毫秒时间戳</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(&apos;2018-07-22&apos;)</span><br><span class="line">Date.parse(&apos;2018-07&apos;) //July 1st 2018, 00:00:00</span><br><span class="line">Date.parse(&apos;2018&apos;) //Jan 1st 2018, 00:00:00</span><br><span class="line">Date.parse(&apos;07/22/2018&apos;)</span><br><span class="line">Date.parse(&apos;2018/07/22&apos;)</span><br><span class="line">Date.parse(&apos;2018/7/22&apos;)</span><br><span class="line">Date.parse(&apos;July 22, 2018&apos;)</span><br><span class="line">Date.parse(&apos;July 22, 2018 07:22:13&apos;)</span><br><span class="line">Date.parse(&apos;2018-07-22 07:22:13&apos;)</span><br><span class="line">Date.parse(&apos;2018-07-22T07:22:13&apos;)</span><br></pre></td></tr></table></figure>
+
+<p>1.5 指定时区</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">new Date(&apos;July 22, 2018 07:22:13 +0700&apos;)</span><br><span class="line">new Date(&apos;July 22, 2018 07:22:13 (CET)&apos;)</span><br></pre></td></tr></table></figure>
+
+<p>1.6 日期转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const date = new Date(&apos;July 22, 2018 07:22:13&apos;)</span><br><span class="line"></span><br><span class="line">date.toString() // &quot;Sun Jul 22 2018 07:22:13 GMT+0200 (Central European Summer Time)&quot;</span><br><span class="line">date.toTimeString() //&quot;07:22:13 GMT+0200 (Central European Summer Time)&quot;</span><br><span class="line">date.toUTCString() //&quot;Sun, 22 Jul 2018 05:22:13 GMT&quot;</span><br><span class="line">date.toDateString() //&quot;Sun Jul 22 2018&quot;</span><br><span class="line">date.toISOString() //&quot;2018-07-22T05:22:13.000Z&quot; (ISO 8601 format)</span><br><span class="line">date.toLocaleString() //&quot;22/07/2018, 07:22:13&quot;</span><br><span class="line">date.toLocaleTimeString()    //&quot;07:22:13&quot;</span><br><span class="line">date.getTime() //1532236933000</span><br><span class="line">date.getTime() //1532236933000</span><br></pre></td></tr></table></figure>
+
+<p>1.7 获取当前时区的时间值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const date = new Date(&apos;July 22, 2018 07:22:13&apos;)</span><br><span class="line"></span><br><span class="line">date.getDate() //22</span><br><span class="line">date.getDay() //0 (0 means sunday, 1 means monday..)</span><br><span class="line">date.getFullYear() //2018</span><br><span class="line">date.getMonth() //6 (starts from 0)</span><br><span class="line">date.getHours() //7</span><br><span class="line">date.getMinutes() //22</span><br><span class="line">date.getSeconds() //13</span><br><span class="line">date.getMilliseconds() //0 (not specified)</span><br><span class="line">date.getTime() //1532236933000</span><br><span class="line">date.getTimezoneOffset() //-120 （将取决于您的位置和检查时间 - 这是夏季的CET）。 返回以分钟为单位表示的时区差异</span><br></pre></td></tr></table></figure>
+
+<p>1.8 获取UTC</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">date.getUTCDate() //22</span><br><span class="line">date.getUTCDay() //0 (0 means sunday, 1 means monday..)</span><br><span class="line">date.getUTCFullYear() //2018</span><br><span class="line">date.getUTCMonth() //6 (starts from 0)</span><br><span class="line">date.getUTCHours() //5 (not 7 like above)</span><br><span class="line">date.getUTCMinutes() //22</span><br><span class="line">date.getUTCSeconds() //13</span><br><span class="line">date.getUTCMilliseconds() //0 (not specified)</span><br></pre></td></tr></table></figure>
+
+<p>1.9 编辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">const date = new Date(&apos;July 22, 2018 07:22:13&apos;)</span><br><span class="line"></span><br><span class="line">date.setDate(newValue)</span><br><span class="line">date.setDay(newValue)</span><br><span class="line">date.setFullYear(newValue) //note: avoid setYear(), it&apos;s deprecated</span><br><span class="line">date.setMonth(newValue)</span><br><span class="line">date.setHours(newValue)</span><br><span class="line">date.setMinutes(newValue)</span><br><span class="line">date.setSeconds(newValue)</span><br><span class="line">date.setMilliseconds(newValue)</span><br><span class="line">date.setTime(newValue)</span><br><span class="line">date.setTimezoneOffset(newValue)</span><br><span class="line"></span><br><span class="line">//UTC</span><br><span class="line">const date = new Date(&apos;July 22, 2018 07:22:13&apos;)</span><br><span class="line"> </span><br><span class="line">date.setUTCDate(newalue)</span><br><span class="line">date.setUTCDay(newValue)</span><br><span class="line">date.setUTCFullYear(newValue)</span><br><span class="line">date.setUTCMonth(newValue)</span><br><span class="line">date.setUTCHours(newValue)</span><br><span class="line">date.setUTCMinutes(newValue)</span><br><span class="line">date.setUTCSeconds(newValue)</span><br><span class="line">date.setUTCMilliseconds(newValue)</span><br></pre></td></tr></table></figure>
+
+<p>1.10 当前时间戳</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Date.now()</span><br><span class="line">new Date().getTime()</span><br></pre></td></tr></table></figure>
+
+<p>1.11 Date自带容错处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">new Date(2018, 6, 40)</span><br><span class="line">结果指向下一月</span><br></pre></td></tr></table></figure>
+
+<p>1.12 根据区域格式化日期</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//根据计算机默认区域格式化日期</span><br><span class="line">// &quot;12/22/2017&quot;</span><br><span class="line">const date = new Date(&apos;July 22, 2018 07:22:13&apos;)</span><br><span class="line">new Intl.DateTimeFormat().format(date) //&quot;22/07/2018&quot; in my locale</span><br><span class="line">//根据不同区域</span><br><span class="line">new Intl.DateTimeFormat(&apos;en-US&apos;).format(date) //&quot;7/22/2018&quot;</span><br><span class="line">//option自定义</span><br><span class="line">const options = &#123;</span><br><span class="line">  year: &apos;numeric&apos;,</span><br><span class="line">  month: &apos;numeric&apos;,</span><br><span class="line">  day: &apos;numeric&apos;,</span><br><span class="line">  hour: &apos;numeric&apos;,</span><br><span class="line">  minute: &apos;numeric&apos;,</span><br><span class="line">  second: &apos;numeric&apos;</span><br><span class="line">&#125;</span><br><span class="line">new Intl.DateTimeFormat(&apos;en-US&apos;, options).format(date) //&quot;7/22/2018, 7:22:13 AM&quot;</span><br><span class="line">new Intl.DateTimeFormat(&apos;it-IT&apos;, options2).format(date) //&quot;22/7/2018, 07:22:13&quot;</span><br></pre></td></tr></table></figure>
+
+<p>1.13 比较两个日期</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const date1 = new Date(&apos;July 10, 2018 07:22:13&apos;)</span><br><span class="line">const date2 = new Date(&apos;July 22, 2018 07:22:13&apos;)</span><br><span class="line">const diff = date2.getTime() - date1.getTime() //difference in milliseconds</span><br><span class="line">or</span><br><span class="line">const date1 = new Date(&apos;July 10, 2018 07:22:13&apos;)</span><br><span class="line">const date2 = new Date(&apos;July 10, 2018 07:22:13&apos;)</span><br><span class="line">if (date2.getTime() === date1.getTime()) &#123;</span><br><span class="line">  //dates are equal</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>常用的date库 Moment.js date-fns </li>
+<li>原文<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://flaviocopes.com/javascript-dates/</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/date/" data-id="ckbmzv5jn000uj4eh2ybrqnlc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-go" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/go/" class="article-date">
+  <time datetime="2020-04-28T09:15:03.955Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/go/">安装gophernotes,通过jupyter notebook学习go语言</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>安装gophernotes</li>
+</ol>
+<ul>
+<li><p>Linux</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ env GO111MODULE=on go get github.com/gopherdata/gophernotes</span><br><span class="line">$ mkdir -p ~/.local/share/jupyter/kernels/gophernotes</span><br><span class="line">$ cd ~/.local/share/jupyter/kernels/gophernotes</span><br><span class="line">$ cp &quot;$(go env GOPATH)&quot;/pkg/mod/github.com/gopherdata/gophernotes@v0.7.0/kernel/*  &quot;.&quot;</span><br><span class="line">$ chmod +w ./kernel.json # in case copied kernel.json has no write permission</span><br><span class="line">$ sed &quot;s|gophernotes|$(go env GOPATH)/bin/gophernotes|&quot; &lt; kernel.json.in &gt; kernel.json</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Mac</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ env GO111MODULE=on go get github.com/gopherdata/gophernotes</span><br><span class="line">$ mkdir -p ~/Library/Jupyter/kernels/gophernotes</span><br><span class="line">$ cd ~/Library/Jupyter/kernels/gophernotes</span><br><span class="line">$ cp &quot;$(go env GOPATH)&quot;/pkg/mod/github.com/gopherdata/gophernotes@v0.7.0/kernel/*  &quot;.&quot;</span><br><span class="line">$ chmod +w ./kernel.json # in case copied kernel.json has no write permission</span><br><span class="line">$ sed &quot;s|gophernotes|$(go env GOPATH)/bin/gophernotes|&quot; &lt; kernel.json.in &gt; kernel.json</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li><p>github</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/gopherdata/gophernotes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/go/" data-id="ckbmzv5jo000zj4eh3jnsy9ms" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-solidity" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/solidity/" class="article-date">
+  <time datetime="2020-04-28T09:14:29.286Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/区块链/">区块链</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/solidity/">Solidity 开发入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>solidity文档<ul>
+<li><a href="https://solidity.readthedocs.io/en/v0.6.2/" target="_blank" rel="noopener">https://solidity.readthedocs.io/en/v0.6.2/</a></li>
+<li><a href="https://solidity-cn.readthedocs.io/zh/develop/" target="_blank" rel="noopener">https://solidity-cn.readthedocs.io/zh/develop/</a></li>
+</ul>
+</li>
+<li>solidity 编译器<br>学习阶段推荐用remix,调试方便易上手<br><a href="https://remix.ethereum.org/" target="_blank" rel="noopener">https://remix.ethereum.org/</a><br>npm solc <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g solc</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>Docker solc</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run ethereum/solc:stable solc --version</span><br></pre></td></tr></table></figure>
+
+<p>工程化使用truffle</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g truffle</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>测试链<br>可以选择开放测试链进行测试，体验一般不推荐<br>推荐使用ganache<br><a href="https://www.trufflesuite.com/docs/ganache/quickstart" target="_blank" rel="noopener">https://www.trufflesuite.com/docs/ganache/quickstart</a><br>有图形界面版和命令行版ganache-cli</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g ganache-cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>私链</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">mkdir privatechain</span><br><span class="line">cd privatechain</span><br><span class="line">echo &apos;&#123;</span><br><span class="line">  &quot;config&quot;: &#123;</span><br><span class="line">        &quot;chainId&quot;: 10, </span><br><span class="line">        &quot;homesteadBlock&quot;: 0,</span><br><span class="line">        &quot;eip150Block&quot;: 0,</span><br><span class="line">        &quot;eip155Block&quot;: 0,</span><br><span class="line">        &quot;eip158Block&quot;: 0</span><br><span class="line">    &#125;,</span><br><span class="line">  &quot;alloc&quot;      : &#123;&#125;,</span><br><span class="line">  &quot;coinbase&quot;   : &quot;0x0000000000000000000000000000000000000000&quot;,</span><br><span class="line">  &quot;difficulty&quot; : &quot;0x20000&quot;,</span><br><span class="line">  &quot;extraData&quot;  : &quot;&quot;,</span><br><span class="line">  &quot;gasLimit&quot;   : &quot;0x2fefd8&quot;,</span><br><span class="line">  &quot;nonce&quot;      : &quot;0x0000000000000042&quot;,</span><br><span class="line">  &quot;mixhash&quot;    : &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,</span><br><span class="line">  &quot;parentHash&quot; : &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,</span><br><span class="line">  &quot;timestamp&quot;  : &quot;0x00&quot;</span><br><span class="line">&#125;&apos; &gt; genesis.json</span><br><span class="line">#初始化链</span><br><span class="line">geth --datadir data0 init genesis.json</span><br><span class="line">#启动一个节点</span><br><span class="line">geth --allow-insecure-unlock --rpc --datadir data0 --networkid 8888 console</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/solidity/" data-id="ckbmzv5ku003cj4ehc1xf7lc3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-web3j" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/web3j/" class="article-date">
+  <time datetime="2020-04-28T09:14:19.601Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/区块链/">区块链</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/web3j/">Web3j示例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>EthService.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br></pre></td><td class="code"><pre><span class="line">public class EthService &#123;</span><br><span class="line">	</span><br><span class="line">//	private static String URL=&quot;http://192.168.1.213:8545&quot;;</span><br><span class="line">	private static String URL=&quot;http://47.88.230.234:18759&quot;;</span><br><span class="line">	private static HttpService httpService;</span><br><span class="line">	/**</span><br><span class="line">     * 初始化web3j普通api调用</span><br><span class="line">     *</span><br><span class="line">     * @return web3j</span><br><span class="line">     */</span><br><span class="line">    public static Web3j initWeb3j() &#123;</span><br><span class="line">        return Web3j.build(getService());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 初始化personal级别的操作对象</span><br><span class="line">     * @return Geth</span><br><span class="line">     */</span><br><span class="line">    public static Geth initGeth()&#123;</span><br><span class="line">        return Geth.build(getService());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 初始化admin级别操作的对象</span><br><span class="line">     * @return Admin</span><br><span class="line">     */</span><br><span class="line">    public static Admin initAdmin()&#123;</span><br><span class="line">        return Admin.build(getService());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 通过http连接到geth节点</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    private static HttpService getService()&#123;</span><br><span class="line">    	if(httpService==null)&#123;</span><br><span class="line">    		httpService=new HttpService(URL);</span><br><span class="line">    	&#125;</span><br><span class="line">        return httpService;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 输入密码创建地址</span><br><span class="line">     *</span><br><span class="line">     * @param password 密码（建议同一个平台的地址使用一个相同的，且复杂度较高的密码）</span><br><span class="line">     * @return 地址hash</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static String newAccount(String password) throws IOException &#123;</span><br><span class="line">        Admin admin = initAdmin();</span><br><span class="line">        Request&lt;?, NewAccountIdentifier&gt; request = admin.personalNewAccount(password);</span><br><span class="line">        NewAccountIdentifier result = request.send();</span><br><span class="line">        return result.getAccountId();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 获得当前区块高度</span><br><span class="line">     *</span><br><span class="line">     * @return 当前区块高度</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static BigInteger getCurrentBlockNumber() throws IOException &#123;</span><br><span class="line">        Web3j web3j = initWeb3j();</span><br><span class="line">        Request&lt;?, EthBlockNumber&gt; request = web3j.ethBlockNumber();</span><br><span class="line">        return request.send().getBlockNumber();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 解锁账户，发送交易前需要对账户进行解锁</span><br><span class="line">     *</span><br><span class="line">     * @param address  地址</span><br><span class="line">     * @param password 密码</span><br><span class="line">     * @param duration 解锁有效时间，单位秒</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static Boolean unlockAccount(String address, String password, BigInteger duration) throws IOException &#123;</span><br><span class="line">        Admin admin = initAdmin();</span><br><span class="line">        Request&lt;?, PersonalUnlockAccount&gt; request = admin.personalUnlockAccount(address, password, duration);</span><br><span class="line">        PersonalUnlockAccount account = request.send();</span><br><span class="line">        return account.accountUnlocked();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 账户解锁，使用完成之后需要锁定</span><br><span class="line">     *</span><br><span class="line">     * @param address</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static Boolean lockAccount(String address) throws IOException &#123;</span><br><span class="line">        Geth geth = initGeth();</span><br><span class="line">        Request&lt;?, BooleanResponse&gt; request = geth.personalLockAccount(address);</span><br><span class="line">        BooleanResponse response = request.send();</span><br><span class="line">        return response.success();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 根据hash值获取交易</span><br><span class="line">     *</span><br><span class="line">     * @param hash</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static EthTransaction getTransactionByHash(String hash) throws IOException &#123;</span><br><span class="line">        Web3j web3j = initWeb3j();</span><br><span class="line">        Request&lt;?, EthTransaction&gt; request = web3j.ethGetTransactionByHash(hash);</span><br><span class="line">        return request.send();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 获得ethblock</span><br><span class="line">     *</span><br><span class="line">     * @param blockNumber 根据区块编号</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static EthBlock getBlockEthBlock(Integer blockNumber) throws IOException &#123;</span><br><span class="line">        Web3j web3j = initWeb3j();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        DefaultBlockParameter defaultBlockParameter = new DefaultBlockParameterNumber(blockNumber);</span><br><span class="line">        Request&lt;?, EthBlock&gt; request = web3j.ethGetBlockByNumber(defaultBlockParameter, true);</span><br><span class="line">        EthBlock ethBlock = request.send();</span><br><span class="line">        return ethBlock;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 发送交易并获得交易hash值</span><br><span class="line">     *</span><br><span class="line">     * @param transaction</span><br><span class="line">     * @param password</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static String sendTransaction(Transaction transaction, String password) throws IOException &#123;</span><br><span class="line">        Admin admin = initAdmin();</span><br><span class="line">        Request&lt;?, EthSendTransaction&gt; request = admin.personalSendTransaction(transaction, password);</span><br><span class="line">        EthSendTransaction ethSendTransaction = request.send();</span><br><span class="line">        return ethSendTransaction.getTransactionHash();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 指定地址发送交易所需nonce获取</span><br><span class="line">     *</span><br><span class="line">     * @param address 待发送交易地址</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static BigInteger getNonce(String address) throws IOException &#123;</span><br><span class="line">        Web3j web3j = initWeb3j();</span><br><span class="line">        Request&lt;?, EthGetTransactionCount&gt; request = web3j.ethGetTransactionCount(address, DefaultBlockParameterName.LATEST);</span><br><span class="line">        return request.send().getTransactionCount();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">App.java</span><br><span class="line"></span><br><span class="line">public class App &#123;</span><br><span class="line">	</span><br><span class="line">    // GAS价格  </span><br><span class="line">    public static BigInteger GAS_PRICE = BigInteger.valueOf(20_000_000_000L);  </span><br><span class="line">    // GAS上限  </span><br><span class="line">    public static BigInteger GAS_LIMIT = BigInteger.valueOf(4_300_000L);  </span><br><span class="line">  </span><br><span class="line">    // 交易费用  </span><br><span class="line">    public static BigInteger GAS_VALUE = BigInteger.valueOf(1300_000L);;  </span><br><span class="line">    </span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// 获取余额</span><br><span class="line">		try &#123;</span><br><span class="line">			System.out.println(&quot;Hello World!&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			Admin admin = EthService.initAdmin();</span><br><span class="line">			System.out.println(admin.personalListAccounts().send().getAccountIds());</span><br><span class="line">////			ShhAddToGroup group = admin.shhAddToGroup(&quot;enode://6d1819c68ad4bb4928f349d8fecb14223087b4ea0740dd3ffee55b95d975c2123d230e12e13a40083fc902440d83f0aa17e0a925616110c14273e6b2d7f59635@192.168.1.64:30303&quot;).send();</span><br><span class="line">////			System.out.println(group);</span><br><span class="line">//			</span><br><span class="line">//			NetPeerCount count=admin.netPeerCount().send();</span><br><span class="line">//			System.out.println(count.getResult());</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 开始挖矿</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void startMining()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 新建用户</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void CreateNewAccounts() &#123;</span><br><span class="line">		String account = &quot;&quot;;</span><br><span class="line">		try &#123;</span><br><span class="line">			account = EthService.newAccount(&quot;123456&quot;);</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(account);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 获取钱包里的所有用户</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void getAllAccounts() &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			Geth geth = EthService.initGeth();</span><br><span class="line">			Request&lt;?, EthAccounts&gt; request = geth.ethAccounts();</span><br><span class="line">			List&lt;String&gt; list = request.send().getAccounts();</span><br><span class="line">			System.out.println(list.toString());</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 获取用户余额</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void getAccountBalance() &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			String address=&quot;0xdbaea9b9d0b4d9dfff546466c89de34c9711a942&quot;;//0x8b7483ea3c7a545dbf93bf07764b479e0469e821 0xdbaea9b9d0b4d9dfff546466c89de34c9711a942</span><br><span class="line">			Web3j web3 = EthService.initWeb3j();</span><br><span class="line">			EthGetBalance ethGetBalance1 = web3.ethGetBalance(address, DefaultBlockParameter.valueOf(&quot;latest&quot;)).send();</span><br><span class="line">			System.out.println(ethGetBalance1.getBalance());</span><br><span class="line">			System.out.println(address+&quot;的余额:&quot; + Convert.fromWei(ethGetBalance1.getBalance().toString(), Convert.Unit.ETHER));  //.new BigDecimal(ethGetBalance1.getBalance() + &quot;&quot;).divide(BigDecimal.valueOf(Math.pow(10, 18))).setScale(6)</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 转账</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void transferBalance()&#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			boolean flag = EthService.unlockAccount(&quot;0xdbaea9b9d0b4d9dfff546466c89de34c9711a942&quot;, &quot;123456&quot;, new BigInteger(1800 + &quot;&quot;));</span><br><span class="line">			System.out.println(flag);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			BigInteger value = Convert.toWei(&quot;12&quot;, Convert.Unit.ETHER).toBigInteger(); </span><br><span class="line">			</span><br><span class="line">			Web3j web3j=EthService.initWeb3j();</span><br><span class="line">			Credentials credentials = WalletUtils.loadCredentials(&quot;123456&quot;, &quot;F:\\Ethereum\\blockchain\\keystore\\UTC--2018-04-26T06-04-02.691651400Z--dbaea9b9d0b4d9dfff546466c89de34c9711a942&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			// get the next available nonce</span><br><span class="line">			BigInteger nonce = EthService.getNonce(&quot;0xdbaea9b9d0b4d9dfff546466c89de34c9711a942&quot;);</span><br><span class="line">			</span><br><span class="line">			// create our transaction</span><br><span class="line">			RawTransaction rawTransaction  = RawTransaction.createEtherTransaction(</span><br><span class="line">			             nonce, GAS_PRICE, GAS_LIMIT, &quot;0x8b7483ea3c7a545dbf93bf07764b479e0469e821&quot;, value);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			// sign &amp; send our transaction</span><br><span class="line">			byte[] signedMessage = TransactionEncoder.signMessage(rawTransaction, credentials);</span><br><span class="line">			String hexValue = Numeric.toHexString(signedMessage);</span><br><span class="line">			EthSendTransaction ethSendTransaction = web3j.ethSendRawTransaction(hexValue).send();</span><br><span class="line">			</span><br><span class="line">			System.out.println(ethSendTransaction.getResult());</span><br><span class="line">			System.out.println(ethSendTransaction.getTransactionHash());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 监听新区块</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void observableBlockChain()&#123;</span><br><span class="line">		Web3j web3j=EthService.initWeb3j();</span><br><span class="line">		Subscription subscription = web3j.blockObservable(false).subscribe(block -&gt; &#123;</span><br><span class="line">			Block blk=block.getResult();</span><br><span class="line">			System.out.println(&quot;当前区块高度：&quot;+blk.getNumber()+&quot;,上一个区块：&quot;+blk.getParentHash()+blk.getHash());</span><br><span class="line">		&#125;);</span><br><span class="line">		System.out.println(&quot;订阅的&quot;+subscription.hashCode());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MyBlockObserve.java</span><br><span class="line"></span><br><span class="line">public class MyBlockObserve &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	private static Web3j web3j=EthService.initWeb3j();</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 监听区块数据</span><br><span class="line">	 */</span><br><span class="line">	public static void observableBlockChain()&#123;</span><br><span class="line">		Subscription subscription = web3j.blockObservable(false).subscribe(block -&gt; &#123;</span><br><span class="line">			Block blk=block.getResult();</span><br><span class="line">			System.out.println(&quot;当前区块高度：&quot;+blk.getNumber()+&quot;,上一个区块：&quot;+blk.getParentHash()+blk.getHash());</span><br><span class="line">		&#125;);</span><br><span class="line">		System.out.println(&quot;订阅的&quot;+subscription.hashCode());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/web3j/" data-id="ckbmzv5lb004bj4ehqa5d8sg6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-web3" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/web3/" class="article-date">
+  <time datetime="2020-04-28T09:13:58.174Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/区块链/">区块链</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/web3/">Web3 私钥签名交易 免解锁账号</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>示例程序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">var Web3 = require(&apos;web3&apos;);</span><br><span class="line">var fs = require(&quot;fs&quot;)</span><br><span class="line">try &#123;</span><br><span class="line">  web3 = new Web3(new Web3.providers.HttpProvider(&quot;http://47.114.114.93:8545&quot;));</span><br><span class="line">  var abi = eval(fs.readFileSync(&apos;./static/abi2.txt&apos;).toString());</span><br><span class="line">  var gcontract = fs.readFileSync(&apos;./static/2.txt&apos;).toString();</span><br><span class="line">  var contract = new web3.eth.Contract(abi, gcontract);</span><br><span class="line">  var transfer = contract.methods.doLottery();</span><br><span class="line">  var encodedABI = transfer.encodeABI();</span><br><span class="line">  var from = &quot;0x1b4f60adE059d2eC70b30478da012D254493Ea24&quot;;</span><br><span class="line">  web3.eth.getTransactionCount(from).then(result =&gt; &#123;</span><br><span class="line">    var number = result.toString(16);</span><br><span class="line">    var tx = &#123;</span><br><span class="line">      nonce: &apos;0x&apos; + number,</span><br><span class="line">      from: &quot;0x1b4f60adE059d2eC70b30478da012D254493Ea24&quot;,</span><br><span class="line">      to: gcontract,</span><br><span class="line">      gas: 6000000,</span><br><span class="line">      data: encodedABI</span><br><span class="line">    &#125;;</span><br><span class="line">    privateKey = &apos;AEA805B16F7A7BD4916737880A2E768DEC1AE3B6A96CB067E5373D412A119566&apos;;</span><br><span class="line">    web3.eth.accounts.signTransaction(tx, privateKey).then(signed =&gt; &#123;</span><br><span class="line">      console.log(signed);</span><br><span class="line">      var tran = web3.eth.sendSignedTransaction(signed.rawTransaction);</span><br><span class="line">      tran.on(&apos;confirmation&apos;, (confirmationNumber, receipt) =&gt; &#123;</span><br><span class="line">        console.log(&apos;confirmation: &apos; + confirmationNumber);</span><br><span class="line">        console.log(receipt);</span><br><span class="line">      &#125;);</span><br><span class="line">      tran.on(&apos;transactionHash&apos;, hash =&gt; &#123;</span><br><span class="line">        console.log(&apos;hash&apos;);</span><br><span class="line">        console.log(hash);</span><br><span class="line">      &#125;);</span><br><span class="line">      tran.on(&apos;receipt&apos;, receipt =&gt; &#123;</span><br><span class="line">        console.log(&apos;reciept&apos;);</span><br><span class="line">        console.log(receipt);</span><br><span class="line">      &#125;);</span><br><span class="line">      tran.on(&apos;error&apos;, console.error);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125; catch (err) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>参考链接<br><a href="http://cw.hubwiz.com/card/c/web3.js-1.0/1/2/22/" target="_blank" rel="noopener">http://cw.hubwiz.com/card/c/web3.js-1.0/1/2/22/</a><br><a href="https://www.jianshu.com/p/3732f39b5638" target="_blank" rel="noopener">https://www.jianshu.com/p/3732f39b5638</a><br><a href="http://cw.hubwiz.com/card/c/ethereum-FAQ/1/1/5/" target="_blank" rel="noopener">http://cw.hubwiz.com/card/c/ethereum-FAQ/1/1/5/</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/web3/" data-id="ckbmzv5l80045j4ehgtavx75i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-nethogs" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/nethogs/" class="article-date">
+  <time datetime="2020-04-28T09:12:51.503Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/nethogs/">Nethogs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux查看某进程使用的网络带宽情况<br>（1）可能查看某个进程的带宽占用需要明确知道PID、进程名字、发送速度、接收速度。</p>
+<p>（2）在Linux原生的软件中没有，只能外装，最符合以上的情况就只有nethogs。</p>
+<p>（3）nethogs可以指定网卡，但是不能指定PID，这就是一个缺陷。</p>
+<p>2、使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nethogs</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/nethogs/" data-id="ckbmzv5k60020j4ehx4bsw9lw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-weevely" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/weevely/" class="article-date">
+  <time datetime="2020-04-28T09:12:42.270Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/weevely/">weevely</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>安装</li>
+</ol>
+<ul>
+<li><p>linux</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$sudo apt-get install g++ python-pip libyaml-dev python-dev</span><br><span class="line"></span><br><span class="line">$sudo pip install prettytable Mako PyYAML python-dateutil PySocks --upgrade</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>OS X</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo port install python27 py27-pip</span><br><span class="line">$ sudo port select --set pip pip27</span><br><span class="line">$ sudo port select --set python python27</span><br><span class="line">$ sudo pip install prettytable Mako PyYAML python-dateutil readline PySocks --upgrade</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Windows</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install prettytable Mako PyYAML python-dateutil pyreadline PySocks --upgrade</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li><p>生成后门</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weevely generate test backdoor.php</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>连接后门</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weevely http://ip/backdoor.php test</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>4.:help</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/weevely/" data-id="ckbmzv5l90047j4ehaqm3a645" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-hack" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/hack/" class="article-date">
+  <time datetime="2020-04-28T09:12:35.642Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/hack/">Hacker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>网络安全 安全攻防 漏洞</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/hack/" data-id="ckbmzv5jq0013j4ehr4t4w7pc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-mv" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/mv/" class="article-date">
+  <time datetime="2020-04-28T09:12:25.138Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/mv/">mv</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.通过mv 唯一处理文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hash=$(md5sum $1|awk &apos;&#123;print $1&#125;&apos;)</span><br><span class="line">if [ ! -f ~/.local/$hash ];then</span><br><span class="line">    echo $hash</span><br><span class="line">    mv $1 ~/.local/$hash</span><br><span class="line">else</span><br><span class="line">    echo &apos;have&apos;</span><br><span class="line">    rm -rf $1</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/mv/" data-id="ckbmzv5k80025j4ehll5mk65s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-color" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/color/" class="article-date">
+  <time datetime="2020-04-28T09:09:57.646Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/color/">Color</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>适合阅读的背景颜色<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* 河白色 #FFFFFF rgb(255, 255, 255)</span><br><span class="line">* 杏仁黄 #FAF9DE rgb(250, 249, 222)</span><br><span class="line">* 秋叶褐 #FFF2E2 rgb(255, 242, 226)</span><br><span class="line">* 胭脂红 #FDE6E0 rgb(253, 230, 224)</span><br><span class="line">* 青草绿 #E3EDCD rgb(227, 237, 205)</span><br><span class="line">* 海天蓝 #DCE2F1 rgb(220, 226, 241)</span><br><span class="line">* 葛巾紫 #E9EBFE rgb(233, 235, 254)</span><br><span class="line">* 极光灰 #EAEAEF rgb(234, 234, 239)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/color/" data-id="ckbmzv5jh000ij4ehvucda8ih" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mysql/">Mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/中间件/">中间件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/交易所/">交易所</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/后端/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微服务/">微服务</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/源码/">源码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络安全/">网络安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/17/sqlinject/">SQL 注入</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/05/htpasswd/">htpasswd</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/19/source/">H淘源码</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/15/thinkphp/">ThinkPHP 5.0 漏洞</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/12/rocketmq/">RocketMQ</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 anonymous<br>
+      Powered by <a href="https://baike.baidu.com/item/%E5%8C%BF%E5%90%8D%E8%80%85%E9%BB%91%E5%AE%A2%E7%BB%84%E7%BB%87/8378313?fromtitle=Anonymous&fromid=7157039&fr=aladdin" target="_blank">H</a>
+      <a href="http://beian.miit.gov.cn">鲁ICP备18014570号</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  </div>
+    <!-- waifu-tips.js 依赖 JQuery 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <!-- 实现拖动效果，需引入 JQuery UI -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-dist@1.12.1/jquery-ui.min.js"></script>
+    <script src="images/assets/autoload.js?v=1.4.2"></script>
+</body>
+</html>

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>H博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="编程博客">
+<meta name="keywords" content="c++ java mysql shell linux h博客 android docker git laravel php python javascript python">
+<meta property="og:type" content="website">
+<meta property="og:title" content="H博客">
+<meta property="og:url" content="https://blog.newtao.vip/page/5/index.html">
+<meta property="og:site_name" content="H博客">
+<meta property="og:description" content="编程博客">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="H博客">
+<meta name="twitter:description" content="编程博客">
+  
+    <link rel="alternate" href="/atom.xml" title="H博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<style>
+.breathe-div {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #2b92d4;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    margin:0px auto;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 10;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: breathe;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes breathe {
+    0% {
+        opacity: .4;
+        box-shadow: 0 1px 2px rgba(0, 147, 223, 0.4), 0 1px 1px rgba(0, 147, 223, 0.1) inset;
+    }
+
+    100% {
+        opacity: 1;
+        border: 1px solid rgba(59, 235, 235, 0.7);
+        box-shadow: 0 1px 30px #0093df, 0 1px 20px #0093df inset;
+    }
+}
+.breathe-point{position:absolute;left:50%; top:150px;}
+.breathe-div{position:absolute;left:-100px; top:-100px }
+</style>
+<body>
+  <div class="breathe-point">
+  <div class="breathe-div"></div>
+  </div>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">H博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">技术博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.newtao.vip"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="true-find" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/06/find/" class="article-date">
+  <time datetime="2019-12-06T04:00:54.771Z" itemprop="datePublished">2019-12-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/shell/">shell</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/06/find/">Linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>find<br>-mtime n[smhdw]<br>             If no units are specified, this primary evaluates to true if the difference between the file last modification time and the time find was started, rounded up to the next full 24-hour period, is n 24-hour periods.</p>
+<pre><code>If units are specified, this primary evaluates to true if the difference between the file last modification time and the time find was started is exactly n units.  Please refer to the -atime primary description for information on
+supported time units.</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find -mtime +1 -type file</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/06/find/" data-id="ckbmzv5jl000qj4ehzhjxao4e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-php_date" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/03/php_date/" class="article-date">
+  <time datetime="2019-12-03T04:11:51.713Z" itemprop="datePublished">2019-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/03/php_date/">PHP Date</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Date</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">//今天开始时间</span><br><span class="line">       $beginToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //今天结束时间</span><br><span class="line">       $endToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)+1,date(&apos;Y&apos;))-1);</span><br><span class="line">       //昨天开始时间</span><br><span class="line">       $beginYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-1,date(&apos;Y&apos;)));</span><br><span class="line">       //昨天结束时间</span><br><span class="line">       $endYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;))-1);</span><br><span class="line">       //本周开始时间</span><br><span class="line">       $beginThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+1,date(&quot;Y&quot;)));</span><br><span class="line">       //本周结束时间</span><br><span class="line">       $endThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+7,date(&quot;Y&quot;)));</span><br><span class="line">       //上周开始时间</span><br><span class="line">       $beginLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+1-7,date(&apos;Y&apos;)));</span><br><span class="line">       //上周结束时间</span><br><span class="line">       $endLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+7-7,date(&apos;Y&apos;)));</span><br><span class="line">       //本月开始时间</span><br><span class="line">       $beginThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),1,date(&apos;Y&apos;)));</span><br><span class="line">       //本月结束时间</span><br><span class="line">       $endThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;t&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //上月开始时间</span><br><span class="line">       $beginLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;)-1,1,date(&quot;Y&quot;)));</span><br><span class="line">       //上月结束时间</span><br><span class="line">       $endLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;) ,0,date(&quot;Y&quot;)));</span><br><span class="line">       //本季度开始时间</span><br><span class="line">       $season = ceil((date(&apos;n&apos;))/3);//当前是第几季度</span><br><span class="line">       $beginThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //本季度结束时间</span><br><span class="line">       $endThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //上季度开始时间</span><br><span class="line">       $season1 = ceil((date(&apos;n&apos;))/3)-1;//上季度是第几季度</span><br><span class="line">       $beginLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season1*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //上季度结束时间</span><br><span class="line">       $endLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season1*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season1*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //本年开始时间</span><br><span class="line">       $beginThisyear=date(&quot;Y&quot;,time()).&quot;-1&quot;.&quot;-1&quot;;</span><br><span class="line">       //本年结束时间</span><br><span class="line">       $endThisyear =date(&quot;Y&quot;,time()).&quot;-12&quot;.&quot;-31&quot;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/03/php_date/" data-id="ckbmzv5kh002kj4ehlld7tnt0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-git_update" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/03/git_update/" class="article-date">
+  <time datetime="2019-12-03T04:11:51.705Z" itemprop="datePublished">2019-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/03/git_update/">Git centos update</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove git*</span><br><span class="line">sudo yum -y install  https://centos7.iuscommunity.org/ius-release.rpm</span><br><span class="line">sudo yum -y install  git2u-all</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/03/git_update/" data-id="ckbmzv5jm000tj4ehcn2ap441" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-hprose" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/03/hprose/" class="article-date">
+  <time datetime="2019-12-03T04:11:51.703Z" itemprop="datePublished">2019-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/03/hprose/">Hprose</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>GIT</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/hprose/hprose-php</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>composer</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">composer.json里增加</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose&quot;: &quot;&gt;=2.0.0&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">swoole版</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose-swoole&quot;: &quot;dev-master&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Symfony</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose-symfony&quot;: &quot;dev-master&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Yii</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose-yii&quot;: &quot;dev-master&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">PSR7</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose-psr7&quot;: &quot;dev-master&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ThinkPHP 示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">&lt;?php</span><br><span class="line">namespace app\admin\controller;</span><br><span class="line"></span><br><span class="line">use think\Controller;</span><br><span class="line">use Hprose\Http\Server;</span><br><span class="line">use think\Log;</span><br><span class="line"></span><br><span class="line">function hello($name) &#123;</span><br><span class="line">	return &apos;hello&apos; . $name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * RpcServer</span><br><span class="line"> * @internal</span><br><span class="line"> */</span><br><span class="line">class Rpcserver extends Controller</span><br><span class="line">&#123;</span><br><span class="line">    public function hello($name) &#123;</span><br><span class="line">	Log::write(&quot;htest&quot;);</span><br><span class="line">	return &apos;hello&apos; . $name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function index()</span><br><span class="line">    &#123;</span><br><span class="line">	$server = new Server();</span><br><span class="line">	$server-&gt;addFunction(&apos;\app\admin\controller\hello&apos;, &apos;hello&apos;);	</span><br><span class="line">	Log::write(&quot;htest&quot;);</span><br><span class="line">	$server-&gt;start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">client:</span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace app\admin\controller;</span><br><span class="line"></span><br><span class="line">use think\Controller;</span><br><span class="line">use Hprose\Http\Client;</span><br><span class="line"></span><br><span class="line">function hello($name) &#123;</span><br><span class="line">        return &apos;hello&apos; . $name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * RpcServer</span><br><span class="line"> * @internal</span><br><span class="line"> */</span><br><span class="line">class Rpcclient extends Controller</span><br><span class="line">&#123;</span><br><span class="line">    public function index()</span><br><span class="line">    &#123;</span><br><span class="line">        #$client = new Client(&quot;&quot;);</span><br><span class="line">        $client = new Client(&quot;http://admin.beta.qdunzi.com/admin/rpcserver&quot;, false);</span><br><span class="line">        $start = microtime(true);</span><br><span class="line">        for($i=0;$i&lt;100;$i++) &#123;</span><br><span class="line">            $client-&gt;hello(&apos;haha&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        $end = microtime(true);</span><br><span class="line">        echo $end - $start . &quot;\n&quot;;</span><br><span class="line">        $start = microtime(true);</span><br><span class="line">        for($i=0;$i&lt;100;$i++) &#123;</span><br><span class="line">            $client-&gt;hello(&apos;haha&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        $end = microtime(true);</span><br><span class="line">        echo $end - $start;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>性能测试</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/03/hprose/" data-id="ckbmzv5js0014j4ehort3s5df" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-npm" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/03/npm/" class="article-date">
+  <time datetime="2019-12-03T04:11:51.700Z" itemprop="datePublished">2019-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/03/npm/">npm 加速</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias npm=&quot;/usr/bin/npm --registry=https://registry.npm.taobao.org \</span><br><span class="line">--cache=$HOME/.npm/.cache/cnpm \</span><br><span class="line">--disturl=https://npm.taobao.org/dist \</span><br><span class="line">--userconfig=$HOME/.cnpmrc&quot;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/03/npm/" data-id="ckbmzv5k70023j4eht80900nt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-pygmentize" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/03/pygmentize/" class="article-date">
+  <time datetime="2019-12-03T04:11:51.697Z" itemprop="datePublished">2019-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/03/pygmentize/">pygmentize</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>install</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip intall pygmentize</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>alias</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br><span class="line"></span><br><span class="line">alias pcat=&apos;pygmentize -g&apos;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/03/pygmentize/" data-id="ckbmzv5kn002zj4ehjzhj43vb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-android_full" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/03/android_full/" class="article-date">
+  <time datetime="2019-12-03T04:11:51.695Z" itemprop="datePublished">2019-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/03/android_full/">Acitivity全屏</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>布局 android:theme=”@android:style/Theme.NoTitleBar.Fullscreen”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity</span><br><span class="line">    android:name=&quot;.MainActivity&quot;</span><br><span class="line">    android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</span><br><span class="line">        &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line">&lt;/activity&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/03/android_full/" data-id="ckbmzv5j60004j4ehi3gcpc7z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/03/git_filemode/" class="article-date">
+  <time datetime="2019-12-03T04:11:51.689Z" itemprop="datePublished">2019-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/03/git_filemode/">Git 权限变更忽略</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/03/git_filemode/" data-id="ckbmzv5jj000mj4ehnvndjbb0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-tars" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/03/tars/" class="article-date">
+  <time datetime="2019-12-03T04:11:51.687Z" itemprop="datePublished">2019-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/微服务/">微服务</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/03/tars/">Tars</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Tars github: <a href="https://github.com/TarsCloud/Tars.git" target="_blank" rel="noopener">https://github.com/TarsCloud/Tars.git</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/03/tars/" data-id="ckbmzv5l2003tj4ehdvn4ooel" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-samba" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/03/samba/" class="article-date">
+  <time datetime="2019-12-03T04:11:51.684Z" itemprop="datePublished">2019-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/运维/">运维</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/03/samba/">Centos Samba</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>server</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install samba samba-client -y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>client</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install samba-client cifs-utils -y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>server conf /etc/samba/smb.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">workgroup = WORKGROUP   windows工作组模式</span><br><span class="line">hosts allow = 192.168.254.1    白名单</span><br><span class="line">[share]</span><br><span class="line">    comment = share                 描述信息</span><br><span class="line">    path =  /share                  共享文件路径</span><br><span class="line">    browseable = no                 是否可以浏览查看该samba服务</span><br><span class="line">    read list = samba1              只读samba用户列表</span><br><span class="line">    write list = samba2             读写samba用户列表</span><br><span class="line">    writable = no                   默认所有用户是只读模式</span><br><span class="line">    printable = no                  是否是打印设备，如果是yes那么文件夹内容不能查看</span><br><span class="line">    public = no                     是否公开，如果公开不需要samba用户也是访问共享文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建samba用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useradd samba1</span><br><span class="line">useradd samba2</span><br><span class="line">smbpasswd -a samba1</span><br><span class="line">smbpasswd -a samba2</span><br><span class="line"></span><br><span class="line">pdbedit -L 查看samba用户</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启用服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable smb</span><br><span class="line">setenforce 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>防火墙设置</p>
+</li>
+<li><p>新建/share目录，并设置权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /share</span><br><span class="line">chmod o+w /share</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>smbclient -L 查看服务是否开启</p>
+</li>
+<li><p>手动挂载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -t cifs //192.168.254.1/share /mnt/share -o username=samba2,password=123</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自动挂载 /etc/fstab</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//192.168.254.1/share /mnt/share	cifs	auto,username=samba2,password=123	0	0</span><br><span class="line">or</span><br><span class="line">//192.168.254.1/share /mnt/cifs cifs credentials=/root/namepass.txt,defaults 0 0</span><br><span class="line"></span><br><span class="line">echo &apos;username=samba2</span><br><span class="line">password=123&apos; &gt; /root/namepass.txt</span><br><span class="line"></span><br><span class="line">mount -a</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/03/samba/" data-id="ckbmzv5kt003aj4ehlr170oqz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mysql/">Mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/中间件/">中间件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/交易所/">交易所</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/后端/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微服务/">微服务</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/源码/">源码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络安全/">网络安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/17/sqlinject/">SQL 注入</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/05/htpasswd/">htpasswd</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/19/source/">H淘源码</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/15/thinkphp/">ThinkPHP 5.0 漏洞</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/12/rocketmq/">RocketMQ</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 anonymous<br>
+      Powered by <a href="https://baike.baidu.com/item/%E5%8C%BF%E5%90%8D%E8%80%85%E9%BB%91%E5%AE%A2%E7%BB%84%E7%BB%87/8378313?fromtitle=Anonymous&fromid=7157039&fr=aladdin" target="_blank">H</a>
+      <a href="http://beian.miit.gov.cn">鲁ICP备18014570号</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  </div>
+    <!-- waifu-tips.js 依赖 JQuery 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <!-- 实现拖动效果，需引入 JQuery UI -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-dist@1.12.1/jquery-ui.min.js"></script>
+    <script src="images/assets/autoload.js?v=1.4.2"></script>
+</body>
+</html>
