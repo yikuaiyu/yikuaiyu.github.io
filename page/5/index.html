@@ -25,7 +25,7 @@
     <link rel="icon" href="/favicon.png">
   
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link href="/css/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -110,7 +110,7 @@
     <article id="true-find" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/06/find/" class="article-date">
-  <time datetime="2019-12-06T04:00:54.771Z" itemprop="datePublished">2019-12-06</time>
+  <time datetime="2019-12-06T06:18:23.198Z" itemprop="datePublished">2019-12-06</time>
 </a>
     
   <div class="article-category">
@@ -141,7 +141,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/06/find/" data-id="ckbmzv5jl000qj4ehzhjxao4e" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/06/find/" data-id="ckbn0hrh0000t7a78dl6lwdmu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,10 +151,53 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
 
 
   
-    <article id="true-php_date" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-iostat" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/php_date/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.713Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/11/22/iostat/" class="article-date">
+  <time datetime="2019-11-22T05:27:41.322Z" itemprop="datePublished">2019-11-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/22/iostat/">iostat</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.常用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iostat -d -k 1 10</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/22/iostat/" data-id="ckbn0hri7001j7a78tg4ohy0w" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-mongo" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/21/mongo/" class="article-date">
+  <time datetime="2019-11-21T06:30:42.469Z" itemprop="datePublished">2019-11-21</time>
 </a>
     
   <div class="article-category">
@@ -169,92 +212,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/php_date/">PHP Date</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Date</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">//今天开始时间</span><br><span class="line">       $beginToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //今天结束时间</span><br><span class="line">       $endToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)+1,date(&apos;Y&apos;))-1);</span><br><span class="line">       //昨天开始时间</span><br><span class="line">       $beginYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-1,date(&apos;Y&apos;)));</span><br><span class="line">       //昨天结束时间</span><br><span class="line">       $endYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;))-1);</span><br><span class="line">       //本周开始时间</span><br><span class="line">       $beginThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+1,date(&quot;Y&quot;)));</span><br><span class="line">       //本周结束时间</span><br><span class="line">       $endThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+7,date(&quot;Y&quot;)));</span><br><span class="line">       //上周开始时间</span><br><span class="line">       $beginLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+1-7,date(&apos;Y&apos;)));</span><br><span class="line">       //上周结束时间</span><br><span class="line">       $endLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+7-7,date(&apos;Y&apos;)));</span><br><span class="line">       //本月开始时间</span><br><span class="line">       $beginThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),1,date(&apos;Y&apos;)));</span><br><span class="line">       //本月结束时间</span><br><span class="line">       $endThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;t&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //上月开始时间</span><br><span class="line">       $beginLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;)-1,1,date(&quot;Y&quot;)));</span><br><span class="line">       //上月结束时间</span><br><span class="line">       $endLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;) ,0,date(&quot;Y&quot;)));</span><br><span class="line">       //本季度开始时间</span><br><span class="line">       $season = ceil((date(&apos;n&apos;))/3);//当前是第几季度</span><br><span class="line">       $beginThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //本季度结束时间</span><br><span class="line">       $endThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //上季度开始时间</span><br><span class="line">       $season1 = ceil((date(&apos;n&apos;))/3)-1;//上季度是第几季度</span><br><span class="line">       $beginLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season1*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //上季度结束时间</span><br><span class="line">       $endLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season1*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season1*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //本年开始时间</span><br><span class="line">       $beginThisyear=date(&quot;Y&quot;,time()).&quot;-1&quot;.&quot;-1&quot;;</span><br><span class="line">       //本年结束时间</span><br><span class="line">       $endThisyear =date(&quot;Y&quot;,time()).&quot;-12&quot;.&quot;-31&quot;;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/php_date/" data-id="ckbmzv5kh002kj4ehlld7tnt0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-git_update" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/03/git_update/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.705Z" itemprop="datePublished">2019-12-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/GIT/">GIT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/git_update/">Git centos update</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove git*</span><br><span class="line">sudo yum -y install  https://centos7.iuscommunity.org/ius-release.rpm</span><br><span class="line">sudo yum -y install  git2u-all</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/git_update/" data-id="ckbmzv5jm000tj4ehcn2ap441" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-hprose" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/03/hprose/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.703Z" itemprop="datePublished">2019-12-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/PHP/">PHP</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/hprose/">Hprose</a>
+      <a class="article-title" href="/2019/11/21/mongo/">宝塔环境 mongodb php拓展</a>
     </h1>
   
 
@@ -263,23 +221,19 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li><p>GIT</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/hprose/hprose-php</span><br></pre></td></tr></table></figure>
+<li><p><a href="https://pecl.php.net/package/mongodb" target="_blank" rel="noopener">https://pecl.php.net/package/mongodb</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://pecl.php.net/get/mongodb-1.6.0.tgz</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>composer</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">composer.json里增加</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose&quot;: &quot;&gt;=2.0.0&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">swoole版</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose-swoole&quot;: &quot;dev-master&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Symfony</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose-symfony&quot;: &quot;dev-master&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Yii</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose-yii&quot;: &quot;dev-master&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">PSR7</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose-psr7&quot;: &quot;dev-master&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>ThinkPHP 示例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">&lt;?php</span><br><span class="line">namespace app\admin\controller;</span><br><span class="line"></span><br><span class="line">use think\Controller;</span><br><span class="line">use Hprose\Http\Server;</span><br><span class="line">use think\Log;</span><br><span class="line"></span><br><span class="line">function hello($name) &#123;</span><br><span class="line">	return &apos;hello&apos; . $name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * RpcServer</span><br><span class="line"> * @internal</span><br><span class="line"> */</span><br><span class="line">class Rpcserver extends Controller</span><br><span class="line">&#123;</span><br><span class="line">    public function hello($name) &#123;</span><br><span class="line">	Log::write(&quot;htest&quot;);</span><br><span class="line">	return &apos;hello&apos; . $name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function index()</span><br><span class="line">    &#123;</span><br><span class="line">	$server = new Server();</span><br><span class="line">	$server-&gt;addFunction(&apos;\app\admin\controller\hello&apos;, &apos;hello&apos;);	</span><br><span class="line">	Log::write(&quot;htest&quot;);</span><br><span class="line">	$server-&gt;start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">client:</span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace app\admin\controller;</span><br><span class="line"></span><br><span class="line">use think\Controller;</span><br><span class="line">use Hprose\Http\Client;</span><br><span class="line"></span><br><span class="line">function hello($name) &#123;</span><br><span class="line">        return &apos;hello&apos; . $name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * RpcServer</span><br><span class="line"> * @internal</span><br><span class="line"> */</span><br><span class="line">class Rpcclient extends Controller</span><br><span class="line">&#123;</span><br><span class="line">    public function index()</span><br><span class="line">    &#123;</span><br><span class="line">        #$client = new Client(&quot;&quot;);</span><br><span class="line">        $client = new Client(&quot;http://admin.beta.qdunzi.com/admin/rpcserver&quot;, false);</span><br><span class="line">        $start = microtime(true);</span><br><span class="line">        for($i=0;$i&lt;100;$i++) &#123;</span><br><span class="line">            $client-&gt;hello(&apos;haha&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        $end = microtime(true);</span><br><span class="line">        echo $end - $start . &quot;\n&quot;;</span><br><span class="line">        $start = microtime(true);</span><br><span class="line">        for($i=0;$i&lt;100;$i++) &#123;</span><br><span class="line">            $client-&gt;hello(&apos;haha&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        $end = microtime(true);</span><br><span class="line">        echo $end - $start;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>性能测试</p>
+<li><p>解压和编译安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mongodb-1.6.0.tgz</span><br><span class="line">cd mongodb-1.6.0</span><br><span class="line">/www/server/php/72/bin/phpize </span><br><span class="line">./configure --with-php-config=/www/server/php/72/bin/php-config</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/hprose/" data-id="ckbmzv5js0014j4ehort3s5df" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/21/mongo/" data-id="ckbn0hriw00207a78ezo7a6s2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -289,52 +243,10 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
 
 
   
-    <article id="true-npm" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-talib" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/npm/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.700Z" itemprop="datePublished">2019-12-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/npm/">npm 加速</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias npm=&quot;/usr/bin/npm --registry=https://registry.npm.taobao.org \</span><br><span class="line">--cache=$HOME/.npm/.cache/cnpm \</span><br><span class="line">--disturl=https://npm.taobao.org/dist \</span><br><span class="line">--userconfig=$HOME/.cnpmrc&quot;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/npm/" data-id="ckbmzv5k70023j4eht80900nt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-pygmentize" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/03/pygmentize/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.697Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/11/20/talib/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.312Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
@@ -349,7 +261,107 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/pygmentize/">pygmentize</a>
+      <a class="article-title" href="/2019/11/20/talib/">量化talib</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>TA-Lib<br>Python wrapper for TA-Lib (<a href="http://ta-lib.org/" target="_blank" rel="noopener">http://ta-lib.org/</a>).<br>Download this project as a .zip fileDownload this project as a tar.gz file<br>Installation<br>You can install from PyPI:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install TA-Lib</span><br></pre></td></tr></table></figure>
+
+<p>Or checkout the sources and run setup.py yourself:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python setup.py install</span><br></pre></td></tr></table></figure>
+
+<p>Troubleshooting Install Errors<br>func.c:256:28: fatal error: ta-lib/ta_libc.h: No such file or directory<br>compilation terminated.<br>If you get build errors like this, it typically means that it can’t find the underlying TA-Lib library and needs to be installed:</p>
+<p>Dependencies<br>To use TA-Lib for python, you need to have the TA-Lib already installed:</p>
+<p>Mac OS X</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install ta-lib</span><br></pre></td></tr></table></figure>
+
+<p>Windows<br>Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib</p>
+<p>Linux<br>Download ta-lib-0.4.0-src.tar.gz and:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ untar and cd</span><br><span class="line">$ ./configure --prefix=/usr</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>If you build TA-Lib using make -jX it will fail but that’s OK! Simply rerun make -jX followed by [sudo] make install.</p>
+<p>Documentation Index</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/talib/" data-id="ckbn0hrmf003z7a784ase2llp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-vim" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/vim/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.312Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/vim/">Vim</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>.vimrc</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set tabstop=4</span><br><span class="line">set softtabstop=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set expandtab</span><br><span class="line">set autoindent</span><br><span class="line">set cindent</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/vim/" data-id="ckbn0hrmz00487a78ees1pj0x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-rsync" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/rsync/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/rsync/">rsync</a>
     </h1>
   
 
@@ -358,19 +370,20 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li><p>install</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip intall pygmentize</span><br></pre></td></tr></table></figure>
+<li><p>rsync简介</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">rsync  version 3.1.2  protocol version 31</span><br><span class="line">Copyright (C) 1996-2015 by Andrew Tridgell, Wayne Davison, and others.</span><br><span class="line">Web site: http://rsync.samba.org/</span><br><span class="line">Capabilities:</span><br><span class="line">    64-bit files, 64-bit inums, 64-bit timestamps, 64-bit long ints,</span><br><span class="line">    socketpairs, hardlinks, symlinks, IPv6, batchfiles, inplace,</span><br><span class="line">    append, ACLs, xattrs, iconv, symtimes, prealloc</span><br><span class="line"></span><br><span class="line">rsync comes with ABSOLUTELY NO WARRANTY.  This is free software, and you</span><br><span class="line">are welcome to redistribute it under certain conditions.  See the GNU</span><br><span class="line">General Public Licence for details.</span><br><span class="line"></span><br><span class="line">rsync is a file transfer program capable of efficient remote update</span><br><span class="line">via a fast differencing algorithm.</span><br><span class="line"></span><br><span class="line">Usage: rsync [OPTION]... SRC [SRC]... DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... [USER@]HOST:DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... [USER@]HOST::DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... rsync://[USER@]HOST[:PORT]/DEST</span><br><span class="line">  or   rsync [OPTION]... [USER@]HOST:SRC [DEST]</span><br><span class="line">  or   rsync [OPTION]... [USER@]HOST::SRC [DEST]</span><br><span class="line">  or   rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]</span><br><span class="line">The &apos;:&apos; usages connect via remote shell, while &apos;::&apos; &amp; &apos;rsync://&apos; usages connect</span><br><span class="line">to an rsync daemon, and require SRC or DEST to start with a module name.</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>alias</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br><span class="line"></span><br><span class="line">alias pcat=&apos;pygmentize -g&apos;</span><br></pre></td></tr></table></figure>
-
+<li><p>断点续传</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rsync -e &quot;ssh -p26034&quot; -avpgolr --progress root@192.168.1.10:/root/1.tar .</span><br><span class="line">26034 为端口号</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>同步<br>rsync -av <a href="mailto:root@47.104" target="_blank" rel="noopener">root@47.104</a>.<em>.</em>:/path/dir /path/dir</p>
 </li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/pygmentize/" data-id="ckbmzv5kn002zj4ehjzhj43vb" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/rsync/" data-id="ckbn0hrkl00397a78ejp45sn6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -380,14 +393,14 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
 
 
   
-    <article id="true-android_full" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-php_date" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/android_full/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.695Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/11/20/php_date/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
   </div>
 
   </div>
@@ -398,7 +411,50 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/android_full/">Acitivity全屏</a>
+      <a class="article-title" href="/2019/11/20/php_date/">PHP Date</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Date</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">//今天开始时间</span><br><span class="line">       $beginToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //今天结束时间</span><br><span class="line">       $endToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)+1,date(&apos;Y&apos;))-1);</span><br><span class="line">       //昨天开始时间</span><br><span class="line">       $beginYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-1,date(&apos;Y&apos;)));</span><br><span class="line">       //昨天结束时间</span><br><span class="line">       $endYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;))-1);</span><br><span class="line">       //本周开始时间</span><br><span class="line">       $beginThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+1,date(&quot;Y&quot;)));</span><br><span class="line">       //本周结束时间</span><br><span class="line">       $endThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+7,date(&quot;Y&quot;)));</span><br><span class="line">       //上周开始时间</span><br><span class="line">       $beginLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+1-7,date(&apos;Y&apos;)));</span><br><span class="line">       //上周结束时间</span><br><span class="line">       $endLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+7-7,date(&apos;Y&apos;)));</span><br><span class="line">       //本月开始时间</span><br><span class="line">       $beginThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),1,date(&apos;Y&apos;)));</span><br><span class="line">       //本月结束时间</span><br><span class="line">       $endThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;t&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //上月开始时间</span><br><span class="line">       $beginLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;)-1,1,date(&quot;Y&quot;)));</span><br><span class="line">       //上月结束时间</span><br><span class="line">       $endLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;) ,0,date(&quot;Y&quot;)));</span><br><span class="line">       //本季度开始时间</span><br><span class="line">       $season = ceil((date(&apos;n&apos;))/3);//当前是第几季度</span><br><span class="line">       $beginThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //本季度结束时间</span><br><span class="line">       $endThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //上季度开始时间</span><br><span class="line">       $season1 = ceil((date(&apos;n&apos;))/3)-1;//上季度是第几季度</span><br><span class="line">       $beginLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season1*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //上季度结束时间</span><br><span class="line">       $endLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season1*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season1*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //本年开始时间</span><br><span class="line">       $beginThisyear=date(&quot;Y&quot;,time()).&quot;-1&quot;.&quot;-1&quot;;</span><br><span class="line">       //本年结束时间</span><br><span class="line">       $endThisyear =date(&quot;Y&quot;,time()).&quot;-12&quot;.&quot;-31&quot;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/php_date/" data-id="ckbn0hrk0002u7a780vgn5jgo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-aliyun_disk" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/aliyun_disk/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/阿里云/">阿里云</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/aliyun_disk/">磁盘扩容</a>
     </h1>
   
 
@@ -407,19 +463,33 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li><p>布局 android:theme=”@android:style/Theme.NoTitleBar.Fullscreen”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity</span><br><span class="line">    android:name=&quot;.MainActivity&quot;</span><br><span class="line">    android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</span><br><span class="line">        &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line">&lt;/activity&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>创建快照以备份数据，防止操作失误导致数据丢失。具体操作，请参见创建快照。</li>
+<li>通过ECS控制台或者API扩容云盘容量。具体操作，请参见扩容云盘容量。 部分情况需要重启生效</li>
+<li>远程连接ECS实例。连接方式请参见连接方式导航。</li>
+<li>根据操作系统安装growpart或者xfsprogs扩容格式化工具。</li>
 </ol>
+<ul>
+<li><p>CentOS 7、Aliyun Linux：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install cloud-utils-growpart</span><br><span class="line">yum install xfsprogs</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Ubuntu 14、Ubuntu 16、Ubuntu 18、Debian 9：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install cloud-guest-utils</span><br><span class="line">apt install xfsprogs</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Debian 8、OpenSUSE 42.3、OpenSUSE 13.1、SUSE Linux Enterprise Server 12 SP2：请使用上游版本（upstream）的growpart或者xfsprogs工具<br>说明 当出现因扩容格式化工具问题导致的扩容失败时，您可以卸载工具后重新安装。</p>
+</li>
+</ul>
+<ol start="5">
+<li>检查实例的内核版本，例如运行uname -a命令查看内核版本。</li>
+</ol>
+<ul>
+<li>内核版本大于3.6.0，该情况请参见高内核版本的操作步骤。</li>
+<li>内核版本小于3.6.0，该情况请参见低内核版本的操作步骤。如CentOS 6、Debian 7和SUSE Linux Enterprise Server 11 SP4等发行版，需要经过一次控制台重启或者API重启才能完成分区扩容。</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/android_full/" data-id="ckbmzv5j60004j4ehi3gcpc7z" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/aliyun_disk/" data-id="ckbn0hrf800037a78xu1g9pgh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -429,14 +499,14 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
 
 
   
-    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-privoxy" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/git_filemode/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.689Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/11/20/privoxy/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -447,7 +517,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/git_filemode/">Git 权限变更忽略</a>
+      <a class="article-title" href="/2019/11/20/privoxy/">Privoxy</a>
     </h1>
   
 
@@ -455,13 +525,14 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
+        <p>socks代理转http    privoxy<br>config 配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forward-socks5t   /   127.0.0.1:1080 .</span><br><span class="line">listen-address  127.0.0.1:8118</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/git_filemode/" data-id="ckbmzv5jj000mj4ehnvndjbb0" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/privoxy/" data-id="ckbn0hrk7002z7a78pmpsbrnm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -471,14 +542,14 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
 
 
   
-    <article id="true-tars" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-mysql_grant" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/tars/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.687Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/11/20/mysql_grant/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/微服务/">微服务</a>
+    <a class="article-category-link" href="/categories/Mysql/">Mysql</a>
   </div>
 
   </div>
@@ -489,48 +560,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/tars/">Tars</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Tars github: <a href="https://github.com/TarsCloud/Tars.git" target="_blank" rel="noopener">https://github.com/TarsCloud/Tars.git</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/tars/" data-id="ckbmzv5l2003tj4ehdvn4ooel" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-samba" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/03/samba/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.684Z" itemprop="datePublished">2019-12-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/运维/">运维</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/samba/">Centos Samba</a>
+      <a class="article-title" href="/2019/11/20/mysql_grant/">Mysql Grant</a>
     </h1>
   
 
@@ -539,41 +569,23 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li><p>server</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install samba samba-client -y</span><br></pre></td></tr></table></figure>
+<li><p>Grant</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>client</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install samba-client cifs-utils -y</span><br></pre></td></tr></table></figure>
+<li><p>授权</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT SElECT ON *.* TO &apos;username&apos;@&apos;%&apos; IDENTIFIED BY &quot;password&quot;;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>server conf /etc/samba/smb.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">workgroup = WORKGROUP   windows工作组模式</span><br><span class="line">hosts allow = 192.168.254.1    白名单</span><br><span class="line">[share]</span><br><span class="line">    comment = share                 描述信息</span><br><span class="line">    path =  /share                  共享文件路径</span><br><span class="line">    browseable = no                 是否可以浏览查看该samba服务</span><br><span class="line">    read list = samba1              只读samba用户列表</span><br><span class="line">    write list = samba2             读写samba用户列表</span><br><span class="line">    writable = no                   默认所有用户是只读模式</span><br><span class="line">    printable = no                  是否是打印设备，如果是yes那么文件夹内容不能查看</span><br><span class="line">    public = no                     是否公开，如果公开不需要samba用户也是访问共享文件</span><br></pre></td></tr></table></figure>
+<li><p>刷新权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>新建samba用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useradd samba1</span><br><span class="line">useradd samba2</span><br><span class="line">smbpasswd -a samba1</span><br><span class="line">smbpasswd -a samba2</span><br><span class="line"></span><br><span class="line">pdbedit -L 查看samba用户</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启用服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable smb</span><br><span class="line">setenforce 0</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>防火墙设置</p>
-</li>
-<li><p>新建/share目录，并设置权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /share</span><br><span class="line">chmod o+w /share</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>smbclient -L 查看服务是否开启</p>
-</li>
-<li><p>手动挂载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -t cifs //192.168.254.1/share /mnt/share -o username=samba2,password=123</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>自动挂载 /etc/fstab</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//192.168.254.1/share /mnt/share	cifs	auto,username=samba2,password=123	0	0</span><br><span class="line">or</span><br><span class="line">//192.168.254.1/share /mnt/cifs cifs credentials=/root/namepass.txt,defaults 0 0</span><br><span class="line"></span><br><span class="line">echo &apos;username=samba2</span><br><span class="line">password=123&apos; &gt; /root/namepass.txt</span><br><span class="line"></span><br><span class="line">mount -a</span><br></pre></td></tr></table></figure>
-
+<li><p>实践中发现 @’%’ 不能正常登录 指定ip可以正常登录</p>
 </li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/samba/" data-id="ckbmzv5kt003aj4ehlr170oqz" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/mysql_grant/" data-id="ckbn0hrj500287a78ucvi0chz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -613,7 +625,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
     </div>
   </div>
 
@@ -674,7 +686,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
 </nav>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.min.js"></script>
 
 
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">

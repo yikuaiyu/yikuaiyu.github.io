@@ -25,7 +25,7 @@
     <link rel="icon" href="/favicon.png">
   
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link href="/css/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -107,14 +107,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="true-rsync" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-radio" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/rsync/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.681Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/11/20/radio/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
   </div>
 
   </div>
@@ -125,7 +125,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/rsync/">rsync</a>
+      <a class="article-title" href="/2019/11/20/radio/">Radio</a>
     </h1>
   
 
@@ -134,69 +134,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li><p>rsync简介</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">rsync  version 3.1.2  protocol version 31</span><br><span class="line">Copyright (C) 1996-2015 by Andrew Tridgell, Wayne Davison, and others.</span><br><span class="line">Web site: http://rsync.samba.org/</span><br><span class="line">Capabilities:</span><br><span class="line">    64-bit files, 64-bit inums, 64-bit timestamps, 64-bit long ints,</span><br><span class="line">    socketpairs, hardlinks, symlinks, IPv6, batchfiles, inplace,</span><br><span class="line">    append, ACLs, xattrs, iconv, symtimes, prealloc</span><br><span class="line"></span><br><span class="line">rsync comes with ABSOLUTELY NO WARRANTY.  This is free software, and you</span><br><span class="line">are welcome to redistribute it under certain conditions.  See the GNU</span><br><span class="line">General Public Licence for details.</span><br><span class="line"></span><br><span class="line">rsync is a file transfer program capable of efficient remote update</span><br><span class="line">via a fast differencing algorithm.</span><br><span class="line"></span><br><span class="line">Usage: rsync [OPTION]... SRC [SRC]... DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... [USER@]HOST:DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... [USER@]HOST::DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... rsync://[USER@]HOST[:PORT]/DEST</span><br><span class="line">  or   rsync [OPTION]... [USER@]HOST:SRC [DEST]</span><br><span class="line">  or   rsync [OPTION]... [USER@]HOST::SRC [DEST]</span><br><span class="line">  or   rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]</span><br><span class="line">The &apos;:&apos; usages connect via remote shell, while &apos;::&apos; &amp; &apos;rsync://&apos; usages connect</span><br><span class="line">to an rsync daemon, and require SRC or DEST to start with a module name.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>断点续传</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rsync -e &quot;ssh -p26034&quot; -avpgolr --progress root@192.168.1.10:/root/1.tar .</span><br><span class="line">26034 为端口号</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>同步<br>rsync -av <a href="mailto:root@47.104" target="_blank" rel="noopener">root@47.104</a>.<em>.</em>:/path/dir /path/dir</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/rsync/" data-id="ckbmzv5kq0036j4ehd1kuac9j" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-mongo" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/03/mongo/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.679Z" itemprop="datePublished">2019-12-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/PHP/">PHP</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/mongo/">宝塔环境 mongodb php拓展</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p><a href="https://pecl.php.net/package/mongodb" target="_blank" rel="noopener">https://pecl.php.net/package/mongodb</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://pecl.php.net/get/mongodb-1.6.0.tgz</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解压和编译安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mongodb-1.6.0.tgz</span><br><span class="line">cd mongodb-1.6.0</span><br><span class="line">/www/server/php/72/bin/phpize </span><br><span class="line">./configure --with-php-config=/www/server/php/72/bin/php-config</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<li>伪元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;input class=&quot;radio_type&quot; type=&quot;radio&quot; name=&quot;type&quot; id=&quot;radio1&quot; checked=&quot;checked&quot;/&gt; </span><br><span class="line">&lt;label for=&quot;radio1&quot;&gt;radio1&lt;/label&gt;</span><br><span class="line">&lt;input class=&quot;radio_type&quot; type=&quot;radio&quot; name=&quot;type&quot; id=&quot;radio2&quot; /&gt; </span><br><span class="line">&lt;label for=&quot;radio2&quot;&gt;radio2&lt;/label&gt;</span><br><span class="line"></span><br><span class="line">label&#123;</span><br><span class="line">    line-height: 20px;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    margin-left: 5px;</span><br><span class="line">    margin-right:15px;</span><br><span class="line">    color: #777;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type&#123;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    appearance: none;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:before&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    border: 1px solid #7d7d7d;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked:before&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    border: 1px solid #c59c5a;</span><br><span class="line">    background:#c59c5a;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked:after&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 10px;</span><br><span class="line">    height:5px;</span><br><span class="line">    border: 2px solid white;</span><br><span class="line">    border-top: transparent;</span><br><span class="line">    border-right: transparent;</span><br><span class="line">    text-align: center;</span><br><span class="line">    display: block;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 6px;</span><br><span class="line">    left:5px;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">    transform: rotate(-45deg);</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked+label&#123;</span><br><span class="line">    color: #c59c5a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
+<p>链接：<a href="https://www.jianshu.com/p/e1dac58adb2c" target="_blank" rel="noopener">https://www.jianshu.com/p/e1dac58adb2c</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/mongo/" data-id="ckbmzv5k1001qj4eh1zilzl99" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/radio/" data-id="ckbn0hrkd00347a78dvtj3yxm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -206,46 +153,10 @@
 
 
   
-    <article id="post-performance" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="true-linux_disk" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/performance/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.671Z" itemprop="datePublished">2019-12-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/performance/">性能测试</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/performance/" data-id="ckbmzv5ki002nj4ehlzgr3iu6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-privoxy" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/03/privoxy/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.665Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/11/20/linux_disk/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
@@ -260,7 +171,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/privoxy/">Privoxy</a>
+      <a class="article-title" href="/2019/11/20/linux_disk/">disk分区扩容</a>
     </h1>
   
 
@@ -268,14 +179,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>socks代理转http    privoxy<br>config 配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forward-socks5t   /   127.0.0.1:1080 .</span><br><span class="line">listen-address  127.0.0.1:8118</span><br></pre></td></tr></table></figure>
-
+        <p>本文提供了如何使用growpart和resize2fs工具完成Linux系统盘分区扩容及文件系统扩展的操作指导。</p>
+<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>本文的操作步骤适用于以下分区和文件系统格式的云盘：</p>
+<pre><code>- 分区格式支持mbr、gpt
+- 文件系统支持ext*、xfs、btrfs</code></pre><p>准备工作<br>    1.创建</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/privoxy/" data-id="ckbmzv5kl002uj4ehanlsxmjn" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/linux_disk/" data-id="ckbn0hrip001v7a78pylwimlt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,14 +197,14 @@
 
 
   
-    <article id="true-talib" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-php_bytes" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/talib/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.662Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/11/20/php_bytes/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/python/">python</a>
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
   </div>
 
   </div>
@@ -303,7 +215,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/talib/">量化talib</a>
+      <a class="article-title" href="/2019/11/20/php_bytes/">PHP Bytes</a>
     </h1>
   
 
@@ -311,28 +223,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>TA-Lib<br>Python wrapper for TA-Lib (<a href="http://ta-lib.org/" target="_blank" rel="noopener">http://ta-lib.org/</a>).<br>Download this project as a .zip fileDownload this project as a tar.gz file<br>Installation<br>You can install from PyPI:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install TA-Lib</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line">* byte数组与字符串转化类</span><br><span class="line">*/</span><br><span class="line">class Bytes &#123;</span><br><span class="line">/**</span><br><span class="line">* 转换一个String字符串为byte数组</span><br><span class="line">* @param $str 需要转换的字符串</span><br><span class="line">* @param $bytes 目标byte数组</span><br><span class="line">* @author Zikie</span><br><span class="line">*/</span><br><span class="line">public static function getBytes($string) &#123;</span><br><span class="line">$bytes = array();</span><br><span class="line">for($i = 0; $i &lt; strlen($string); $i++)&#123;</span><br><span class="line">$bytes[] = ord($string[$i]);</span><br><span class="line">&#125;</span><br><span class="line">return $bytes;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 将字节数组转化为String类型的数据</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $str 目标字符串</span><br><span class="line">* @return 一个String类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function toStr($bytes) &#123;</span><br><span class="line">$str = &apos;&apos;;</span><br><span class="line">foreach($bytes as $ch) &#123;</span><br><span class="line">$str .= chr($ch);</span><br><span class="line">&#125;</span><br><span class="line">return $str;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 转换一个int为byte数组</span><br><span class="line">* @param $byt 目标byte数组</span><br><span class="line">* @param $val 需要转换的字符串</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">public static function integerToBytes($val) &#123;</span><br><span class="line">$byt = array();</span><br><span class="line">$byt[0] = ($val &amp; 0xff);</span><br><span class="line">$byt[1] = ($val &gt;&gt; 8 &amp; 0xff);</span><br><span class="line">$byt[2] = ($val &gt;&gt; 16 &amp; 0xff);</span><br><span class="line">$byt[3] = ($val &gt;&gt; 24 &amp; 0xff);</span><br><span class="line">return $byt;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 从字节数组中指定的位置读取一个Integer类型的数据</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $position 指定的开始位置</span><br><span class="line">* @return 一个Integer类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function bytesToInteger($bytes, $position) &#123;</span><br><span class="line">$val = 0;</span><br><span class="line">$val = $bytes[$position + 3] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position + 2] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position + 1] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position] &amp; 0xff;</span><br><span class="line">return $val;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 转换一个shor字符串为byte数组</span><br><span class="line">* @param $byt 目标byte数组</span><br><span class="line">* @param $val 需要转换的字符串</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">public static function shortToBytes($val) &#123;</span><br><span class="line">$byt = array();</span><br><span class="line">$byt[0] = ($val &amp; 0xff);</span><br><span class="line">$byt[1] = ($val &gt;&gt; 8 &amp; 0xff);</span><br><span class="line">return $byt;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 从字节数组中指定的位置读取一个Short类型的数据。</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $position 指定的开始位置</span><br><span class="line">* @return 一个Short类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function bytesToShort($bytes, $position) &#123;</span><br><span class="line">$val = 0;</span><br><span class="line">$val = $bytes[$position + 1] &amp; 0xFF;</span><br><span class="line">$val = $val &lt;&lt; 8;</span><br><span class="line">$val |= $bytes[$position] &amp; 0xFF;</span><br><span class="line">return $val;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 
-<p>Or checkout the sources and run setup.py yourself:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python setup.py install</span><br></pre></td></tr></table></figure>
-
-<p>Troubleshooting Install Errors<br>func.c:256:28: fatal error: ta-lib/ta_libc.h: No such file or directory<br>compilation terminated.<br>If you get build errors like this, it typically means that it can’t find the underlying TA-Lib library and needs to be installed:</p>
-<p>Dependencies<br>To use TA-Lib for python, you need to have the TA-Lib already installed:</p>
-<p>Mac OS X</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install ta-lib</span><br></pre></td></tr></table></figure>
-
-<p>Windows<br>Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib</p>
-<p>Linux<br>Download ta-lib-0.4.0-src.tar.gz and:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ untar and cd</span><br><span class="line">$ ./configure --prefix=/usr</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
-
-<p>If you build TA-Lib using make -jX it will fail but that’s OK! Simply rerun make -jX followed by [sudo] make install.</p>
-<p>Documentation Index</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/talib/" data-id="ckbmzv5kz003oj4eh4uta6ytj" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/php_bytes/" data-id="ckbn0hrjx002s7a78yrwule5c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -342,14 +239,14 @@
 
 
   
-    <article id="true-mysql_grant" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/mysql_grant/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.659Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/11/20/git_filemode/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Mysql/">Mysql</a>
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
   </div>
 
   </div>
@@ -360,7 +257,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/mysql_grant/">Mysql Grant</a>
+      <a class="article-title" href="/2019/11/20/git_filemode/">Git 权限变更忽略</a>
     </h1>
   
 
@@ -368,24 +265,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p>Grant</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>授权</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT SElECT ON *.* TO &apos;username&apos;@&apos;%&apos; IDENTIFIED BY &quot;password&quot;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>刷新权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>实践中发现 @’%’ 不能正常登录 指定ip可以正常登录</p>
-</li>
-</ol>
+        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/mysql_grant/" data-id="ckbmzv5k5001yj4eh6miwja9t" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/git_filemode/" data-id="ckbn0hrh4000u7a78gx5fk4sm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -395,14 +281,14 @@
 
 
   
-    <article id="true-android_gradle" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-git_update" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/android_gradle/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.657Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/11/20/git_update/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
   </div>
 
   </div>
@@ -413,7 +299,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/android_gradle/">Gradle</a>
+      <a class="article-title" href="/2019/11/20/git_update/">Git centos update</a>
     </h1>
   
 
@@ -421,16 +307,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p>gradle build很慢的解决方案</p>
-<p> 很慢的问题是gradle同步时下载很慢，可以通过1增加代理服务器，2修改镜像，3获取离线构建解决</p>
-</li>
-</ol>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove git*</span><br><span class="line">sudo yum -y install  https://centos7.iuscommunity.org/ius-release.rpm</span><br><span class="line">sudo yum -y install  git2u-all</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/android_gradle/" data-id="ckbmzv5j50003j4eh6eyifhom" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/git_update/" data-id="ckbn0hrha000y7a78ig9gvn4u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -440,10 +323,10 @@
 
 
   
-    <article id="true-aliyun_maven" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-serial" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/aliyun_maven/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.654Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/07/12/serial/" class="article-date">
+  <time datetime="2019-07-12T11:58:21.459Z" itemprop="datePublished">2019-07-12</time>
 </a>
     
   <div class="article-category">
@@ -458,7 +341,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/aliyun_maven/">阿里云Maven仓库</a>
+      <a class="article-title" href="/2019/07/12/serial/">Android 读取串口数据</a>
     </h1>
   
 
@@ -467,19 +350,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li><p><a href="https://maven.aliyun.com/mvn/view" target="_blank" rel="noopener">https://maven.aliyun.com/mvn/view</a></p>
-</li>
-<li><p>使用方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">修改build.gradle</span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; url &apos;https://maven.aliyun.com/repository/public/&apos; &#125;</span><br><span class="line">        mavenLocal()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>阿里云的使用教程 <a href="https://help.aliyun.com/document_detail/102512.html?spm=a2c40.aliyun_maven_repo.0.0.36183054omsn6f" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/102512.html?spm=a2c40.aliyun_maven_repo.0.0.36183054omsn6f</a></p>
-</li>
+<li>超级详细的教程  <a href="https://www.logcg.com/archives/2831.html" target="_blank" rel="noopener">https://www.logcg.com/archives/2831.html</a></li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/aliyun_maven/" data-id="ckbmzv5j20001j4eh705z7n09" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/12/serial/" data-id="ckbn0hrlb003i7a783hblxay1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -491,8 +368,8 @@
   
     <article id="true-android_id" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/android_id/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.649Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/07/12/android_id/" class="article-date">
+  <time datetime="2019-07-12T10:12:27.558Z" itemprop="datePublished">2019-07-12</time>
 </a>
     
   <div class="article-category">
@@ -507,7 +384,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/android_id/">IMEI，MEID，ESN，IMSI,android_id 之间的区别</a>
+      <a class="article-title" href="/2019/07/12/android_id/">IMEI，MEID，ESN，IMSI,android_id 之间的区别</a>
     </h1>
   
 
@@ -654,7 +531,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/android_id/" data-id="ckbmzv5j70005j4ehfhqnhwnh" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/12/android_id/" data-id="ckbn0hrfv00087a78yjpvd24q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -664,14 +541,14 @@
 
 
   
-    <article id="true-mysql" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-android_full" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/03/mysql/" class="article-date">
-  <time datetime="2019-12-03T04:11:51.646Z" itemprop="datePublished">2019-12-03</time>
+    <a href="/2019/07/12/android_full/" class="article-date">
+  <time datetime="2019-07-12T09:46:00.043Z" itemprop="datePublished">2019-07-12</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/数据库/">数据库</a>
+    <a class="article-category-link" href="/categories/Android/">Android</a>
   </div>
 
   </div>
@@ -682,7 +559,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/mysql/">Mysql binlog</a>
+      <a class="article-title" href="/2019/07/12/android_full/">Acitivity全屏</a>
     </h1>
   
 
@@ -691,17 +568,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li><p>开启mysql-binlog<br>修改my.cnf配置并重启</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">log-bin=mysql-bin</span><br><span class="line"></span><br><span class="line">service mysqld restart    or   systemctl restart mysqld</span><br></pre></td></tr></table></figure>
+<li><p>布局 android:theme=”@android:style/Theme.NoTitleBar.Fullscreen”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity</span><br><span class="line">    android:name=&quot;.MainActivity&quot;</span><br><span class="line">    android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</span><br><span class="line">        &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line">&lt;/activity&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>备份数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -p 123456 database_name &gt; /tmp/d.sql</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>此时如果数据丢失，如网站被入侵，数据被篡改，需要对数据进行修复</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">两种情况：</span><br><span class="line">1.存在完整的logbin，可以完整直接通过logbin文件恢复</span><br><span class="line">2.有备份的sql数据，及备份时间点往后的logbin,可以配合恢复</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>bin-log操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">查看binlog日志:</span><br><span class="line">show master status</span><br><span class="line">binlog-file导出sql:</span><br><span class="line">mysqlbinlog --no-defaults binlog-file | more</span><br><span class="line">从某一点(100)开始恢复</span><br><span class="line">mysqlbinlog --no-defaults --start-position=&quot;100&quot; --stop-position=&quot;1000&quot; mysql-bin.000001 |mysql -uroot -p123456 database_name</span><br></pre></td></tr></table></figure>
+<li><p>代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -709,7 +580,111 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/03/mysql/" data-id="ckbmzv5k3001tj4eherqimdid" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/12/android_full/" data-id="ckbn0hrfk00057a78sgap2c0f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-adb" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/12/adb/" class="article-date">
+  <time datetime="2019-07-12T08:33:58.656Z" itemprop="datePublished">2019-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/12/adb/">adb 无线调试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>Android设置 需要root权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setprop service.adb.tcp.port 5555</span><br><span class="line">stop adbd</span><br><span class="line">start adbd</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>PC设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb connect 192.168.1.102:5555</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>恢复设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setprop service.adb.tcp.port -1</span><br><span class="line">stop adbd</span><br><span class="line">start adbd</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多个设备时logcat</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br><span class="line"></span><br><span class="line">List of devices attached</span><br><span class="line">DYJUBHOSU1	device</span><br><span class="line">phone2:5555	device</span><br><span class="line">zhang:5555	device</span><br><span class="line"></span><br><span class="line">adb -s phon2:5555 logcat</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/07/12/adb/" data-id="ckbn0hrep00017a78zyjs26jv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-aliyun_maven" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/12/aliyun_maven/" class="article-date">
+  <time datetime="2019-07-12T08:15:27.351Z" itemprop="datePublished">2019-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/12/aliyun_maven/">阿里云Maven仓库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p><a href="https://maven.aliyun.com/mvn/view" target="_blank" rel="noopener">https://maven.aliyun.com/mvn/view</a></p>
+</li>
+<li><p>使用方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">修改build.gradle</span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; url &apos;https://maven.aliyun.com/repository/public/&apos; &#125;</span><br><span class="line">        mavenLocal()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>阿里云的使用教程 <a href="https://help.aliyun.com/document_detail/102512.html?spm=a2c40.aliyun_maven_repo.0.0.36183054omsn6f" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/102512.html?spm=a2c40.aliyun_maven_repo.0.0.36183054omsn6f</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/07/12/aliyun_maven/" data-id="ckbn0hrfd00047a78xv2j8lzh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -749,7 +724,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
     </div>
   </div>
 
@@ -810,7 +785,7 @@
 </nav>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.min.js"></script>
 
 
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
