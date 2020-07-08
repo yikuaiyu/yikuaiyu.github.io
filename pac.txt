@@ -6,6 +6,7 @@ var domains_in = {
 }
 
 var domains = {
+  "ripple.com": 1,
   "kaggle.com": 1,
   "i.imgur.com": 1,
   "cloudflare.com": 1,

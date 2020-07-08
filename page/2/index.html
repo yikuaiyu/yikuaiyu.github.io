@@ -107,14 +107,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="true-go" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-laravel" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/04/28/go/" class="article-date">
-  <time datetime="2020-04-28T09:15:45.073Z" itemprop="datePublished">2020-04-28</time>
+    <a href="/2020/04/28/laravel/" class="article-date">
+  <time datetime="2020-04-28T09:17:07.612Z" itemprop="datePublished">2020-04-28</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/后端/">后端</a>
   </div>
 
   </div>
@@ -125,7 +125,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/28/go/">安装gophernotes,通过jupyter notebook学习go语言</a>
+      <a class="article-title" href="/2020/04/28/laravel/">Laravel</a>
     </h1>
   
 
@@ -134,22 +134,49 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li>安装gophernotes</li>
+<li>Laravel 环境依赖</li>
 </ol>
 <ul>
-<li><p>Linux</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ env GO111MODULE=on go get github.com/gopherdata/gophernotes</span><br><span class="line">$ mkdir -p ~/.local/share/jupyter/kernels/gophernotes</span><br><span class="line">$ cd ~/.local/share/jupyter/kernels/gophernotes</span><br><span class="line">$ cp &quot;$(go env GOPATH)&quot;/pkg/mod/github.com/gopherdata/gophernotes@v0.7.0/kernel/*  &quot;.&quot;</span><br><span class="line">$ chmod +w ./kernel.json # in case copied kernel.json has no write permission</span><br><span class="line">$ sed &quot;s|gophernotes|$(go env GOPATH)/bin/gophernotes|&quot; &lt; kernel.json.in &gt; kernel.json</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Mac</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ env GO111MODULE=on go get github.com/gopherdata/gophernotes</span><br><span class="line">$ mkdir -p ~/Library/Jupyter/kernels/gophernotes</span><br><span class="line">$ cd ~/Library/Jupyter/kernels/gophernotes</span><br><span class="line">$ cp &quot;$(go env GOPATH)&quot;/pkg/mod/github.com/gopherdata/gophernotes@v0.7.0/kernel/*  &quot;.&quot;</span><br><span class="line">$ chmod +w ./kernel.json # in case copied kernel.json has no write permission</span><br><span class="line">$ sed &quot;s|gophernotes|$(go env GOPATH)/bin/gophernotes|&quot; &lt; kernel.json.in &gt; kernel.json</span><br></pre></td></tr></table></figure>
-</li>
+<li>PHP &gt;= 7.2.0</li>
+<li>BCMath PHP 拓展</li>
+<li>Ctype PHP 拓展</li>
+<li>JSON PHP 拓展</li>
+<li>Mbstring PHP 拓展</li>
+<li>OpenSSL PHP 拓展</li>
+<li>PDO PHP 拓展</li>
+<li>Tokenizer PHP 拓展</li>
+<li>XML PHP 拓展</li>
 </ul>
 <ol start="2">
-<li><p>github</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/gopherdata/gophernotes</span><br></pre></td></tr></table></figure>
+<li><p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer global require laravel/installer</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
+<li><p>新建项目<br>确保将 Composer’s system-wide vendor 目录放置在你的系统环境变量 $PATH 中，以便系统可以找到 Laravel 的可执行文件。该目录根据你的操作系统存在不同的位置中；一些常见的配置包括 :<br>macOS and GNU / Linux 发行版: $HOME/.composer/vendor/bin<br>Windows: %USERPROFILE%\AppData\Roaming\Composer\vendor\bin</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">laravel new blog</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过composer创建项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist laravel/laravel blog</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地开发环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan serve</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置<br>公共路径<br>安装完 Laravel 之后，你应该配置你的 web 服务的文档目录指向 public 路径。该路径下的 index.php 文件作为进入应用的所有 HTTP 请求的前端控制器。</p>
+</li>
+<li><p>配置文件<br>Laravel 框架的所有配置文件存放在 config 目录下。每个选项都有文档标注，便于通过文件查看并熟悉对你有用的选项。</p>
+</li>
+<li><p>目录权限<br>在安装 Laravel 后，你可能需要配置一些权限。 storage 和 bootstrap/cache 目录在你的 web 服务下应该是可写的权限，否则 Laravel 将无法运行。如果你用的是 Homestead 虚拟机，这些权限应该已经设置好了。</p>
+</li>
+<li><p>应用密钥<br>安装好 Laravel 之后的下一步是设置你的应用密钥为随机字符串。如果你通过 Composer 或者 Laravel 安装器安装的，这个密钥已经通过 php artisan key:generate 命令为你设置好了。</p>
+</li>
+</ol>
+<p>通常，这个字符串应该是 32 个字符长度。这个密钥将会设置在环境变量文件 .env 中。如果你还没有将 .env.example 文件重命名为 .env 那么你现在应当把此文件重命名。 如果应用密钥还没有设置，你的用户会话和其他的加密数据将会不安全</p>
+<ol start="10">
+<li>其他配置<br>Laravel 几乎不需要除上面所说的其他什么配置了。你可以随心所欲的开始开发了！然而，你可能会想要再次查看 config/app.php 文件和它的注释说明。它包含一些你希望根据你应用来更改的选项，诸如： timezone 和 locale 。</li>
+</ol>
+<p>你还可能想要配置 Laravel 的其他的一些组件，例如：</p>
+<p>缓存<br>数据库<br>会话控制</p>
+<ol start="11">
+<li>Nginx<br>如果你使用 Nginx ，在你的站点配置中加入以下配置，所有的请求将会引导至 index.php 前端控制器：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    try_files $uri $uri/ /index.php?$query_string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -157,7 +184,52 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/go/" data-id="ckcd1pw620010gc78crcdqamg" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/laravel/" data-id="ckcd1zd330028pc78jitrbnd3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-hackintosh" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/hackintosh/" class="article-date">
+  <time datetime="2020-04-28T09:17:07.612Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Mac/">Mac</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/hackintosh/">黑苹果驱动</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>HoRNDIS<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">HoRNDIS Mac版是一款可以让你的Mac连接开启 USB tethering 模式的Android手机接入互联网的驱动。HoRNDIS Mac版打破了Mac与Android USB tethering模式间最后的障碍：微软的RNDIS协议，让前者兼容支持RNDIS，HoRNDIS本身也不会与其他 TAP/TUN 扩展冲突。</span><br><span class="line"></span><br><span class="line">使用方法</span><br><span class="line"></span><br><span class="line">　　1、安装 HoRNDIS 驱动到 EFI 目录或 /System/Library/Extensions 目录</span><br><span class="line"></span><br><span class="line">　　2、重启，连接上 Android 设备</span><br><span class="line"></span><br><span class="line">　　3、打开 Android 的设置，找到类似于 热点/网络共享 的选项</span><br><span class="line"></span><br><span class="line">　　4、勾选 USB 共享</span><br><span class="line"></span><br><span class="line">　　5、完成，部分设备可能需要进入 macOS 偏好设置 → 网络 进行设置</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/hackintosh/" data-id="ckcd1zd0q001bpc78z1lcc5b9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -245,7 +317,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/date/" data-id="ckcd1pw5n000pgc78f2wlof3d" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/date/" data-id="ckcd1zd0c000tpc78rysav0zq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -255,14 +327,14 @@
 
 
   
-    <article id="true-web3j" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-go" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/04/28/web3j/" class="article-date">
-  <time datetime="2020-04-28T09:14:39.967Z" itemprop="datePublished">2020-04-28</time>
+    <a href="/2020/04/28/go/" class="article-date">
+  <time datetime="2020-04-28T09:15:45.073Z" itemprop="datePublished">2020-04-28</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/区块链/">区块链</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -273,7 +345,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/28/web3j/">Web3j示例</a>
+      <a class="article-title" href="/2020/04/28/go/">安装gophernotes,通过jupyter notebook学习go语言</a>
     </h1>
   
 
@@ -281,14 +353,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>EthService.java</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br></pre></td><td class="code"><pre><span class="line">public class EthService &#123;</span><br><span class="line">	</span><br><span class="line">//	private static String URL=&quot;http://192.168.1.213:8545&quot;;</span><br><span class="line">	private static String URL=&quot;http://47.88.230.234:18759&quot;;</span><br><span class="line">	private static HttpService httpService;</span><br><span class="line">	/**</span><br><span class="line">     * 初始化web3j普通api调用</span><br><span class="line">     *</span><br><span class="line">     * @return web3j</span><br><span class="line">     */</span><br><span class="line">    public static Web3j initWeb3j() &#123;</span><br><span class="line">        return Web3j.build(getService());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 初始化personal级别的操作对象</span><br><span class="line">     * @return Geth</span><br><span class="line">     */</span><br><span class="line">    public static Geth initGeth()&#123;</span><br><span class="line">        return Geth.build(getService());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 初始化admin级别操作的对象</span><br><span class="line">     * @return Admin</span><br><span class="line">     */</span><br><span class="line">    public static Admin initAdmin()&#123;</span><br><span class="line">        return Admin.build(getService());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 通过http连接到geth节点</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    private static HttpService getService()&#123;</span><br><span class="line">    	if(httpService==null)&#123;</span><br><span class="line">    		httpService=new HttpService(URL);</span><br><span class="line">    	&#125;</span><br><span class="line">        return httpService;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 输入密码创建地址</span><br><span class="line">     *</span><br><span class="line">     * @param password 密码（建议同一个平台的地址使用一个相同的，且复杂度较高的密码）</span><br><span class="line">     * @return 地址hash</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static String newAccount(String password) throws IOException &#123;</span><br><span class="line">        Admin admin = initAdmin();</span><br><span class="line">        Request&lt;?, NewAccountIdentifier&gt; request = admin.personalNewAccount(password);</span><br><span class="line">        NewAccountIdentifier result = request.send();</span><br><span class="line">        return result.getAccountId();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 获得当前区块高度</span><br><span class="line">     *</span><br><span class="line">     * @return 当前区块高度</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static BigInteger getCurrentBlockNumber() throws IOException &#123;</span><br><span class="line">        Web3j web3j = initWeb3j();</span><br><span class="line">        Request&lt;?, EthBlockNumber&gt; request = web3j.ethBlockNumber();</span><br><span class="line">        return request.send().getBlockNumber();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 解锁账户，发送交易前需要对账户进行解锁</span><br><span class="line">     *</span><br><span class="line">     * @param address  地址</span><br><span class="line">     * @param password 密码</span><br><span class="line">     * @param duration 解锁有效时间，单位秒</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static Boolean unlockAccount(String address, String password, BigInteger duration) throws IOException &#123;</span><br><span class="line">        Admin admin = initAdmin();</span><br><span class="line">        Request&lt;?, PersonalUnlockAccount&gt; request = admin.personalUnlockAccount(address, password, duration);</span><br><span class="line">        PersonalUnlockAccount account = request.send();</span><br><span class="line">        return account.accountUnlocked();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 账户解锁，使用完成之后需要锁定</span><br><span class="line">     *</span><br><span class="line">     * @param address</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static Boolean lockAccount(String address) throws IOException &#123;</span><br><span class="line">        Geth geth = initGeth();</span><br><span class="line">        Request&lt;?, BooleanResponse&gt; request = geth.personalLockAccount(address);</span><br><span class="line">        BooleanResponse response = request.send();</span><br><span class="line">        return response.success();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 根据hash值获取交易</span><br><span class="line">     *</span><br><span class="line">     * @param hash</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static EthTransaction getTransactionByHash(String hash) throws IOException &#123;</span><br><span class="line">        Web3j web3j = initWeb3j();</span><br><span class="line">        Request&lt;?, EthTransaction&gt; request = web3j.ethGetTransactionByHash(hash);</span><br><span class="line">        return request.send();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 获得ethblock</span><br><span class="line">     *</span><br><span class="line">     * @param blockNumber 根据区块编号</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static EthBlock getBlockEthBlock(Integer blockNumber) throws IOException &#123;</span><br><span class="line">        Web3j web3j = initWeb3j();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        DefaultBlockParameter defaultBlockParameter = new DefaultBlockParameterNumber(blockNumber);</span><br><span class="line">        Request&lt;?, EthBlock&gt; request = web3j.ethGetBlockByNumber(defaultBlockParameter, true);</span><br><span class="line">        EthBlock ethBlock = request.send();</span><br><span class="line">        return ethBlock;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 发送交易并获得交易hash值</span><br><span class="line">     *</span><br><span class="line">     * @param transaction</span><br><span class="line">     * @param password</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static String sendTransaction(Transaction transaction, String password) throws IOException &#123;</span><br><span class="line">        Admin admin = initAdmin();</span><br><span class="line">        Request&lt;?, EthSendTransaction&gt; request = admin.personalSendTransaction(transaction, password);</span><br><span class="line">        EthSendTransaction ethSendTransaction = request.send();</span><br><span class="line">        return ethSendTransaction.getTransactionHash();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 指定地址发送交易所需nonce获取</span><br><span class="line">     *</span><br><span class="line">     * @param address 待发送交易地址</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static BigInteger getNonce(String address) throws IOException &#123;</span><br><span class="line">        Web3j web3j = initWeb3j();</span><br><span class="line">        Request&lt;?, EthGetTransactionCount&gt; request = web3j.ethGetTransactionCount(address, DefaultBlockParameterName.LATEST);</span><br><span class="line">        return request.send().getTransactionCount();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">App.java</span><br><span class="line"></span><br><span class="line">public class App &#123;</span><br><span class="line">	</span><br><span class="line">    // GAS价格  </span><br><span class="line">    public static BigInteger GAS_PRICE = BigInteger.valueOf(20_000_000_000L);  </span><br><span class="line">    // GAS上限  </span><br><span class="line">    public static BigInteger GAS_LIMIT = BigInteger.valueOf(4_300_000L);  </span><br><span class="line">  </span><br><span class="line">    // 交易费用  </span><br><span class="line">    public static BigInteger GAS_VALUE = BigInteger.valueOf(1300_000L);;  </span><br><span class="line">    </span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// 获取余额</span><br><span class="line">		try &#123;</span><br><span class="line">			System.out.println(&quot;Hello World!&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			Admin admin = EthService.initAdmin();</span><br><span class="line">			System.out.println(admin.personalListAccounts().send().getAccountIds());</span><br><span class="line">////			ShhAddToGroup group = admin.shhAddToGroup(&quot;enode://6d1819c68ad4bb4928f349d8fecb14223087b4ea0740dd3ffee55b95d975c2123d230e12e13a40083fc902440d83f0aa17e0a925616110c14273e6b2d7f59635@192.168.1.64:30303&quot;).send();</span><br><span class="line">////			System.out.println(group);</span><br><span class="line">//			</span><br><span class="line">//			NetPeerCount count=admin.netPeerCount().send();</span><br><span class="line">//			System.out.println(count.getResult());</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 开始挖矿</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void startMining()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 新建用户</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void CreateNewAccounts() &#123;</span><br><span class="line">		String account = &quot;&quot;;</span><br><span class="line">		try &#123;</span><br><span class="line">			account = EthService.newAccount(&quot;123456&quot;);</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(account);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 获取钱包里的所有用户</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void getAllAccounts() &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			Geth geth = EthService.initGeth();</span><br><span class="line">			Request&lt;?, EthAccounts&gt; request = geth.ethAccounts();</span><br><span class="line">			List&lt;String&gt; list = request.send().getAccounts();</span><br><span class="line">			System.out.println(list.toString());</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 获取用户余额</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void getAccountBalance() &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			String address=&quot;0xdbaea9b9d0b4d9dfff546466c89de34c9711a942&quot;;//0x8b7483ea3c7a545dbf93bf07764b479e0469e821 0xdbaea9b9d0b4d9dfff546466c89de34c9711a942</span><br><span class="line">			Web3j web3 = EthService.initWeb3j();</span><br><span class="line">			EthGetBalance ethGetBalance1 = web3.ethGetBalance(address, DefaultBlockParameter.valueOf(&quot;latest&quot;)).send();</span><br><span class="line">			System.out.println(ethGetBalance1.getBalance());</span><br><span class="line">			System.out.println(address+&quot;的余额:&quot; + Convert.fromWei(ethGetBalance1.getBalance().toString(), Convert.Unit.ETHER));  //.new BigDecimal(ethGetBalance1.getBalance() + &quot;&quot;).divide(BigDecimal.valueOf(Math.pow(10, 18))).setScale(6)</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 转账</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void transferBalance()&#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			boolean flag = EthService.unlockAccount(&quot;0xdbaea9b9d0b4d9dfff546466c89de34c9711a942&quot;, &quot;123456&quot;, new BigInteger(1800 + &quot;&quot;));</span><br><span class="line">			System.out.println(flag);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			BigInteger value = Convert.toWei(&quot;12&quot;, Convert.Unit.ETHER).toBigInteger(); </span><br><span class="line">			</span><br><span class="line">			Web3j web3j=EthService.initWeb3j();</span><br><span class="line">			Credentials credentials = WalletUtils.loadCredentials(&quot;123456&quot;, &quot;F:\\Ethereum\\blockchain\\keystore\\UTC--2018-04-26T06-04-02.691651400Z--dbaea9b9d0b4d9dfff546466c89de34c9711a942&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			// get the next available nonce</span><br><span class="line">			BigInteger nonce = EthService.getNonce(&quot;0xdbaea9b9d0b4d9dfff546466c89de34c9711a942&quot;);</span><br><span class="line">			</span><br><span class="line">			// create our transaction</span><br><span class="line">			RawTransaction rawTransaction  = RawTransaction.createEtherTransaction(</span><br><span class="line">			             nonce, GAS_PRICE, GAS_LIMIT, &quot;0x8b7483ea3c7a545dbf93bf07764b479e0469e821&quot;, value);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			// sign &amp; send our transaction</span><br><span class="line">			byte[] signedMessage = TransactionEncoder.signMessage(rawTransaction, credentials);</span><br><span class="line">			String hexValue = Numeric.toHexString(signedMessage);</span><br><span class="line">			EthSendTransaction ethSendTransaction = web3j.ethSendRawTransaction(hexValue).send();</span><br><span class="line">			</span><br><span class="line">			System.out.println(ethSendTransaction.getResult());</span><br><span class="line">			System.out.println(ethSendTransaction.getTransactionHash());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 监听新区块</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void observableBlockChain()&#123;</span><br><span class="line">		Web3j web3j=EthService.initWeb3j();</span><br><span class="line">		Subscription subscription = web3j.blockObservable(false).subscribe(block -&gt; &#123;</span><br><span class="line">			Block blk=block.getResult();</span><br><span class="line">			System.out.println(&quot;当前区块高度：&quot;+blk.getNumber()+&quot;,上一个区块：&quot;+blk.getParentHash()+blk.getHash());</span><br><span class="line">		&#125;);</span><br><span class="line">		System.out.println(&quot;订阅的&quot;+subscription.hashCode());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MyBlockObserve.java</span><br><span class="line"></span><br><span class="line">public class MyBlockObserve &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	private static Web3j web3j=EthService.initWeb3j();</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 监听区块数据</span><br><span class="line">	 */</span><br><span class="line">	public static void observableBlockChain()&#123;</span><br><span class="line">		Subscription subscription = web3j.blockObservable(false).subscribe(block -&gt; &#123;</span><br><span class="line">			Block blk=block.getResult();</span><br><span class="line">			System.out.println(&quot;当前区块高度：&quot;+blk.getNumber()+&quot;,上一个区块：&quot;+blk.getParentHash()+blk.getHash());</span><br><span class="line">		&#125;);</span><br><span class="line">		System.out.println(&quot;订阅的&quot;+subscription.hashCode());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <ol>
+<li>安装gophernotes</li>
+</ol>
+<ul>
+<li><p>Linux</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ env GO111MODULE=on go get github.com/gopherdata/gophernotes</span><br><span class="line">$ mkdir -p ~/.local/share/jupyter/kernels/gophernotes</span><br><span class="line">$ cd ~/.local/share/jupyter/kernels/gophernotes</span><br><span class="line">$ cp &quot;$(go env GOPATH)&quot;/pkg/mod/github.com/gopherdata/gophernotes@v0.7.0/kernel/*  &quot;.&quot;</span><br><span class="line">$ chmod +w ./kernel.json # in case copied kernel.json has no write permission</span><br><span class="line">$ sed &quot;s|gophernotes|$(go env GOPATH)/bin/gophernotes|&quot; &lt; kernel.json.in &gt; kernel.json</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Mac</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ env GO111MODULE=on go get github.com/gopherdata/gophernotes</span><br><span class="line">$ mkdir -p ~/Library/Jupyter/kernels/gophernotes</span><br><span class="line">$ cd ~/Library/Jupyter/kernels/gophernotes</span><br><span class="line">$ cp &quot;$(go env GOPATH)&quot;/pkg/mod/github.com/gopherdata/gophernotes@v0.7.0/kernel/*  &quot;.&quot;</span><br><span class="line">$ chmod +w ./kernel.json # in case copied kernel.json has no write permission</span><br><span class="line">$ sed &quot;s|gophernotes|$(go env GOPATH)/bin/gophernotes|&quot; &lt; kernel.json.in &gt; kernel.json</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li><p>github</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/gopherdata/gophernotes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/web3j/" data-id="ckcd1pwac004egc785r58f5lc" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/go/" data-id="ckcd1zd0k0014pc78bgdy8ty3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -353,7 +442,50 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/solidity/" data-id="ckcd1pw99003lgc78myocizn3" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/solidity/" data-id="ckcd1zd82003upc78wa6j7wtm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-web3j" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/web3j/" class="article-date">
+  <time datetime="2020-04-28T09:14:39.967Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/区块链/">区块链</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/web3j/">Web3j示例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>EthService.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br></pre></td><td class="code"><pre><span class="line">public class EthService &#123;</span><br><span class="line">	</span><br><span class="line">//	private static String URL=&quot;http://192.168.1.213:8545&quot;;</span><br><span class="line">	private static String URL=&quot;http://47.88.230.234:18759&quot;;</span><br><span class="line">	private static HttpService httpService;</span><br><span class="line">	/**</span><br><span class="line">     * 初始化web3j普通api调用</span><br><span class="line">     *</span><br><span class="line">     * @return web3j</span><br><span class="line">     */</span><br><span class="line">    public static Web3j initWeb3j() &#123;</span><br><span class="line">        return Web3j.build(getService());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 初始化personal级别的操作对象</span><br><span class="line">     * @return Geth</span><br><span class="line">     */</span><br><span class="line">    public static Geth initGeth()&#123;</span><br><span class="line">        return Geth.build(getService());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 初始化admin级别操作的对象</span><br><span class="line">     * @return Admin</span><br><span class="line">     */</span><br><span class="line">    public static Admin initAdmin()&#123;</span><br><span class="line">        return Admin.build(getService());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 通过http连接到geth节点</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    private static HttpService getService()&#123;</span><br><span class="line">    	if(httpService==null)&#123;</span><br><span class="line">    		httpService=new HttpService(URL);</span><br><span class="line">    	&#125;</span><br><span class="line">        return httpService;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 输入密码创建地址</span><br><span class="line">     *</span><br><span class="line">     * @param password 密码（建议同一个平台的地址使用一个相同的，且复杂度较高的密码）</span><br><span class="line">     * @return 地址hash</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static String newAccount(String password) throws IOException &#123;</span><br><span class="line">        Admin admin = initAdmin();</span><br><span class="line">        Request&lt;?, NewAccountIdentifier&gt; request = admin.personalNewAccount(password);</span><br><span class="line">        NewAccountIdentifier result = request.send();</span><br><span class="line">        return result.getAccountId();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 获得当前区块高度</span><br><span class="line">     *</span><br><span class="line">     * @return 当前区块高度</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static BigInteger getCurrentBlockNumber() throws IOException &#123;</span><br><span class="line">        Web3j web3j = initWeb3j();</span><br><span class="line">        Request&lt;?, EthBlockNumber&gt; request = web3j.ethBlockNumber();</span><br><span class="line">        return request.send().getBlockNumber();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 解锁账户，发送交易前需要对账户进行解锁</span><br><span class="line">     *</span><br><span class="line">     * @param address  地址</span><br><span class="line">     * @param password 密码</span><br><span class="line">     * @param duration 解锁有效时间，单位秒</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static Boolean unlockAccount(String address, String password, BigInteger duration) throws IOException &#123;</span><br><span class="line">        Admin admin = initAdmin();</span><br><span class="line">        Request&lt;?, PersonalUnlockAccount&gt; request = admin.personalUnlockAccount(address, password, duration);</span><br><span class="line">        PersonalUnlockAccount account = request.send();</span><br><span class="line">        return account.accountUnlocked();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 账户解锁，使用完成之后需要锁定</span><br><span class="line">     *</span><br><span class="line">     * @param address</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static Boolean lockAccount(String address) throws IOException &#123;</span><br><span class="line">        Geth geth = initGeth();</span><br><span class="line">        Request&lt;?, BooleanResponse&gt; request = geth.personalLockAccount(address);</span><br><span class="line">        BooleanResponse response = request.send();</span><br><span class="line">        return response.success();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 根据hash值获取交易</span><br><span class="line">     *</span><br><span class="line">     * @param hash</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static EthTransaction getTransactionByHash(String hash) throws IOException &#123;</span><br><span class="line">        Web3j web3j = initWeb3j();</span><br><span class="line">        Request&lt;?, EthTransaction&gt; request = web3j.ethGetTransactionByHash(hash);</span><br><span class="line">        return request.send();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 获得ethblock</span><br><span class="line">     *</span><br><span class="line">     * @param blockNumber 根据区块编号</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static EthBlock getBlockEthBlock(Integer blockNumber) throws IOException &#123;</span><br><span class="line">        Web3j web3j = initWeb3j();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        DefaultBlockParameter defaultBlockParameter = new DefaultBlockParameterNumber(blockNumber);</span><br><span class="line">        Request&lt;?, EthBlock&gt; request = web3j.ethGetBlockByNumber(defaultBlockParameter, true);</span><br><span class="line">        EthBlock ethBlock = request.send();</span><br><span class="line">        return ethBlock;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 发送交易并获得交易hash值</span><br><span class="line">     *</span><br><span class="line">     * @param transaction</span><br><span class="line">     * @param password</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static String sendTransaction(Transaction transaction, String password) throws IOException &#123;</span><br><span class="line">        Admin admin = initAdmin();</span><br><span class="line">        Request&lt;?, EthSendTransaction&gt; request = admin.personalSendTransaction(transaction, password);</span><br><span class="line">        EthSendTransaction ethSendTransaction = request.send();</span><br><span class="line">        return ethSendTransaction.getTransactionHash();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 指定地址发送交易所需nonce获取</span><br><span class="line">     *</span><br><span class="line">     * @param address 待发送交易地址</span><br><span class="line">     * @return</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static BigInteger getNonce(String address) throws IOException &#123;</span><br><span class="line">        Web3j web3j = initWeb3j();</span><br><span class="line">        Request&lt;?, EthGetTransactionCount&gt; request = web3j.ethGetTransactionCount(address, DefaultBlockParameterName.LATEST);</span><br><span class="line">        return request.send().getTransactionCount();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">App.java</span><br><span class="line"></span><br><span class="line">public class App &#123;</span><br><span class="line">	</span><br><span class="line">    // GAS价格  </span><br><span class="line">    public static BigInteger GAS_PRICE = BigInteger.valueOf(20_000_000_000L);  </span><br><span class="line">    // GAS上限  </span><br><span class="line">    public static BigInteger GAS_LIMIT = BigInteger.valueOf(4_300_000L);  </span><br><span class="line">  </span><br><span class="line">    // 交易费用  </span><br><span class="line">    public static BigInteger GAS_VALUE = BigInteger.valueOf(1300_000L);;  </span><br><span class="line">    </span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// 获取余额</span><br><span class="line">		try &#123;</span><br><span class="line">			System.out.println(&quot;Hello World!&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			Admin admin = EthService.initAdmin();</span><br><span class="line">			System.out.println(admin.personalListAccounts().send().getAccountIds());</span><br><span class="line">////			ShhAddToGroup group = admin.shhAddToGroup(&quot;enode://6d1819c68ad4bb4928f349d8fecb14223087b4ea0740dd3ffee55b95d975c2123d230e12e13a40083fc902440d83f0aa17e0a925616110c14273e6b2d7f59635@192.168.1.64:30303&quot;).send();</span><br><span class="line">////			System.out.println(group);</span><br><span class="line">//			</span><br><span class="line">//			NetPeerCount count=admin.netPeerCount().send();</span><br><span class="line">//			System.out.println(count.getResult());</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 开始挖矿</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void startMining()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 新建用户</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void CreateNewAccounts() &#123;</span><br><span class="line">		String account = &quot;&quot;;</span><br><span class="line">		try &#123;</span><br><span class="line">			account = EthService.newAccount(&quot;123456&quot;);</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(account);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 获取钱包里的所有用户</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void getAllAccounts() &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			Geth geth = EthService.initGeth();</span><br><span class="line">			Request&lt;?, EthAccounts&gt; request = geth.ethAccounts();</span><br><span class="line">			List&lt;String&gt; list = request.send().getAccounts();</span><br><span class="line">			System.out.println(list.toString());</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 获取用户余额</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void getAccountBalance() &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			String address=&quot;0xdbaea9b9d0b4d9dfff546466c89de34c9711a942&quot;;//0x8b7483ea3c7a545dbf93bf07764b479e0469e821 0xdbaea9b9d0b4d9dfff546466c89de34c9711a942</span><br><span class="line">			Web3j web3 = EthService.initWeb3j();</span><br><span class="line">			EthGetBalance ethGetBalance1 = web3.ethGetBalance(address, DefaultBlockParameter.valueOf(&quot;latest&quot;)).send();</span><br><span class="line">			System.out.println(ethGetBalance1.getBalance());</span><br><span class="line">			System.out.println(address+&quot;的余额:&quot; + Convert.fromWei(ethGetBalance1.getBalance().toString(), Convert.Unit.ETHER));  //.new BigDecimal(ethGetBalance1.getBalance() + &quot;&quot;).divide(BigDecimal.valueOf(Math.pow(10, 18))).setScale(6)</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 转账</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void transferBalance()&#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			boolean flag = EthService.unlockAccount(&quot;0xdbaea9b9d0b4d9dfff546466c89de34c9711a942&quot;, &quot;123456&quot;, new BigInteger(1800 + &quot;&quot;));</span><br><span class="line">			System.out.println(flag);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			BigInteger value = Convert.toWei(&quot;12&quot;, Convert.Unit.ETHER).toBigInteger(); </span><br><span class="line">			</span><br><span class="line">			Web3j web3j=EthService.initWeb3j();</span><br><span class="line">			Credentials credentials = WalletUtils.loadCredentials(&quot;123456&quot;, &quot;F:\\Ethereum\\blockchain\\keystore\\UTC--2018-04-26T06-04-02.691651400Z--dbaea9b9d0b4d9dfff546466c89de34c9711a942&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			// get the next available nonce</span><br><span class="line">			BigInteger nonce = EthService.getNonce(&quot;0xdbaea9b9d0b4d9dfff546466c89de34c9711a942&quot;);</span><br><span class="line">			</span><br><span class="line">			// create our transaction</span><br><span class="line">			RawTransaction rawTransaction  = RawTransaction.createEtherTransaction(</span><br><span class="line">			             nonce, GAS_PRICE, GAS_LIMIT, &quot;0x8b7483ea3c7a545dbf93bf07764b479e0469e821&quot;, value);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			// sign &amp; send our transaction</span><br><span class="line">			byte[] signedMessage = TransactionEncoder.signMessage(rawTransaction, credentials);</span><br><span class="line">			String hexValue = Numeric.toHexString(signedMessage);</span><br><span class="line">			EthSendTransaction ethSendTransaction = web3j.ethSendRawTransaction(hexValue).send();</span><br><span class="line">			</span><br><span class="line">			System.out.println(ethSendTransaction.getResult());</span><br><span class="line">			System.out.println(ethSendTransaction.getTransactionHash());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 监听新区块</span><br><span class="line">	 */</span><br><span class="line">	@Test</span><br><span class="line">	public void observableBlockChain()&#123;</span><br><span class="line">		Web3j web3j=EthService.initWeb3j();</span><br><span class="line">		Subscription subscription = web3j.blockObservable(false).subscribe(block -&gt; &#123;</span><br><span class="line">			Block blk=block.getResult();</span><br><span class="line">			System.out.println(&quot;当前区块高度：&quot;+blk.getNumber()+&quot;,上一个区块：&quot;+blk.getParentHash()+blk.getHash());</span><br><span class="line">		&#125;);</span><br><span class="line">		System.out.println(&quot;订阅的&quot;+subscription.hashCode());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MyBlockObserve.java</span><br><span class="line"></span><br><span class="line">public class MyBlockObserve &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	private static Web3j web3j=EthService.initWeb3j();</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 监听区块数据</span><br><span class="line">	 */</span><br><span class="line">	public static void observableBlockChain()&#123;</span><br><span class="line">		Subscription subscription = web3j.blockObservable(false).subscribe(block -&gt; &#123;</span><br><span class="line">			Block blk=block.getResult();</span><br><span class="line">			System.out.println(&quot;当前区块高度：&quot;+blk.getNumber()+&quot;,上一个区块：&quot;+blk.getParentHash()+blk.getHash());</span><br><span class="line">		&#125;);</span><br><span class="line">		System.out.println(&quot;订阅的&quot;+subscription.hashCode());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/web3j/" data-id="ckcd1zd9q004npc78alypmufl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -400,7 +532,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/web3/" data-id="ckcd1pwaa004cgc78pgn4s81b" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/web3/" data-id="ckcd1zd9p004lpc78jhtvf781" class="article-share-link">Share</a>
       
       
     </footer>
@@ -464,7 +596,50 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/weevely/" data-id="ckcd1pwae004ggc78kbe2yubs" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/weevely/" data-id="ckcd1zd9u004ppc7851m9374d" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-mv" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/mv/" class="article-date">
+  <time datetime="2020-04-28T09:13:04.152Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/mv/">mv</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.通过mv 唯一处理文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hash=$(md5sum $1|awk &apos;&#123;print $1&#125;&apos;)</span><br><span class="line">if [ ! -f ~/.local/$hash ];then</span><br><span class="line">    echo $hash</span><br><span class="line">    mv $1 ~/.local/$hash</span><br><span class="line">else</span><br><span class="line">    echo &apos;have&apos;</span><br><span class="line">    rm -rf $1</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/mv/" data-id="ckcd1zd3v002jpc785ivtx6ae" class="article-share-link">Share</a>
       
       
     </footer>
@@ -510,136 +685,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/nethogs/" data-id="ckcd1pw7p002agc789qrmqrwf" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-mv" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/28/mv/" class="article-date">
-  <time datetime="2020-04-28T09:13:04.152Z" itemprop="datePublished">2020-04-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/28/mv/">mv</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.通过mv 唯一处理文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hash=$(md5sum $1|awk &apos;&#123;print $1&#125;&apos;)</span><br><span class="line">if [ ! -f ~/.local/$hash ];then</span><br><span class="line">    echo $hash</span><br><span class="line">    mv $1 ~/.local/$hash</span><br><span class="line">else</span><br><span class="line">    echo &apos;have&apos;</span><br><span class="line">    rm -rf $1</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/mv/" data-id="ckcd1pw7j0023gc78ae7k5zr8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-hack" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/28/hack/" class="article-date">
-  <time datetime="2020-04-28T09:13:04.138Z" itemprop="datePublished">2020-04-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/28/hack/">Hacker</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>网络安全 安全攻防 漏洞</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/hack/" data-id="ckcd1pw660014gc78qynwvhgi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-color" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/28/color/" class="article-date">
-  <time datetime="2020-04-28T09:10:08.545Z" itemprop="datePublished">2020-04-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/28/color/">Color</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>适合阅读的背景颜色<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* 河白色 #FFFFFF rgb(255, 255, 255)</span><br><span class="line">* 杏仁黄 #FAF9DE rgb(250, 249, 222)</span><br><span class="line">* 秋叶褐 #FFF2E2 rgb(255, 242, 226)</span><br><span class="line">* 胭脂红 #FDE6E0 rgb(253, 230, 224)</span><br><span class="line">* 青草绿 #E3EDCD rgb(227, 237, 205)</span><br><span class="line">* 海天蓝 #DCE2F1 rgb(220, 226, 241)</span><br><span class="line">* 葛巾紫 #E9EBFE rgb(233, 235, 254)</span><br><span class="line">* 极光灰 #EAEAEF rgb(234, 234, 239)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/color/" data-id="ckcd1pw5g000hgc7855l0ujtt" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/nethogs/" data-id="ckcd1zd4g002qpc78u4h9u0wd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -664,7 +710,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mysql/">Mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/中间件/">中间件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/交易所/">交易所</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/后端/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微服务/">微服务</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/源码/">源码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络安全/">网络安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/阿里云/">阿里云</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mysql/">Mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/中间件/">中间件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/交易所/">交易所</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/后端/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微服务/">微服务</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/源码/">源码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络安全/">网络安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/阿里云/">阿里云</a></li></ul>
     </div>
   </div>
 
@@ -679,7 +725,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
     </div>
   </div>
 
@@ -692,6 +738,14 @@
       <ul>
         
           <li>
+            <a href="/2020/07/08/asm/">汇编指令集</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/08/asm_study/">汇编，栈溢出相关教程</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/17/sqlinject/">SQL 注入</a>
           </li>
         
@@ -701,14 +755,6 @@
         
           <li>
             <a href="/2020/05/19/source/">H淘源码</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/15/thinkphp/">ThinkPHP 5.0 漏洞</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/12/rocketmq/">RocketMQ</a>
           </li>
         
       </ul>
