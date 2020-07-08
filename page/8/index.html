@@ -107,6 +107,77 @@
       <div class="outer">
         <section id="main">
   
+    <article id="true-samba" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/26/samba/" class="article-date">
+  <time datetime="2019-06-26T00:43:25.193Z" itemprop="datePublished">2019-06-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/运维/">运维</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/26/samba/">Centos Samba</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>server</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install samba samba-client -y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>client</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install samba-client cifs-utils -y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>server conf /etc/samba/smb.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">workgroup = WORKGROUP   windows工作组模式</span><br><span class="line">hosts allow = 192.168.254.1    白名单</span><br><span class="line">[share]</span><br><span class="line">    comment = share                 描述信息</span><br><span class="line">    path =  /share                  共享文件路径</span><br><span class="line">    browseable = no                 是否可以浏览查看该samba服务</span><br><span class="line">    read list = samba1              只读samba用户列表</span><br><span class="line">    write list = samba2             读写samba用户列表</span><br><span class="line">    writable = no                   默认所有用户是只读模式</span><br><span class="line">    printable = no                  是否是打印设备，如果是yes那么文件夹内容不能查看</span><br><span class="line">    public = no                     是否公开，如果公开不需要samba用户也是访问共享文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建samba用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useradd samba1</span><br><span class="line">useradd samba2</span><br><span class="line">smbpasswd -a samba1</span><br><span class="line">smbpasswd -a samba2</span><br><span class="line"></span><br><span class="line">pdbedit -L 查看samba用户</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启用服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable smb</span><br><span class="line">setenforce 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>防火墙设置</p>
+</li>
+<li><p>新建/share目录，并设置权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /share</span><br><span class="line">chmod o+w /share</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>smbclient -L 查看服务是否开启</p>
+</li>
+<li><p>手动挂载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -t cifs //192.168.254.1/share /mnt/share -o username=samba2,password=123</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自动挂载 /etc/fstab</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//192.168.254.1/share /mnt/share	cifs	auto,username=samba2,password=123	0	0</span><br><span class="line">or</span><br><span class="line">//192.168.254.1/share /mnt/cifs cifs credentials=/root/namepass.txt,defaults 0 0</span><br><span class="line"></span><br><span class="line">echo &apos;username=samba2</span><br><span class="line">password=123&apos; &gt; /root/namepass.txt</span><br><span class="line"></span><br><span class="line">mount -a</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/06/26/samba/" data-id="ckcd21n2k003kuz78ga54lzcq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="true-vue" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/25/vue/" class="article-date">
@@ -138,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/06/25/vue/" data-id="ckcd1zd9m004jpc78k0r93b9o" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/06/25/vue/" data-id="ckcd21n4m004luz78pm8txqde" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/06/25/npm/" data-id="ckcd1zd4j002spc78ypy3pu0j" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/06/25/npm/" data-id="ckcd21n1j002ouz787xo9wki7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/06/23/hi/" data-id="ckcd1zd0u001dpc783jrnh3r9" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/06/23/hi/" data-id="ckcd21mzu001kuz782xiordy8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/06/21/seckill/" data-id="ckcd1zd7w003opc78rjrd8z1j" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/06/21/seckill/" data-id="ckcd21n2m003nuz788j77k4o0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -295,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/06/21/performance/" data-id="ckcd1zd4w0032pc783gmegow1" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/06/21/performance/" data-id="ckcd21n1w0030uz785ebuc85j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -320,7 +391,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mysql/">Mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/中间件/">中间件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/交易所/">交易所</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/后端/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微服务/">微服务</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/源码/">源码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络安全/">网络安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/阿里云/">阿里云</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mysql/">Mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/中间件/">中间件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/交易所/">交易所</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/后端/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微服务/">微服务</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/源码/">源码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络安全/">网络安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/运维/">运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/阿里云/">阿里云</a></li></ul>
     </div>
   </div>
 
@@ -348,11 +419,15 @@
       <ul>
         
           <li>
-            <a href="/2020/07/08/asm/">汇编指令集</a>
+            <a href="/2020/07/08/ctf/">安全领域资源</a>
           </li>
         
           <li>
             <a href="/2020/07/08/asm_study/">汇编，栈溢出相关教程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/08/asm/">汇编指令集</a>
           </li>
         
           <li>
@@ -361,10 +436,6 @@
         
           <li>
             <a href="/2020/06/05/htpasswd/">htpasswd</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/19/source/">H淘源码</a>
           </li>
         
       </ul>
