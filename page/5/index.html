@@ -107,6 +107,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="true-terminal_proxy" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/21/terminal_proxy/" class="article-date">
+  <time datetime="2019-12-21T01:18:38.059Z" itemprop="datePublished">2019-12-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/21/terminal_proxy/">让终端走socks5代理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>把代理服务器地址写入shell配置文件.bashrc或者.zshrc<br>直接在.bashrc或者.zshrc添加下面内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=&quot;http://localhost:port&quot;</span><br><span class="line">export https_proxy=&quot;http://localhost:port&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>shadowsocks代理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=&quot;socks5://127.0.0.1:1080&quot;</span><br><span class="line">export https_proxy=&quot;socks5://127.0.0.1:1080&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ALL_PROXY</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias setproxy=&quot;export ALL_PROXY=socks5://127.0.0.1:1080&quot;</span><br><span class="line">alias unsetproxy=&quot;unset ALL_PROXY&quot;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/21/terminal_proxy/" data-id="ckcfy6ahf004afq78555uy8ia" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="true-grep" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/20/grep/" class="article-date">
@@ -144,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/20/grep/" data-id="ckcfu66en0018o578azfyba10" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/20/grep/" data-id="ckcfy6acw0018fq78enamuerp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/19/ssh2_msg_kexinit/" data-id="ckcfu66jx0045o578tcvdgel8" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/19/ssh2_msg_kexinit/" data-id="ckcfy6agz003yfq78e1qqtxrt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/06/linux_date/" data-id="ckcfu66gy0021o578oy7r883t" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/06/linux_date/" data-id="ckcfy6ae6001yfq78ztwtwk9s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -277,7 +329,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/06/find/" data-id="ckcfu66ea000xo5782lo628es" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/06/find/" data-id="ckcfy6aci000yfq786qk28ny1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -320,7 +372,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/22/iostat/" data-id="ckcfu66gb001so578snqezzby" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/22/iostat/" data-id="ckcfy6adw001ofq78x7osywm3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -369,7 +421,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/21/mongo/" data-id="ckcfu66hb0028o5788hyzy500" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/21/mongo/" data-id="ckcfy6aeg0026fq78nob5pplr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -412,7 +464,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/vim/" data-id="ckcfu66k80048o578qfhrxe6b" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/vim/" data-id="ckcfy6aic004sfq78wbcedh75" class="article-share-link">Share</a>
       
       
     </footer>
@@ -469,7 +521,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/talib/" data-id="ckcfu66jr0040o578x5bhofa4" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/talib/" data-id="ckcfy6ah50045fq78kxeny800" class="article-share-link">Share</a>
       
       
     </footer>
@@ -479,14 +531,14 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
 
 
   
-    <article id="true-php_date" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/20/php_date/" class="article-date">
+    <a href="/2019/11/20/git_filemode/" class="article-date">
   <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
   </div>
 
   </div>
@@ -497,7 +549,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/php_date/">PHP Date</a>
+      <a class="article-title" href="/2019/11/20/git_filemode/">Git 权限变更忽略</a>
     </h1>
   
 
@@ -505,57 +557,13 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Date</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">//今天开始时间</span><br><span class="line">       $beginToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //今天结束时间</span><br><span class="line">       $endToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)+1,date(&apos;Y&apos;))-1);</span><br><span class="line">       //昨天开始时间</span><br><span class="line">       $beginYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-1,date(&apos;Y&apos;)));</span><br><span class="line">       //昨天结束时间</span><br><span class="line">       $endYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;))-1);</span><br><span class="line">       //本周开始时间</span><br><span class="line">       $beginThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+1,date(&quot;Y&quot;)));</span><br><span class="line">       //本周结束时间</span><br><span class="line">       $endThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+7,date(&quot;Y&quot;)));</span><br><span class="line">       //上周开始时间</span><br><span class="line">       $beginLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+1-7,date(&apos;Y&apos;)));</span><br><span class="line">       //上周结束时间</span><br><span class="line">       $endLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+7-7,date(&apos;Y&apos;)));</span><br><span class="line">       //本月开始时间</span><br><span class="line">       $beginThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),1,date(&apos;Y&apos;)));</span><br><span class="line">       //本月结束时间</span><br><span class="line">       $endThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;t&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //上月开始时间</span><br><span class="line">       $beginLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;)-1,1,date(&quot;Y&quot;)));</span><br><span class="line">       //上月结束时间</span><br><span class="line">       $endLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;) ,0,date(&quot;Y&quot;)));</span><br><span class="line">       //本季度开始时间</span><br><span class="line">       $season = ceil((date(&apos;n&apos;))/3);//当前是第几季度</span><br><span class="line">       $beginThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //本季度结束时间</span><br><span class="line">       $endThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //上季度开始时间</span><br><span class="line">       $season1 = ceil((date(&apos;n&apos;))/3)-1;//上季度是第几季度</span><br><span class="line">       $beginLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season1*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //上季度结束时间</span><br><span class="line">       $endLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season1*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season1*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //本年开始时间</span><br><span class="line">       $beginThisyear=date(&quot;Y&quot;,time()).&quot;-1&quot;.&quot;-1&quot;;</span><br><span class="line">       //本年结束时间</span><br><span class="line">       $endThisyear =date(&quot;Y&quot;,time()).&quot;-12&quot;.&quot;-31&quot;;</span><br></pre></td></tr></table></figure>
+        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/php_date/" data-id="ckcfu66im0032o578v3x910c0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-privoxy" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/privoxy/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/privoxy/">Privoxy</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>socks代理转http    privoxy<br>config 配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forward-socks5t   /   127.0.0.1:1080 .</span><br><span class="line">listen-address  127.0.0.1:8118</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/privoxy/" data-id="ckcfu66ip0034o5784xebdtqw" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/git_filemode/" data-id="ckcfy6ack0010fq78qy3jzoq3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -608,11 +616,11 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       <ul>
         
           <li>
-            <a href="/2020/07/08/ctf/">安全领域资源</a>
+            <a href="/2020/07/10/wget_c/">wget</a>
           </li>
         
           <li>
-            <a href="/2020/07/08/asm/">汇编指令集</a>
+            <a href="/2020/07/08/ctf/">安全领域资源</a>
           </li>
         
           <li>
@@ -620,11 +628,11 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
           </li>
         
           <li>
-            <a href="/2020/06/17/sqlinject/">SQL 注入</a>
+            <a href="/2020/07/08/asm/">汇编指令集</a>
           </li>
         
           <li>
-            <a href="/2020/06/05/htpasswd/">htpasswd</a>
+            <a href="/2020/06/17/sqlinject/">SQL 注入</a>
           </li>
         
       </ul>

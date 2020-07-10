@@ -107,6 +107,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="true-hprose" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/27/hprose/" class="article-date">
+  <time datetime="2019-06-27T10:25:56.803Z" itemprop="datePublished">2019-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/27/hprose/">Hprose</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>GIT</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/hprose/hprose-php</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>composer</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">composer.json里增加</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose&quot;: &quot;&gt;=2.0.0&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">swoole版</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose-swoole&quot;: &quot;dev-master&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Symfony</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose-symfony&quot;: &quot;dev-master&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Yii</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose-yii&quot;: &quot;dev-master&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">PSR7</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;: &#123;</span><br><span class="line">        &quot;hprose/hprose-psr7&quot;: &quot;dev-master&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ThinkPHP 示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">&lt;?php</span><br><span class="line">namespace app\admin\controller;</span><br><span class="line"></span><br><span class="line">use think\Controller;</span><br><span class="line">use Hprose\Http\Server;</span><br><span class="line">use think\Log;</span><br><span class="line"></span><br><span class="line">function hello($name) &#123;</span><br><span class="line">	return &apos;hello&apos; . $name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * RpcServer</span><br><span class="line"> * @internal</span><br><span class="line"> */</span><br><span class="line">class Rpcserver extends Controller</span><br><span class="line">&#123;</span><br><span class="line">    public function hello($name) &#123;</span><br><span class="line">	Log::write(&quot;htest&quot;);</span><br><span class="line">	return &apos;hello&apos; . $name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function index()</span><br><span class="line">    &#123;</span><br><span class="line">	$server = new Server();</span><br><span class="line">	$server-&gt;addFunction(&apos;\app\admin\controller\hello&apos;, &apos;hello&apos;);	</span><br><span class="line">	Log::write(&quot;htest&quot;);</span><br><span class="line">	$server-&gt;start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">client:</span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace app\admin\controller;</span><br><span class="line"></span><br><span class="line">use think\Controller;</span><br><span class="line">use Hprose\Http\Client;</span><br><span class="line"></span><br><span class="line">function hello($name) &#123;</span><br><span class="line">        return &apos;hello&apos; . $name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * RpcServer</span><br><span class="line"> * @internal</span><br><span class="line"> */</span><br><span class="line">class Rpcclient extends Controller</span><br><span class="line">&#123;</span><br><span class="line">    public function index()</span><br><span class="line">    &#123;</span><br><span class="line">        #$client = new Client(&quot;&quot;);</span><br><span class="line">        $client = new Client(&quot;http://admin.beta.qdunzi.com/admin/rpcserver&quot;, false);</span><br><span class="line">        $start = microtime(true);</span><br><span class="line">        for($i=0;$i&lt;100;$i++) &#123;</span><br><span class="line">            $client-&gt;hello(&apos;haha&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        $end = microtime(true);</span><br><span class="line">        echo $end - $start . &quot;\n&quot;;</span><br><span class="line">        $start = microtime(true);</span><br><span class="line">        for($i=0;$i&lt;100;$i++) &#123;</span><br><span class="line">            $client-&gt;hello(&apos;haha&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        $end = microtime(true);</span><br><span class="line">        echo $end - $start;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>性能测试</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/06/27/hprose/" data-id="ckcfy6ad5001hfq784z3h88ms" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="true-samba" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/26/samba/" class="article-date">
@@ -168,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/06/26/samba/" data-id="ckcfu66iz003eo578mselmr18" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/06/26/samba/" data-id="ckcfy6ag5003hfq78xigtxneo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -210,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/06/25/npm/" data-id="ckcfu66hx002go578f7hpeybf" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/06/25/npm/" data-id="ckcfy6aey002ifq78nzslu3pq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -251,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/06/25/vue/" data-id="ckcfu66kw004po5780ba0h4mk" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/06/25/vue/" data-id="ckcfy6aih004tfq78gr92x4qa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -288,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/06/23/hi/" data-id="ckcfu66fl001ko57855x2eekc" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/06/23/hi/" data-id="ckcfy6ad3001ffq78j1do6oa6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -330,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/06/21/seckill/" data-id="ckcfu66j2003ho578n7b4aqg5" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/06/21/seckill/" data-id="ckcfy6ag9003jfq78h8w3p7x0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -366,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/06/21/performance/" data-id="ckcfu66id002uo5780vi243ss" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/06/21/performance/" data-id="ckcfy6afb002ufq78k4bs4e9r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -419,11 +472,11 @@
       <ul>
         
           <li>
-            <a href="/2020/07/08/ctf/">安全领域资源</a>
+            <a href="/2020/07/10/wget_c/">wget</a>
           </li>
         
           <li>
-            <a href="/2020/07/08/asm/">汇编指令集</a>
+            <a href="/2020/07/08/ctf/">安全领域资源</a>
           </li>
         
           <li>
@@ -431,11 +484,11 @@
           </li>
         
           <li>
-            <a href="/2020/06/17/sqlinject/">SQL 注入</a>
+            <a href="/2020/07/08/asm/">汇编指令集</a>
           </li>
         
           <li>
-            <a href="/2020/06/05/htpasswd/">htpasswd</a>
+            <a href="/2020/06/17/sqlinject/">SQL 注入</a>
           </li>
         
       </ul>
