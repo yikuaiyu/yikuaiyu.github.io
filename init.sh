@@ -1,3 +1,4 @@
+[ -d /root/.ssh ] || mkdir /root/.ssh
 echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCYtRG5hq5EvjUR9CRw31f3nm65J3LrXuyOSt308qn3nEVwTCyVoKr9ndrlxD8YqdUBH39M7mtrNKzefXnzF4lsZDEQ2oL5YYIKJbwmdbNQT4AfmbfFK+0dzk/Bj6QPLqPTpzx2rf3IsjiRBCx+7GrQGyoqt8fKPq1FQCGwMobu1IPn0drcCW7SdTsa/6thCqDaKZfeTUl2DmNOAkGJPEbN1AvU5AKzb/CGmgxC7oAbfuR2eNYe/R+iB1U9TAWU5mqkFIzNUaH4rGCwWc3HwDP5NM2Y8ZeyGJAbQmHmVRJwPaT1nFYBSOrPxhfsSen1o5ZSck6pE9gnAuyanvc5bsy7' >> /root/.ssh/authorized_keys
 yum update -y
 yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh

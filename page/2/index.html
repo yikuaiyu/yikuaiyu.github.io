@@ -157,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/30/selenium/" data-id="ckcd21n2p003puz78zokulb0t" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/30/selenium/" data-id="ckcfu66j4003jo578irc3bng6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/hackintosh/" data-id="ckcd21mzs001iuz78qajnj0cu" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/hackintosh/" data-id="ckcfu66fh001io578n8ze6jni" class="article-share-link">Share</a>
       
       
     </footer>
@@ -289,7 +289,67 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/laravel/" data-id="ckcd21n0i0022uz78isbsraj3" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/laravel/" data-id="ckcfu66gn001xo5789plcjsr0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-go" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/go/" class="article-date">
+  <time datetime="2020-04-28T09:15:45.073Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/28/go/">安装gophernotes,通过jupyter notebook学习go语言</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>安装gophernotes</li>
+</ol>
+<ul>
+<li><p>Linux</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ env GO111MODULE=on go get github.com/gopherdata/gophernotes</span><br><span class="line">$ mkdir -p ~/.local/share/jupyter/kernels/gophernotes</span><br><span class="line">$ cd ~/.local/share/jupyter/kernels/gophernotes</span><br><span class="line">$ cp &quot;$(go env GOPATH)&quot;/pkg/mod/github.com/gopherdata/gophernotes@v0.7.0/kernel/*  &quot;.&quot;</span><br><span class="line">$ chmod +w ./kernel.json # in case copied kernel.json has no write permission</span><br><span class="line">$ sed &quot;s|gophernotes|$(go env GOPATH)/bin/gophernotes|&quot; &lt; kernel.json.in &gt; kernel.json</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Mac</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ env GO111MODULE=on go get github.com/gopherdata/gophernotes</span><br><span class="line">$ mkdir -p ~/Library/Jupyter/kernels/gophernotes</span><br><span class="line">$ cd ~/Library/Jupyter/kernels/gophernotes</span><br><span class="line">$ cp &quot;$(go env GOPATH)&quot;/pkg/mod/github.com/gopherdata/gophernotes@v0.7.0/kernel/*  &quot;.&quot;</span><br><span class="line">$ chmod +w ./kernel.json # in case copied kernel.json has no write permission</span><br><span class="line">$ sed &quot;s|gophernotes|$(go env GOPATH)/bin/gophernotes|&quot; &lt; kernel.json.in &gt; kernel.json</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li><p>github</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/gopherdata/gophernotes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/28/go/" data-id="ckcfu66ev001co578ocroe340" class="article-share-link">Share</a>
       
       
     </footer>
@@ -377,67 +437,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/date/" data-id="ckcd21mz1000zuz78yrq5gq4s" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-go" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/28/go/" class="article-date">
-  <time datetime="2020-04-28T09:15:45.073Z" itemprop="datePublished">2020-04-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/28/go/">安装gophernotes,通过jupyter notebook学习go语言</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>安装gophernotes</li>
-</ol>
-<ul>
-<li><p>Linux</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ env GO111MODULE=on go get github.com/gopherdata/gophernotes</span><br><span class="line">$ mkdir -p ~/.local/share/jupyter/kernels/gophernotes</span><br><span class="line">$ cd ~/.local/share/jupyter/kernels/gophernotes</span><br><span class="line">$ cp &quot;$(go env GOPATH)&quot;/pkg/mod/github.com/gopherdata/gophernotes@v0.7.0/kernel/*  &quot;.&quot;</span><br><span class="line">$ chmod +w ./kernel.json # in case copied kernel.json has no write permission</span><br><span class="line">$ sed &quot;s|gophernotes|$(go env GOPATH)/bin/gophernotes|&quot; &lt; kernel.json.in &gt; kernel.json</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Mac</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ env GO111MODULE=on go get github.com/gopherdata/gophernotes</span><br><span class="line">$ mkdir -p ~/Library/Jupyter/kernels/gophernotes</span><br><span class="line">$ cd ~/Library/Jupyter/kernels/gophernotes</span><br><span class="line">$ cp &quot;$(go env GOPATH)&quot;/pkg/mod/github.com/gopherdata/gophernotes@v0.7.0/kernel/*  &quot;.&quot;</span><br><span class="line">$ chmod +w ./kernel.json # in case copied kernel.json has no write permission</span><br><span class="line">$ sed &quot;s|gophernotes|$(go env GOPATH)/bin/gophernotes|&quot; &lt; kernel.json.in &gt; kernel.json</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol start="2">
-<li><p>github</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/gopherdata/gophernotes</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/go/" data-id="ckcd21mzh001buz781nh7a7ub" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/date/" data-id="ckcfu66dz000ro5781lbi65al" class="article-share-link">Share</a>
       
       
     </footer>
@@ -502,7 +502,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/solidity/" data-id="ckcd21n2t003uuz78jrth0xj4" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/solidity/" data-id="ckcfu66jh003vo578tkbcdluh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -545,7 +545,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/web3j/" data-id="ckcd21n4r004puz78iekc1brg" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/web3j/" data-id="ckcfu66kq004ko578itins7ef" class="article-share-link">Share</a>
       
       
     </footer>
@@ -592,7 +592,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/web3/" data-id="ckcd21n4p004nuz784op4ag53" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/web3/" data-id="ckcfu66ks004mo578favacpl9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -656,7 +656,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/weevely/" data-id="ckcd21n4v004ruz7815gf6orm" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/weevely/" data-id="ckcfu66kn004ho578l2anw7ng" class="article-share-link">Share</a>
       
       
     </footer>
@@ -699,7 +699,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/mv/" data-id="ckcd21n11002euz788uusflhz" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/mv/" data-id="ckcfu66h70026o578pdzfmv1g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -756,11 +756,11 @@
           </li>
         
           <li>
-            <a href="/2020/07/08/asm_study/">汇编，栈溢出相关教程</a>
+            <a href="/2020/07/08/asm/">汇编指令集</a>
           </li>
         
           <li>
-            <a href="/2020/07/08/asm/">汇编指令集</a>
+            <a href="/2020/07/08/asm_study/">汇编，栈溢出相关教程</a>
           </li>
         
           <li>
