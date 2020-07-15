@@ -107,6 +107,84 @@
       <div class="outer">
         <section id="main">
   
+    <article id="true-iost" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/07/iost/" class="article-date">
+  <time datetime="2020-05-07T09:11:27.896Z" itemprop="datePublished">2020-05-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/区块链/">区块链</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/07/iost/">IOST</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本文介绍iost-dapp开发入门"><a href="#本文介绍iost-dapp开发入门" class="headerlink" title="本文介绍iost dapp开发入门"></a>本文介绍iost dapp开发入门</h2><ol>
+<li><p>创建目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir iost_dapp</span><br><span class="line">cd iost_dapp</span><br><span class="line">mkdir contract</span><br><span class="line">mkdir dapp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>vim Makefile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">all: ./contract/*.js</span><br><span class="line">	make compile</span><br><span class="line">	make deploy</span><br><span class="line">compile: ./contract/*.js</span><br><span class="line">	iwallet compile ./contract/*.js</span><br><span class="line">deploy:</span><br><span class="line">	sh deploy.sh HelloWorld</span><br><span class="line">import-admin:</span><br><span class="line">	iwallet account import admin 2yquS3ySrGWPEKywCPzX4RTJugqRh7kJSo5aehsLYPEWkUxBWA39oMrZ7ZxuM4fgyXYs2cPwh5n8aNNpH5x2VyK1</span><br><span class="line">port:</span><br><span class="line">	ssh -C -f -N -g -L 30001:0.0.0.0:30001 root@192.168.254.220</span><br><span class="line">	ssh -C -f -N -g -L 30002:0.0.0.0:30002 root@192.168.254.220</span><br><span class="line">	ssh -C -f -N -g -L 30003:0.0.0.0:30003 root@192.168.254.220</span><br><span class="line">docker:</span><br><span class="line">	docker run --rm -p 30000-30003:30000-30003 -v ./iserver/:/var/lib/iserver iostio/iost-node</span><br><span class="line">test:</span><br><span class="line">	echo test</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>一些快速部署的脚本</p>
+<ol start="3">
+<li><p>vim deploy.sh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">iwallet \</span><br><span class="line"> --expiration 10 --gas_limit 1000000 --gas_ratio 1 \</span><br><span class="line"> --server localhost:30002 \</span><br><span class="line"> --account admin \</span><br><span class="line"> --amount_limit &apos;*:unlimited&apos; \</span><br><span class="line"> publish ./contract/$1.js ./contract/$1.js.abi &gt; ./tmp/deploy.log</span><br><span class="line">id=$(cat ./tmp/deploy.log|grep &quot;The contract id is&quot;|awk &apos;&#123;print $5&#125;&apos;)</span><br><span class="line">echo $id</span><br><span class="line">echo $&#123;1&#125;:$&#123;id&#125; &gt;&gt; id.list</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>vim newAccount.sh 用于新建账号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">iwallet \</span><br><span class="line">  account create $1 \</span><br><span class="line">  --initial_ram 65536  \</span><br><span class="line">  --initial_gas_pledge 1000000 \</span><br><span class="line">  --initial_balance 10000 \</span><br><span class="line">  --amount_limit &apos;*:unlimited&apos; \</span><br><span class="line">  --account admin \</span><br><span class="line">  --server localhost:30002</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>vim call.sh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">iwallet \</span><br><span class="line"> --expiration 10000 --gas_limit 1000000 --gas_ratio 1 \</span><br><span class="line"> --server localhost:30002 \</span><br><span class="line"> --account admin \</span><br><span class="line"> --amount_limit &apos;*:unlimited&apos; \</span><br><span class="line"> call &quot;gas.iost&quot; &apos;pledge&apos; &apos;[&quot;admin&quot;,&quot;player1&quot;,&quot;10000.00&quot;]&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install iost</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Smart Contract<br>vim ./contract/HelloWorld.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class HelloWorld &#123;</span><br><span class="line">    init() &#123;&#125; // 需要提供一个init函数，它将会在部署时被调用</span><br><span class="line">    hello(someone) &#123;</span><br><span class="line">        return &quot;hello, &quot;+ someone</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = HelloWorld;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译部署</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>参考文档</p>
+</li>
+</ol>
+<p><a href="https://github.com/iost-official/iost.js" target="_blank" rel="noopener">https://github.com/iost-official/iost.js</a><br><a href="https://developers.iost.io/docs/zh-CN/3-smart-contract/ContractStart.html" target="_blank" rel="noopener">https://developers.iost.io/docs/zh-CN/3-smart-contract/ContractStart.html</a></p>
+<ol start="10">
+<li>使用合约转账<br>使用合约进行资金操作时，需要在 abi 文件中，每个导出的函数都有一个 amountLimit，如果 函数涉及到了资金操作，需要在 amountLimit 字段添加 [{ “token”:”iost”, “val”:”100” }]，其中 token 是资金操作的币种，val 是最多可以操作的金额，可以设置成 unlimited，合约以及 abi 参考如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;lang&quot;: &quot;javascript&quot;,</span><br><span class="line">    &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">    &quot;abi&quot;: [</span><br><span class="line">            ...</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;send&quot;,</span><br><span class="line">            &quot;args&quot;: [</span><br><span class="line">                &quot;string&quot;,</span><br><span class="line">                &quot;string&quot;</span><br><span class="line">            ],</span><br><span class="line">            &quot;amountLimit&quot;: [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;token&quot;: &quot;iost&quot;,</span><br><span class="line">                    &quot;val&quot;: &quot;100&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;description&quot;: &quot;&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/05/07/iost/" data-id="ckcn7nu2e001n8c78vr2d5n9p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="true-ssh_pipe" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/05/05/ssh_pipe/" class="article-date">
@@ -145,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/05/05/ssh_pipe/" data-id="ckcfy6ah10040fq78vbyq0r1t" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/05/05/ssh_pipe/" data-id="ckcn7nu5w003w8c78dzshb6j3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -205,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/30/selenium/" data-id="ckcfy6age003mfq78e6ripo5n" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/30/selenium/" data-id="ckcn7nu59003p8c780bi1g7pi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -250,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/hackintosh/" data-id="ckcfy6ad1001cfq78fmsu4ba0" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/hackintosh/" data-id="ckcn7nu27001i8c78ka9c0c3z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -337,7 +415,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/laravel/" data-id="ckcfy6ae4001wfq786d6v8fkc" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/laravel/" data-id="ckcn7nu2q001x8c78pc2pxmqc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -425,7 +503,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/date/" data-id="ckcfy6ace000ufq78d3nzbboq" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/date/" data-id="ckcn7nu0x000t8c782j56gqks" class="article-share-link">Share</a>
       
       
     </footer>
@@ -485,54 +563,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/go/" data-id="ckcfy6act0016fq7888u9so62" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-web3" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/28/web3/" class="article-date">
-  <time datetime="2020-04-28T09:14:39.967Z" itemprop="datePublished">2020-04-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/区块链/">区块链</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/28/web3/">Web3 私钥签名交易 免解锁账号</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>示例程序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">var Web3 = require(&apos;web3&apos;);</span><br><span class="line">var fs = require(&quot;fs&quot;)</span><br><span class="line">try &#123;</span><br><span class="line">  web3 = new Web3(new Web3.providers.HttpProvider(&quot;http://47.114.114.93:8545&quot;));</span><br><span class="line">  var abi = eval(fs.readFileSync(&apos;./static/abi2.txt&apos;).toString());</span><br><span class="line">  var gcontract = fs.readFileSync(&apos;./static/2.txt&apos;).toString();</span><br><span class="line">  var contract = new web3.eth.Contract(abi, gcontract);</span><br><span class="line">  var transfer = contract.methods.doLottery();</span><br><span class="line">  var encodedABI = transfer.encodeABI();</span><br><span class="line">  var from = &quot;0x1b4f60adE059d2eC70b30478da012D254493Ea24&quot;;</span><br><span class="line">  web3.eth.getTransactionCount(from).then(result =&gt; &#123;</span><br><span class="line">    var number = result.toString(16);</span><br><span class="line">    var tx = &#123;</span><br><span class="line">      nonce: &apos;0x&apos; + number,</span><br><span class="line">      from: &quot;0x1b4f60adE059d2eC70b30478da012D254493Ea24&quot;,</span><br><span class="line">      to: gcontract,</span><br><span class="line">      gas: 6000000,</span><br><span class="line">      data: encodedABI</span><br><span class="line">    &#125;;</span><br><span class="line">    privateKey = &apos;AEA805B16F7A7BD4916737880A2E768DEC1AE3B6A96CB067E5373D412A119566&apos;;</span><br><span class="line">    web3.eth.accounts.signTransaction(tx, privateKey).then(signed =&gt; &#123;</span><br><span class="line">      console.log(signed);</span><br><span class="line">      var tran = web3.eth.sendSignedTransaction(signed.rawTransaction);</span><br><span class="line">      tran.on(&apos;confirmation&apos;, (confirmationNumber, receipt) =&gt; &#123;</span><br><span class="line">        console.log(&apos;confirmation: &apos; + confirmationNumber);</span><br><span class="line">        console.log(receipt);</span><br><span class="line">      &#125;);</span><br><span class="line">      tran.on(&apos;transactionHash&apos;, hash =&gt; &#123;</span><br><span class="line">        console.log(&apos;hash&apos;);</span><br><span class="line">        console.log(hash);</span><br><span class="line">      &#125;);</span><br><span class="line">      tran.on(&apos;receipt&apos;, receipt =&gt; &#123;</span><br><span class="line">        console.log(&apos;reciept&apos;);</span><br><span class="line">        console.log(receipt);</span><br><span class="line">      &#125;);</span><br><span class="line">      tran.on(&apos;error&apos;, console.error);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125; catch (err) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>参考链接<br><a href="http://cw.hubwiz.com/card/c/web3.js-1.0/1/2/22/" target="_blank" rel="noopener">http://cw.hubwiz.com/card/c/web3.js-1.0/1/2/22/</a><br><a href="https://www.jianshu.com/p/3732f39b5638" target="_blank" rel="noopener">https://www.jianshu.com/p/3732f39b5638</a><br><a href="http://cw.hubwiz.com/card/c/ethereum-FAQ/1/1/5/" target="_blank" rel="noopener">http://cw.hubwiz.com/card/c/ethereum-FAQ/1/1/5/</a></p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/web3/" data-id="ckcfy6aio004ufq78cd5g9umy" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/go/" data-id="ckcn7nu1k00168c78e9guw4ha" class="article-share-link">Share</a>
       
       
     </footer>
@@ -575,7 +606,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/web3j/" data-id="ckcfy6ait004vfq78mmk30p9t" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/web3j/" data-id="ckcn7nu75004p8c7897m8h3sx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -640,7 +671,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/solidity/" data-id="ckcfy6ags003qfq78ejr9wjdu" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/solidity/" data-id="ckcn7nu55003m8c782w2ozk72" class="article-share-link">Share</a>
       
       
     </footer>
@@ -650,14 +681,14 @@
 
 
   
-    <article id="true-weevely" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-web3" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/04/28/weevely/" class="article-date">
-  <time datetime="2020-04-28T09:13:04.153Z" itemprop="datePublished">2020-04-28</time>
+    <a href="/2020/04/28/web3/" class="article-date">
+  <time datetime="2020-04-28T09:14:39.967Z" itemprop="datePublished">2020-04-28</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/区块链/">区块链</a>
   </div>
 
   </div>
@@ -668,7 +699,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/28/weevely/">weevely</a>
+      <a class="article-title" href="/2020/04/28/web3/">Web3 私钥签名交易 免解锁账号</a>
     </h1>
   
 
@@ -677,34 +708,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li>安装</li>
-</ol>
-<ul>
-<li><p>linux</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$sudo apt-get install g++ python-pip libyaml-dev python-dev</span><br><span class="line"></span><br><span class="line">$sudo pip install prettytable Mako PyYAML python-dateutil PySocks --upgrade</span><br></pre></td></tr></table></figure>
+<li><p>示例程序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">var Web3 = require(&apos;web3&apos;);</span><br><span class="line">var fs = require(&quot;fs&quot;)</span><br><span class="line">try &#123;</span><br><span class="line">  web3 = new Web3(new Web3.providers.HttpProvider(&quot;http://47.114.114.93:8545&quot;));</span><br><span class="line">  var abi = eval(fs.readFileSync(&apos;./static/abi2.txt&apos;).toString());</span><br><span class="line">  var gcontract = fs.readFileSync(&apos;./static/2.txt&apos;).toString();</span><br><span class="line">  var contract = new web3.eth.Contract(abi, gcontract);</span><br><span class="line">  var transfer = contract.methods.doLottery();</span><br><span class="line">  var encodedABI = transfer.encodeABI();</span><br><span class="line">  var from = &quot;0x1b4f60adE059d2eC70b30478da012D254493Ea24&quot;;</span><br><span class="line">  web3.eth.getTransactionCount(from).then(result =&gt; &#123;</span><br><span class="line">    var number = result.toString(16);</span><br><span class="line">    var tx = &#123;</span><br><span class="line">      nonce: &apos;0x&apos; + number,</span><br><span class="line">      from: &quot;0x1b4f60adE059d2eC70b30478da012D254493Ea24&quot;,</span><br><span class="line">      to: gcontract,</span><br><span class="line">      gas: 6000000,</span><br><span class="line">      data: encodedABI</span><br><span class="line">    &#125;;</span><br><span class="line">    privateKey = &apos;AEA805B16F7A7BD4916737880A2E768DEC1AE3B6A96CB067E5373D412A119566&apos;;</span><br><span class="line">    web3.eth.accounts.signTransaction(tx, privateKey).then(signed =&gt; &#123;</span><br><span class="line">      console.log(signed);</span><br><span class="line">      var tran = web3.eth.sendSignedTransaction(signed.rawTransaction);</span><br><span class="line">      tran.on(&apos;confirmation&apos;, (confirmationNumber, receipt) =&gt; &#123;</span><br><span class="line">        console.log(&apos;confirmation: &apos; + confirmationNumber);</span><br><span class="line">        console.log(receipt);</span><br><span class="line">      &#125;);</span><br><span class="line">      tran.on(&apos;transactionHash&apos;, hash =&gt; &#123;</span><br><span class="line">        console.log(&apos;hash&apos;);</span><br><span class="line">        console.log(hash);</span><br><span class="line">      &#125;);</span><br><span class="line">      tran.on(&apos;receipt&apos;, receipt =&gt; &#123;</span><br><span class="line">        console.log(&apos;reciept&apos;);</span><br><span class="line">        console.log(receipt);</span><br><span class="line">      &#125;);</span><br><span class="line">      tran.on(&apos;error&apos;, console.error);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125; catch (err) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>OS X</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo port install python27 py27-pip</span><br><span class="line">$ sudo port select --set pip pip27</span><br><span class="line">$ sudo port select --set python python27</span><br><span class="line">$ sudo pip install prettytable Mako PyYAML python-dateutil readline PySocks --upgrade</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Windows</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install prettytable Mako PyYAML python-dateutil pyreadline PySocks --upgrade</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol start="2">
-<li><p>生成后门</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weevely generate test backdoor.php</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>连接后门</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weevely http://ip/backdoor.php test</span><br></pre></td></tr></table></figure>
-
+<li><p>参考链接<br><a href="http://cw.hubwiz.com/card/c/web3.js-1.0/1/2/22/" target="_blank" rel="noopener">http://cw.hubwiz.com/card/c/web3.js-1.0/1/2/22/</a><br><a href="https://www.jianshu.com/p/3732f39b5638" target="_blank" rel="noopener">https://www.jianshu.com/p/3732f39b5638</a><br><a href="http://cw.hubwiz.com/card/c/ethereum-FAQ/1/1/5/" target="_blank" rel="noopener">http://cw.hubwiz.com/card/c/ethereum-FAQ/1/1/5/</a></p>
 </li>
 </ol>
-<p>4.:help</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/28/weevely/" data-id="ckcfy6aix004xfq78zuorifkh" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/28/web3/" data-id="ckcn7nu6l004b8c78ffgxnhqs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -757,6 +771,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/15/aliyun_disk/">磁盘扩容</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/10/wget_c/">wget</a>
           </li>
         
@@ -765,15 +783,11 @@
           </li>
         
           <li>
-            <a href="/2020/07/08/asm_study/">汇编，栈溢出相关教程</a>
-          </li>
-        
-          <li>
             <a href="/2020/07/08/asm/">汇编指令集</a>
           </li>
         
           <li>
-            <a href="/2020/06/17/sqlinject/">SQL 注入</a>
+            <a href="/2020/07/08/asm_study/">汇编，栈溢出相关教程</a>
           </li>
         
       </ul>
