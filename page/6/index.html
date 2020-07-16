@@ -139,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/php_bytes/" data-id="ckcn7nu3v002s8c78okwpmpkm" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/php_bytes/" data-id="ckcolbqvz002r4r787as30bz6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,9 +149,9 @@
 
 
   
-    <article id="true-git_update" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/20/git_update/" class="article-date">
+    <a href="/2019/11/20/git_filemode/" class="article-date">
   <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
@@ -167,7 +167,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/git_update/">Git centos update</a>
+      <a class="article-title" href="/2019/11/20/git_filemode/">Git 权限变更忽略</a>
     </h1>
   
 
@@ -175,13 +175,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove git*</span><br><span class="line">sudo yum -y install  https://centos7.iuscommunity.org/ius-release.rpm</span><br><span class="line">sudo yum -y install  git2u-all</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/git_update/" data-id="ckcn7nu1n00188c786ng0adwa" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/git_filemode/" data-id="ckcolbqsz000y4r78gbmd4x94" class="article-share-link">Share</a>
       
       
     </footer>
@@ -191,14 +191,14 @@
 
 
   
-    <article id="true-php_date" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-privoxy" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/20/php_date/" class="article-date">
+    <a href="/2019/11/20/privoxy/" class="article-date">
   <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -209,7 +209,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/php_date/">PHP Date</a>
+      <a class="article-title" href="/2019/11/20/privoxy/">Privoxy</a>
     </h1>
   
 
@@ -217,60 +217,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Date</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">//今天开始时间</span><br><span class="line">       $beginToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //今天结束时间</span><br><span class="line">       $endToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)+1,date(&apos;Y&apos;))-1);</span><br><span class="line">       //昨天开始时间</span><br><span class="line">       $beginYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-1,date(&apos;Y&apos;)));</span><br><span class="line">       //昨天结束时间</span><br><span class="line">       $endYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;))-1);</span><br><span class="line">       //本周开始时间</span><br><span class="line">       $beginThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+1,date(&quot;Y&quot;)));</span><br><span class="line">       //本周结束时间</span><br><span class="line">       $endThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+7,date(&quot;Y&quot;)));</span><br><span class="line">       //上周开始时间</span><br><span class="line">       $beginLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+1-7,date(&apos;Y&apos;)));</span><br><span class="line">       //上周结束时间</span><br><span class="line">       $endLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+7-7,date(&apos;Y&apos;)));</span><br><span class="line">       //本月开始时间</span><br><span class="line">       $beginThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),1,date(&apos;Y&apos;)));</span><br><span class="line">       //本月结束时间</span><br><span class="line">       $endThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;t&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //上月开始时间</span><br><span class="line">       $beginLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;)-1,1,date(&quot;Y&quot;)));</span><br><span class="line">       //上月结束时间</span><br><span class="line">       $endLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;) ,0,date(&quot;Y&quot;)));</span><br><span class="line">       //本季度开始时间</span><br><span class="line">       $season = ceil((date(&apos;n&apos;))/3);//当前是第几季度</span><br><span class="line">       $beginThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //本季度结束时间</span><br><span class="line">       $endThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //上季度开始时间</span><br><span class="line">       $season1 = ceil((date(&apos;n&apos;))/3)-1;//上季度是第几季度</span><br><span class="line">       $beginLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season1*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //上季度结束时间</span><br><span class="line">       $endLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season1*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season1*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //本年开始时间</span><br><span class="line">       $beginThisyear=date(&quot;Y&quot;,time()).&quot;-1&quot;.&quot;-1&quot;;</span><br><span class="line">       //本年结束时间</span><br><span class="line">       $endThisyear =date(&quot;Y&quot;,time()).&quot;-12&quot;.&quot;-31&quot;;</span><br></pre></td></tr></table></figure>
+        <p>socks代理转http    privoxy<br>config 配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forward-socks5t   /   127.0.0.1:1080 .</span><br><span class="line">listen-address  127.0.0.1:8118</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/php_date/" data-id="ckcn7nu4b00358c78qdp78ssk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-radio" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/radio/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/radio/">Radio</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>伪元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;input class=&quot;radio_type&quot; type=&quot;radio&quot; name=&quot;type&quot; id=&quot;radio1&quot; checked=&quot;checked&quot;/&gt; </span><br><span class="line">&lt;label for=&quot;radio1&quot;&gt;radio1&lt;/label&gt;</span><br><span class="line">&lt;input class=&quot;radio_type&quot; type=&quot;radio&quot; name=&quot;type&quot; id=&quot;radio2&quot; /&gt; </span><br><span class="line">&lt;label for=&quot;radio2&quot;&gt;radio2&lt;/label&gt;</span><br><span class="line"></span><br><span class="line">label&#123;</span><br><span class="line">    line-height: 20px;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    margin-left: 5px;</span><br><span class="line">    margin-right:15px;</span><br><span class="line">    color: #777;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type&#123;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    appearance: none;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:before&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    border: 1px solid #7d7d7d;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked:before&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    border: 1px solid #c59c5a;</span><br><span class="line">    background:#c59c5a;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked:after&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 10px;</span><br><span class="line">    height:5px;</span><br><span class="line">    border: 2px solid white;</span><br><span class="line">    border-top: transparent;</span><br><span class="line">    border-right: transparent;</span><br><span class="line">    text-align: center;</span><br><span class="line">    display: block;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 6px;</span><br><span class="line">    left:5px;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">    transform: rotate(-45deg);</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked+label&#123;</span><br><span class="line">    color: #c59c5a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>链接：<a href="https://www.jianshu.com/p/e1dac58adb2c" target="_blank" rel="noopener">https://www.jianshu.com/p/e1dac58adb2c</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/radio/" data-id="ckcn7nu4f00378c7805x2m7yp" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/privoxy/" data-id="ckcolbqwg00344r7876trdh14" class="article-share-link">Share</a>
       
       
     </footer>
@@ -320,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/rsync/" data-id="ckcn7nu4i003a8c78iomx3wb4" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/rsync/" data-id="ckcolbqwn00364r78b2uz64qd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -373,7 +327,49 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/mysql_grant/" data-id="ckcn7nu37002b8c78hy27plab" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/mysql_grant/" data-id="ckcolbqvc00254r78b3ujqod8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-git_update" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/git_update/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/git_update/">Git centos update</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove git*</span><br><span class="line">sudo yum -y install  https://centos7.iuscommunity.org/ius-release.rpm</span><br><span class="line">sudo yum -y install  git2u-all</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/git_update/" data-id="ckcolbqtk001b4r789kfuk1cy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -417,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/linux_disk/" data-id="ckcn7nu2l001v8c78odytfcml" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/linux_disk/" data-id="ckcolbquw001u4r78ktgcfl47" class="article-share-link">Share</a>
       
       
     </footer>
@@ -427,14 +423,14 @@
 
 
   
-    <article id="true-privoxy" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-php_date" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/20/privoxy/" class="article-date">
+    <a href="/2019/11/20/php_date/" class="article-date">
   <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
   </div>
 
   </div>
@@ -445,7 +441,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/privoxy/">Privoxy</a>
+      <a class="article-title" href="/2019/11/20/php_date/">PHP Date</a>
     </h1>
   
 
@@ -453,14 +449,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>socks代理转http    privoxy<br>config 配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forward-socks5t   /   127.0.0.1:1080 .</span><br><span class="line">listen-address  127.0.0.1:8118</span><br></pre></td></tr></table></figure>
+        <p>Date</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">//今天开始时间</span><br><span class="line">       $beginToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //今天结束时间</span><br><span class="line">       $endToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)+1,date(&apos;Y&apos;))-1);</span><br><span class="line">       //昨天开始时间</span><br><span class="line">       $beginYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-1,date(&apos;Y&apos;)));</span><br><span class="line">       //昨天结束时间</span><br><span class="line">       $endYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;))-1);</span><br><span class="line">       //本周开始时间</span><br><span class="line">       $beginThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+1,date(&quot;Y&quot;)));</span><br><span class="line">       //本周结束时间</span><br><span class="line">       $endThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+7,date(&quot;Y&quot;)));</span><br><span class="line">       //上周开始时间</span><br><span class="line">       $beginLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+1-7,date(&apos;Y&apos;)));</span><br><span class="line">       //上周结束时间</span><br><span class="line">       $endLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+7-7,date(&apos;Y&apos;)));</span><br><span class="line">       //本月开始时间</span><br><span class="line">       $beginThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),1,date(&apos;Y&apos;)));</span><br><span class="line">       //本月结束时间</span><br><span class="line">       $endThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;t&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //上月开始时间</span><br><span class="line">       $beginLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;)-1,1,date(&quot;Y&quot;)));</span><br><span class="line">       //上月结束时间</span><br><span class="line">       $endLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;) ,0,date(&quot;Y&quot;)));</span><br><span class="line">       //本季度开始时间</span><br><span class="line">       $season = ceil((date(&apos;n&apos;))/3);//当前是第几季度</span><br><span class="line">       $beginThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //本季度结束时间</span><br><span class="line">       $endThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //上季度开始时间</span><br><span class="line">       $season1 = ceil((date(&apos;n&apos;))/3)-1;//上季度是第几季度</span><br><span class="line">       $beginLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season1*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //上季度结束时间</span><br><span class="line">       $endLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season1*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season1*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //本年开始时间</span><br><span class="line">       $beginThisyear=date(&quot;Y&quot;,time()).&quot;-1&quot;.&quot;-1&quot;;</span><br><span class="line">       //本年结束时间</span><br><span class="line">       $endThisyear =date(&quot;Y&quot;,time()).&quot;-12&quot;.&quot;-31&quot;;</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/privoxy/" data-id="ckcn7nu4600308c78tjwaccl5" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/php_date/" data-id="ckcolbqw9002w4r78pv8uh2ld" class="article-share-link">Share</a>
       
       
     </footer>
@@ -470,14 +466,14 @@
 
 
   
-    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-radio" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/20/git_filemode/" class="article-date">
+    <a href="/2019/11/20/radio/" class="article-date">
   <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
   </div>
 
   </div>
@@ -488,7 +484,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/git_filemode/">Git 权限变更忽略</a>
+      <a class="article-title" href="/2019/11/20/radio/">Radio</a>
     </h1>
   
 
@@ -496,13 +492,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
+        <ol>
+<li>伪元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;input class=&quot;radio_type&quot; type=&quot;radio&quot; name=&quot;type&quot; id=&quot;radio1&quot; checked=&quot;checked&quot;/&gt; </span><br><span class="line">&lt;label for=&quot;radio1&quot;&gt;radio1&lt;/label&gt;</span><br><span class="line">&lt;input class=&quot;radio_type&quot; type=&quot;radio&quot; name=&quot;type&quot; id=&quot;radio2&quot; /&gt; </span><br><span class="line">&lt;label for=&quot;radio2&quot;&gt;radio2&lt;/label&gt;</span><br><span class="line"></span><br><span class="line">label&#123;</span><br><span class="line">    line-height: 20px;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    margin-left: 5px;</span><br><span class="line">    margin-right:15px;</span><br><span class="line">    color: #777;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type&#123;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    appearance: none;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:before&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    border: 1px solid #7d7d7d;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked:before&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    border: 1px solid #c59c5a;</span><br><span class="line">    background:#c59c5a;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked:after&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 10px;</span><br><span class="line">    height:5px;</span><br><span class="line">    border: 2px solid white;</span><br><span class="line">    border-top: transparent;</span><br><span class="line">    border-right: transparent;</span><br><span class="line">    text-align: center;</span><br><span class="line">    display: block;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 6px;</span><br><span class="line">    left:5px;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">    transform: rotate(-45deg);</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked+label&#123;</span><br><span class="line">    color: #c59c5a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+<p>链接：<a href="https://www.jianshu.com/p/e1dac58adb2c" target="_blank" rel="noopener">https://www.jianshu.com/p/e1dac58adb2c</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/git_filemode/" data-id="ckcn7nu13000y8c78lo2jq0l0" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/radio/" data-id="ckcolbqx6003e4r788w9difwl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -545,7 +545,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/07/12/serial/" data-id="ckcn7nu52003k8c78471e9ign" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/12/serial/" data-id="ckcolbqx8003g4r78707if2sl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -610,11 +610,11 @@
           </li>
         
           <li>
-            <a href="/2020/07/08/asm/">汇编指令集</a>
+            <a href="/2020/07/08/asm_study/">汇编，栈溢出相关教程</a>
           </li>
         
           <li>
-            <a href="/2020/07/08/asm_study/">汇编，栈溢出相关教程</a>
+            <a href="/2020/07/08/asm/">汇编指令集</a>
           </li>
         
       </ul>
