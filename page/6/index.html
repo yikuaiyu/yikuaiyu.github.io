@@ -107,14 +107,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="true-talib" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-vim" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/20/talib/" class="article-date">
+    <a href="/2019/11/20/vim/" class="article-date">
   <time datetime="2019-11-20T03:47:31.312Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/python/">python</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -125,7 +125,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/talib/">量化talib</a>
+      <a class="article-title" href="/2019/11/20/vim/">Vim</a>
     </h1>
   
 
@@ -133,28 +133,58 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>TA-Lib<br>Python wrapper for TA-Lib (<a href="http://ta-lib.org/" target="_blank" rel="noopener">http://ta-lib.org/</a>).<br>Download this project as a .zip fileDownload this project as a tar.gz file<br>Installation<br>You can install from PyPI:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install TA-Lib</span><br></pre></td></tr></table></figure>
+        <p>.vimrc</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set tabstop=4</span><br><span class="line">set softtabstop=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set expandtab</span><br><span class="line">set autoindent</span><br><span class="line">set cindent</span><br></pre></td></tr></table></figure>
 
-<p>Or checkout the sources and run setup.py yourself:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python setup.py install</span><br></pre></td></tr></table></figure>
-
-<p>Troubleshooting Install Errors<br>func.c:256:28: fatal error: ta-lib/ta_libc.h: No such file or directory<br>compilation terminated.<br>If you get build errors like this, it typically means that it can’t find the underlying TA-Lib library and needs to be installed:</p>
-<p>Dependencies<br>To use TA-Lib for python, you need to have the TA-Lib already installed:</p>
-<p>Mac OS X</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install ta-lib</span><br></pre></td></tr></table></figure>
-
-<p>Windows<br>Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib</p>
-<p>Linux<br>Download ta-lib-0.4.0-src.tar.gz and:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ untar and cd</span><br><span class="line">$ ./configure --prefix=/usr</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
-
-<p>If you build TA-Lib using make -jX it will fail but that’s OK! Simply rerun make -jX followed by [sudo] make install.</p>
-<p>Documentation Index</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/talib/" data-id="ckd6pmpir0047gd78aycsbpaz" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/vim/" data-id="ckd6ppw71004hq7787v9v4kt4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-linux_disk" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/linux_disk/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/linux_disk/">disk分区扩容</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文提供了如何使用growpart和resize2fs工具完成Linux系统盘分区扩容及文件系统扩展的操作指导。</p>
+<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>本文的操作步骤适用于以下分区和文件系统格式的云盘：</p>
+<pre><code>- 分区格式支持mbr、gpt
+- 文件系统支持ext*、xfs、btrfs</code></pre><p>准备工作<br>    1.创建</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/linux_disk/" data-id="ckd6ppw3l0021q778h7w00gx1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -200,101 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/radio/" data-id="ckd6pmph10038gd78howy5ydj" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-linux_disk" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/linux_disk/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/linux_disk/">disk分区扩容</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文提供了如何使用growpart和resize2fs工具完成Linux系统盘分区扩容及文件系统扩展的操作指导。</p>
-<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>本文的操作步骤适用于以下分区和文件系统格式的云盘：</p>
-<pre><code>- 分区格式支持mbr、gpt
-- 文件系统支持ext*、xfs、btrfs</code></pre><p>准备工作<br>    1.创建</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/linux_disk/" data-id="ckd6pmpf5001ygd78mi2f0dtj" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-rsync" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/rsync/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/rsync/">rsync</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>rsync简介</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">rsync  version 3.1.2  protocol version 31</span><br><span class="line">Copyright (C) 1996-2015 by Andrew Tridgell, Wayne Davison, and others.</span><br><span class="line">Web site: http://rsync.samba.org/</span><br><span class="line">Capabilities:</span><br><span class="line">    64-bit files, 64-bit inums, 64-bit timestamps, 64-bit long ints,</span><br><span class="line">    socketpairs, hardlinks, symlinks, IPv6, batchfiles, inplace,</span><br><span class="line">    append, ACLs, xattrs, iconv, symtimes, prealloc</span><br><span class="line"></span><br><span class="line">rsync comes with ABSOLUTELY NO WARRANTY.  This is free software, and you</span><br><span class="line">are welcome to redistribute it under certain conditions.  See the GNU</span><br><span class="line">General Public Licence for details.</span><br><span class="line"></span><br><span class="line">rsync is a file transfer program capable of efficient remote update</span><br><span class="line">via a fast differencing algorithm.</span><br><span class="line"></span><br><span class="line">Usage: rsync [OPTION]... SRC [SRC]... DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... [USER@]HOST:DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... [USER@]HOST::DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... rsync://[USER@]HOST[:PORT]/DEST</span><br><span class="line">  or   rsync [OPTION]... [USER@]HOST:SRC [DEST]</span><br><span class="line">  or   rsync [OPTION]... [USER@]HOST::SRC [DEST]</span><br><span class="line">  or   rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]</span><br><span class="line">The &apos;:&apos; usages connect via remote shell, while &apos;::&apos; &amp; &apos;rsync://&apos; usages connect</span><br><span class="line">to an rsync daemon, and require SRC or DEST to start with a module name.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>断点续传</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rsync -e &quot;ssh -p26034&quot; -avpgolr --progress root@192.168.1.10:/root/1.tar .</span><br><span class="line">26034 为端口号</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>同步<br>rsync -av <a href="mailto:root@47.104" target="_blank" rel="noopener">root@47.104</a>.<em>.</em>:/path/dir /path/dir</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/rsync/" data-id="ckd6pmph7003cgd78ws0h13dp" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/radio/" data-id="ckd6ppw5b0039q7787b949fth" class="article-share-link">Share</a>
       
       
     </footer>
@@ -347,7 +283,57 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/mysql_grant/" data-id="ckd6pmpft002hgd78yd3mt94m" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/mysql_grant/" data-id="ckd6ppw3x002dq778nxao8r5i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-rsync" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/rsync/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/rsync/">rsync</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>rsync简介</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">rsync  version 3.1.2  protocol version 31</span><br><span class="line">Copyright (C) 1996-2015 by Andrew Tridgell, Wayne Davison, and others.</span><br><span class="line">Web site: http://rsync.samba.org/</span><br><span class="line">Capabilities:</span><br><span class="line">    64-bit files, 64-bit inums, 64-bit timestamps, 64-bit long ints,</span><br><span class="line">    socketpairs, hardlinks, symlinks, IPv6, batchfiles, inplace,</span><br><span class="line">    append, ACLs, xattrs, iconv, symtimes, prealloc</span><br><span class="line"></span><br><span class="line">rsync comes with ABSOLUTELY NO WARRANTY.  This is free software, and you</span><br><span class="line">are welcome to redistribute it under certain conditions.  See the GNU</span><br><span class="line">General Public Licence for details.</span><br><span class="line"></span><br><span class="line">rsync is a file transfer program capable of efficient remote update</span><br><span class="line">via a fast differencing algorithm.</span><br><span class="line"></span><br><span class="line">Usage: rsync [OPTION]... SRC [SRC]... DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... [USER@]HOST:DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... [USER@]HOST::DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... rsync://[USER@]HOST[:PORT]/DEST</span><br><span class="line">  or   rsync [OPTION]... [USER@]HOST:SRC [DEST]</span><br><span class="line">  or   rsync [OPTION]... [USER@]HOST::SRC [DEST]</span><br><span class="line">  or   rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]</span><br><span class="line">The &apos;:&apos; usages connect via remote shell, while &apos;::&apos; &amp; &apos;rsync://&apos; usages connect</span><br><span class="line">to an rsync daemon, and require SRC or DEST to start with a module name.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>断点续传</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rsync -e &quot;ssh -p26034&quot; -avpgolr --progress root@192.168.1.10:/root/1.tar .</span><br><span class="line">26034 为端口号</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>同步<br>rsync -av <a href="mailto:root@47.104" target="_blank" rel="noopener">root@47.104</a>.<em>.</em>:/path/dir /path/dir</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/rsync/" data-id="ckd6ppw5h003eq778rwewhx7z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -390,7 +376,91 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/php_date/" data-id="ckd6pmpgr0034gd785ibhmdb7" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/php_date/" data-id="ckd6ppw4v002zq7787o5lm98q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/git_filemode/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/git_filemode/">Git 权限变更忽略</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/git_filemode/" data-id="ckd6ppw220010q778powjbxkp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-git_update" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/git_update/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/git_update/">Git centos update</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove git*</span><br><span class="line">sudo yum -y install  https://centos7.iuscommunity.org/ius-release.rpm</span><br><span class="line">sudo yum -y install  git2u-all</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/git_update/" data-id="ckd6ppw260013q7788jodumuc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -432,7 +502,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/php_bytes/" data-id="ckd6pmpgj002zgd784w0g31x2" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/php_bytes/" data-id="ckd6ppw4q002xq77816bfk9ce" class="article-share-link">Share</a>
       
       
     </footer>
@@ -475,91 +545,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/privoxy/" data-id="ckd6pmpgz0036gd78fhswikig" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-git_update" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/git_update/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/GIT/">GIT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/git_update/">Git centos update</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove git*</span><br><span class="line">sudo yum -y install  https://centos7.iuscommunity.org/ius-release.rpm</span><br><span class="line">sudo yum -y install  git2u-all</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/git_update/" data-id="ckd6pmpe70017gd78otx4bakc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/git_filemode/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/GIT/">GIT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/git_filemode/">Git 权限变更忽略</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/git_filemode/" data-id="ckd6pmpdv000xgd78f2n9nlir" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/privoxy/" data-id="ckd6ppw510034q778xzh5fae5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -612,7 +598,7 @@
       <ul>
         
           <li>
-            <a href="/2020/07/29/sshd_ip/">防火墙ssh报名单</a>
+            <a href="/2020/07/29/sshd_ip/">防火墙ssh白名单</a>
           </li>
         
           <li>
