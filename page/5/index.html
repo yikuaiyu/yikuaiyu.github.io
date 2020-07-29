@@ -107,6 +107,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="true-autossh" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/24/autossh/" class="article-date">
+  <time datetime="2019-12-24T01:13:04.453Z" itemprop="datePublished">2019-12-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/24/autossh/">autossh</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>autossh 是一个用来启动 ssh 并进行监控的程序，可在需要时重启 ssh，如果程序问题或者是网络问题。其灵感和机制来自于 rstunnel (Reliable SSH Tunnel). autossh 1.2 的方法已经改变：autossh 使用 ssh 来构造一个 ssh 重定向循环(本地到远程和远程到本地)，然后发送测试数据并获得返回结果。</p>
+<p>内网主机主动连接到外网主机，又被称作反向连接(Reverse Connection)，这样NAT路由/防火墙就会在内网主机和外网主机之间建立映射即可相互通信了。但这种映射是路由网关自动维持的，不会持续下去，如果连接断开或者网络不稳定都会导致通信失败，这时内网主机需要自动重连机制了。</p>
+<p>参数：</p>
+<p>-M为autossh参数， -CqTfnN -D 为ssh参数<br>-M 5678 : 负责通过5678端口监视连接状态，连接有问题时就会自动重连<br>-C ：启动数据压缩传输<br>-q ：安静模式运行，忽略提示和错误<br>-T ：不占用shell<br>-f ：后台运行<br>-n ：配合 -f 参数使用<br>-N ：不执行远程命令，专为端口转发度身打造<br>-D 192.168.0.2:7070 ：指定一个本地机器 “动态的“ 应用程序端口转发，如果不加IP地址，默认只监听127.0.0.1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#将在&apos;x.x.x.x&apos;主机上开启一个本地侦听地址:18081,访问本地18081将转发至10.10.3.x:8080</span><br><span class="line"># autossh -M 9090 -fCNR 18081:10.10.3.x:8080 root@x.x.x.x</span><br></pre></td></tr></table></figure>
+
+<p>隧道</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># autossh -M20000 -f -i ~/.ssh/id_rsa -Ng -D 7080 user@vps_host</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/24/autossh/" data-id="ckd6pmpcr000dgd780mx8wufq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="true-kubernetes" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/21/kubernetes/" class="article-date">
@@ -305,7 +354,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/21/kubernetes/" data-id="ckcolbqur001p4r78op8j53b6" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/21/kubernetes/" data-id="ckd6pmpfb0023gd78ml5smb7o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -357,7 +406,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/21/terminal_proxy/" data-id="ckcolbqya00424r78fjxykimq" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/21/terminal_proxy/" data-id="ckd6pmpjk004igd785bqmut8w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -404,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/20/grep/" data-id="ckcolbqti00184r78zqbvp0kk" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/20/grep/" data-id="ckd6pmpef001bgd78mbp098fq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -450,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/19/ssh2_msg_kexinit/" data-id="ckcolbqxu003t4r78ef1gbtw4" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/19/ssh2_msg_kexinit/" data-id="ckd6pmpib0040gd782tksb8ta" class="article-share-link">Share</a>
       
       
     </footer>
@@ -493,7 +542,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/06/linux_date/" data-id="ckcolbqv4001y4r784b14lubw" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/06/linux_date/" data-id="ckd6pmpf2001vgd78sce0kjgx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -537,7 +586,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/06/find/" data-id="ckcolbqsx000x4r78lf5c2ofc" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/06/find/" data-id="ckd6pmpdr000wgd78sjz9l0vw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -580,7 +629,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/22/iostat/" data-id="ckcolbqun001m4r78d29kpfrf" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/22/iostat/" data-id="ckd6pmpey001tgd78jgltrejk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -629,64 +678,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/21/mongo/" data-id="ckcolbqv900234r78vib50d1o" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-talib" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/talib/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.312Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python/">python</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/talib/">量化talib</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>TA-Lib<br>Python wrapper for TA-Lib (<a href="http://ta-lib.org/" target="_blank" rel="noopener">http://ta-lib.org/</a>).<br>Download this project as a .zip fileDownload this project as a tar.gz file<br>Installation<br>You can install from PyPI:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install TA-Lib</span><br></pre></td></tr></table></figure>
-
-<p>Or checkout the sources and run setup.py yourself:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python setup.py install</span><br></pre></td></tr></table></figure>
-
-<p>Troubleshooting Install Errors<br>func.c:256:28: fatal error: ta-lib/ta_libc.h: No such file or directory<br>compilation terminated.<br>If you get build errors like this, it typically means that it can’t find the underlying TA-Lib library and needs to be installed:</p>
-<p>Dependencies<br>To use TA-Lib for python, you need to have the TA-Lib already installed:</p>
-<p>Mac OS X</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install ta-lib</span><br></pre></td></tr></table></figure>
-
-<p>Windows<br>Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib</p>
-<p>Linux<br>Download ta-lib-0.4.0-src.tar.gz and:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ untar and cd</span><br><span class="line">$ ./configure --prefix=/usr</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
-
-<p>If you build TA-Lib using make -jX it will fail but that’s OK! Simply rerun make -jX followed by [sudo] make install.</p>
-<p>Documentation Index</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/talib/" data-id="ckcolbqyf00474r78ud6mq1aj" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/21/mongo/" data-id="ckd6pmpfd0025gd782b2ao08k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -729,7 +721,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/vim/" data-id="ckcolbqyq004f4r78ois1h90f" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/vim/" data-id="ckd6pmpix004egd78ujocw7pb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -782,6 +774,10 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       <ul>
         
           <li>
+            <a href="/2020/07/29/sshd_ip/">防火墙ssh报名单</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/15/aliyun_disk/">磁盘扩容</a>
           </li>
         
@@ -791,10 +787,6 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
         
           <li>
             <a href="/2020/07/08/ctf/">安全领域资源</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/08/asm_study/">汇编，栈溢出相关教程</a>
           </li>
         
           <li>

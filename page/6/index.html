@@ -107,14 +107,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="true-php_bytes" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-talib" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/20/php_bytes/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+    <a href="/2019/11/20/talib/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.312Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+    <a class="article-category-link" href="/categories/python/">python</a>
   </div>
 
   </div>
@@ -125,7 +125,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/php_bytes/">PHP Bytes</a>
+      <a class="article-title" href="/2019/11/20/talib/">量化talib</a>
     </h1>
   
 
@@ -133,13 +133,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line">* byte数组与字符串转化类</span><br><span class="line">*/</span><br><span class="line">class Bytes &#123;</span><br><span class="line">/**</span><br><span class="line">* 转换一个String字符串为byte数组</span><br><span class="line">* @param $str 需要转换的字符串</span><br><span class="line">* @param $bytes 目标byte数组</span><br><span class="line">* @author Zikie</span><br><span class="line">*/</span><br><span class="line">public static function getBytes($string) &#123;</span><br><span class="line">$bytes = array();</span><br><span class="line">for($i = 0; $i &lt; strlen($string); $i++)&#123;</span><br><span class="line">$bytes[] = ord($string[$i]);</span><br><span class="line">&#125;</span><br><span class="line">return $bytes;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 将字节数组转化为String类型的数据</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $str 目标字符串</span><br><span class="line">* @return 一个String类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function toStr($bytes) &#123;</span><br><span class="line">$str = &apos;&apos;;</span><br><span class="line">foreach($bytes as $ch) &#123;</span><br><span class="line">$str .= chr($ch);</span><br><span class="line">&#125;</span><br><span class="line">return $str;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 转换一个int为byte数组</span><br><span class="line">* @param $byt 目标byte数组</span><br><span class="line">* @param $val 需要转换的字符串</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">public static function integerToBytes($val) &#123;</span><br><span class="line">$byt = array();</span><br><span class="line">$byt[0] = ($val &amp; 0xff);</span><br><span class="line">$byt[1] = ($val &gt;&gt; 8 &amp; 0xff);</span><br><span class="line">$byt[2] = ($val &gt;&gt; 16 &amp; 0xff);</span><br><span class="line">$byt[3] = ($val &gt;&gt; 24 &amp; 0xff);</span><br><span class="line">return $byt;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 从字节数组中指定的位置读取一个Integer类型的数据</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $position 指定的开始位置</span><br><span class="line">* @return 一个Integer类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function bytesToInteger($bytes, $position) &#123;</span><br><span class="line">$val = 0;</span><br><span class="line">$val = $bytes[$position + 3] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position + 2] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position + 1] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position] &amp; 0xff;</span><br><span class="line">return $val;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 转换一个shor字符串为byte数组</span><br><span class="line">* @param $byt 目标byte数组</span><br><span class="line">* @param $val 需要转换的字符串</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">public static function shortToBytes($val) &#123;</span><br><span class="line">$byt = array();</span><br><span class="line">$byt[0] = ($val &amp; 0xff);</span><br><span class="line">$byt[1] = ($val &gt;&gt; 8 &amp; 0xff);</span><br><span class="line">return $byt;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 从字节数组中指定的位置读取一个Short类型的数据。</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $position 指定的开始位置</span><br><span class="line">* @return 一个Short类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function bytesToShort($bytes, $position) &#123;</span><br><span class="line">$val = 0;</span><br><span class="line">$val = $bytes[$position + 1] &amp; 0xFF;</span><br><span class="line">$val = $val &lt;&lt; 8;</span><br><span class="line">$val |= $bytes[$position] &amp; 0xFF;</span><br><span class="line">return $val;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+        <p>TA-Lib<br>Python wrapper for TA-Lib (<a href="http://ta-lib.org/" target="_blank" rel="noopener">http://ta-lib.org/</a>).<br>Download this project as a .zip fileDownload this project as a tar.gz file<br>Installation<br>You can install from PyPI:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install TA-Lib</span><br></pre></td></tr></table></figure>
 
+<p>Or checkout the sources and run setup.py yourself:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python setup.py install</span><br></pre></td></tr></table></figure>
+
+<p>Troubleshooting Install Errors<br>func.c:256:28: fatal error: ta-lib/ta_libc.h: No such file or directory<br>compilation terminated.<br>If you get build errors like this, it typically means that it can’t find the underlying TA-Lib library and needs to be installed:</p>
+<p>Dependencies<br>To use TA-Lib for python, you need to have the TA-Lib already installed:</p>
+<p>Mac OS X</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install ta-lib</span><br></pre></td></tr></table></figure>
+
+<p>Windows<br>Download ta-lib-0.4.0-msvc.zip and unzip to C:\ta-lib</p>
+<p>Linux<br>Download ta-lib-0.4.0-src.tar.gz and:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ untar and cd</span><br><span class="line">$ ./configure --prefix=/usr</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>If you build TA-Lib using make -jX it will fail but that’s OK! Simply rerun make -jX followed by [sudo] make install.</p>
+<p>Documentation Index</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/php_bytes/" data-id="ckcolbqvz002r4r787as30bz6" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/talib/" data-id="ckd6pmpir0047gd78aycsbpaz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,14 +164,14 @@
 
 
   
-    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-radio" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/20/git_filemode/" class="article-date">
+    <a href="/2019/11/20/radio/" class="article-date">
   <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
   </div>
 
   </div>
@@ -167,7 +182,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/git_filemode/">Git 权限变更忽略</a>
+      <a class="article-title" href="/2019/11/20/radio/">Radio</a>
     </h1>
   
 
@@ -175,13 +190,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
+        <ol>
+<li>伪元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;input class=&quot;radio_type&quot; type=&quot;radio&quot; name=&quot;type&quot; id=&quot;radio1&quot; checked=&quot;checked&quot;/&gt; </span><br><span class="line">&lt;label for=&quot;radio1&quot;&gt;radio1&lt;/label&gt;</span><br><span class="line">&lt;input class=&quot;radio_type&quot; type=&quot;radio&quot; name=&quot;type&quot; id=&quot;radio2&quot; /&gt; </span><br><span class="line">&lt;label for=&quot;radio2&quot;&gt;radio2&lt;/label&gt;</span><br><span class="line"></span><br><span class="line">label&#123;</span><br><span class="line">    line-height: 20px;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    margin-left: 5px;</span><br><span class="line">    margin-right:15px;</span><br><span class="line">    color: #777;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type&#123;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    appearance: none;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:before&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    border: 1px solid #7d7d7d;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked:before&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    border: 1px solid #c59c5a;</span><br><span class="line">    background:#c59c5a;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked:after&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 10px;</span><br><span class="line">    height:5px;</span><br><span class="line">    border: 2px solid white;</span><br><span class="line">    border-top: transparent;</span><br><span class="line">    border-right: transparent;</span><br><span class="line">    text-align: center;</span><br><span class="line">    display: block;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 6px;</span><br><span class="line">    left:5px;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">    transform: rotate(-45deg);</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked+label&#123;</span><br><span class="line">    color: #c59c5a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+<p>链接：<a href="https://www.jianshu.com/p/e1dac58adb2c" target="_blank" rel="noopener">https://www.jianshu.com/p/e1dac58adb2c</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/git_filemode/" data-id="ckcolbqsz000y4r78gbmd4x94" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/radio/" data-id="ckd6pmph10038gd78howy5ydj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -191,9 +210,9 @@
 
 
   
-    <article id="true-privoxy" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-linux_disk" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/20/privoxy/" class="article-date">
+    <a href="/2019/11/20/linux_disk/" class="article-date">
   <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
@@ -209,7 +228,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/privoxy/">Privoxy</a>
+      <a class="article-title" href="/2019/11/20/linux_disk/">disk分区扩容</a>
     </h1>
   
 
@@ -217,14 +236,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>socks代理转http    privoxy<br>config 配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forward-socks5t   /   127.0.0.1:1080 .</span><br><span class="line">listen-address  127.0.0.1:8118</span><br></pre></td></tr></table></figure>
-
+        <p>本文提供了如何使用growpart和resize2fs工具完成Linux系统盘分区扩容及文件系统扩展的操作指导。</p>
+<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>本文的操作步骤适用于以下分区和文件系统格式的云盘：</p>
+<pre><code>- 分区格式支持mbr、gpt
+- 文件系统支持ext*、xfs、btrfs</code></pre><p>准备工作<br>    1.创建</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/privoxy/" data-id="ckcolbqwg00344r7876trdh14" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/linux_disk/" data-id="ckd6pmpf5001ygd78mi2f0dtj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -274,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/rsync/" data-id="ckcolbqwn00364r78b2uz64qd" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/rsync/" data-id="ckd6pmph7003cgd78ws0h13dp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -327,93 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/mysql_grant/" data-id="ckcolbqvc00254r78b3ujqod8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-git_update" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/git_update/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/GIT/">GIT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/git_update/">Git centos update</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove git*</span><br><span class="line">sudo yum -y install  https://centos7.iuscommunity.org/ius-release.rpm</span><br><span class="line">sudo yum -y install  git2u-all</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/git_update/" data-id="ckcolbqtk001b4r789kfuk1cy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-linux_disk" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/linux_disk/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/linux_disk/">disk分区扩容</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文提供了如何使用growpart和resize2fs工具完成Linux系统盘分区扩容及文件系统扩展的操作指导。</p>
-<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>本文的操作步骤适用于以下分区和文件系统格式的云盘：</p>
-<pre><code>- 分区格式支持mbr、gpt
-- 文件系统支持ext*、xfs、btrfs</code></pre><p>准备工作<br>    1.创建</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/linux_disk/" data-id="ckcolbquw001u4r78ktgcfl47" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/mysql_grant/" data-id="ckd6pmpft002hgd78yd3mt94m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -456,7 +390,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/php_date/" data-id="ckcolbqw9002w4r78pv8uh2ld" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/php_date/" data-id="ckd6pmpgr0034gd785ibhmdb7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -466,14 +400,14 @@
 
 
   
-    <article id="true-radio" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-php_bytes" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/20/radio/" class="article-date">
+    <a href="/2019/11/20/php_bytes/" class="article-date">
   <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
   </div>
 
   </div>
@@ -484,7 +418,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/radio/">Radio</a>
+      <a class="article-title" href="/2019/11/20/php_bytes/">PHP Bytes</a>
     </h1>
   
 
@@ -492,17 +426,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>伪元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;input class=&quot;radio_type&quot; type=&quot;radio&quot; name=&quot;type&quot; id=&quot;radio1&quot; checked=&quot;checked&quot;/&gt; </span><br><span class="line">&lt;label for=&quot;radio1&quot;&gt;radio1&lt;/label&gt;</span><br><span class="line">&lt;input class=&quot;radio_type&quot; type=&quot;radio&quot; name=&quot;type&quot; id=&quot;radio2&quot; /&gt; </span><br><span class="line">&lt;label for=&quot;radio2&quot;&gt;radio2&lt;/label&gt;</span><br><span class="line"></span><br><span class="line">label&#123;</span><br><span class="line">    line-height: 20px;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    margin-left: 5px;</span><br><span class="line">    margin-right:15px;</span><br><span class="line">    color: #777;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type&#123;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    appearance: none;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:before&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    border: 1px solid #7d7d7d;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked:before&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    border: 1px solid #c59c5a;</span><br><span class="line">    background:#c59c5a;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked:after&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 10px;</span><br><span class="line">    height:5px;</span><br><span class="line">    border: 2px solid white;</span><br><span class="line">    border-top: transparent;</span><br><span class="line">    border-right: transparent;</span><br><span class="line">    text-align: center;</span><br><span class="line">    display: block;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 6px;</span><br><span class="line">    left:5px;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">    transform: rotate(-45deg);</span><br><span class="line">&#125;</span><br><span class="line">.radio_type:checked+label&#123;</span><br><span class="line">    color: #c59c5a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line">* byte数组与字符串转化类</span><br><span class="line">*/</span><br><span class="line">class Bytes &#123;</span><br><span class="line">/**</span><br><span class="line">* 转换一个String字符串为byte数组</span><br><span class="line">* @param $str 需要转换的字符串</span><br><span class="line">* @param $bytes 目标byte数组</span><br><span class="line">* @author Zikie</span><br><span class="line">*/</span><br><span class="line">public static function getBytes($string) &#123;</span><br><span class="line">$bytes = array();</span><br><span class="line">for($i = 0; $i &lt; strlen($string); $i++)&#123;</span><br><span class="line">$bytes[] = ord($string[$i]);</span><br><span class="line">&#125;</span><br><span class="line">return $bytes;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 将字节数组转化为String类型的数据</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $str 目标字符串</span><br><span class="line">* @return 一个String类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function toStr($bytes) &#123;</span><br><span class="line">$str = &apos;&apos;;</span><br><span class="line">foreach($bytes as $ch) &#123;</span><br><span class="line">$str .= chr($ch);</span><br><span class="line">&#125;</span><br><span class="line">return $str;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 转换一个int为byte数组</span><br><span class="line">* @param $byt 目标byte数组</span><br><span class="line">* @param $val 需要转换的字符串</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">public static function integerToBytes($val) &#123;</span><br><span class="line">$byt = array();</span><br><span class="line">$byt[0] = ($val &amp; 0xff);</span><br><span class="line">$byt[1] = ($val &gt;&gt; 8 &amp; 0xff);</span><br><span class="line">$byt[2] = ($val &gt;&gt; 16 &amp; 0xff);</span><br><span class="line">$byt[3] = ($val &gt;&gt; 24 &amp; 0xff);</span><br><span class="line">return $byt;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 从字节数组中指定的位置读取一个Integer类型的数据</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $position 指定的开始位置</span><br><span class="line">* @return 一个Integer类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function bytesToInteger($bytes, $position) &#123;</span><br><span class="line">$val = 0;</span><br><span class="line">$val = $bytes[$position + 3] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position + 2] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position + 1] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position] &amp; 0xff;</span><br><span class="line">return $val;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 转换一个shor字符串为byte数组</span><br><span class="line">* @param $byt 目标byte数组</span><br><span class="line">* @param $val 需要转换的字符串</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">public static function shortToBytes($val) &#123;</span><br><span class="line">$byt = array();</span><br><span class="line">$byt[0] = ($val &amp; 0xff);</span><br><span class="line">$byt[1] = ($val &gt;&gt; 8 &amp; 0xff);</span><br><span class="line">return $byt;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 从字节数组中指定的位置读取一个Short类型的数据。</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $position 指定的开始位置</span><br><span class="line">* @return 一个Short类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function bytesToShort($bytes, $position) &#123;</span><br><span class="line">$val = 0;</span><br><span class="line">$val = $bytes[$position + 1] &amp; 0xFF;</span><br><span class="line">$val = $val &lt;&lt; 8;</span><br><span class="line">$val |= $bytes[$position] &amp; 0xFF;</span><br><span class="line">return $val;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
-<p>链接：<a href="https://www.jianshu.com/p/e1dac58adb2c" target="_blank" rel="noopener">https://www.jianshu.com/p/e1dac58adb2c</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/radio/" data-id="ckcolbqx6003e4r788w9difwl" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/php_bytes/" data-id="ckd6pmpgj002zgd784w0g31x2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -512,14 +442,14 @@
 
 
   
-    <article id="true-serial" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-privoxy" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/12/serial/" class="article-date">
-  <time datetime="2019-07-12T11:58:21.459Z" itemprop="datePublished">2019-07-12</time>
+    <a href="/2019/11/20/privoxy/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -530,7 +460,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/12/serial/">Android 读取串口数据</a>
+      <a class="article-title" href="/2019/11/20/privoxy/">Privoxy</a>
     </h1>
   
 
@@ -538,14 +468,98 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>超级详细的教程  <a href="https://www.logcg.com/archives/2831.html" target="_blank" rel="noopener">https://www.logcg.com/archives/2831.html</a></li>
-</ol>
+        <p>socks代理转http    privoxy<br>config 配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forward-socks5t   /   127.0.0.1:1080 .</span><br><span class="line">listen-address  127.0.0.1:8118</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/07/12/serial/" data-id="ckcolbqx8003g4r78707if2sl" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/privoxy/" data-id="ckd6pmpgz0036gd78fhswikig" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-git_update" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/git_update/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/git_update/">Git centos update</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove git*</span><br><span class="line">sudo yum -y install  https://centos7.iuscommunity.org/ius-release.rpm</span><br><span class="line">sudo yum -y install  git2u-all</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/git_update/" data-id="ckd6pmpe70017gd78otx4bakc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/git_filemode/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/git_filemode/">Git 权限变更忽略</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/git_filemode/" data-id="ckd6pmpdv000xgd78f2n9nlir" class="article-share-link">Share</a>
       
       
     </footer>
@@ -598,6 +612,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/29/sshd_ip/">防火墙ssh报名单</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/15/aliyun_disk/">磁盘扩容</a>
           </li>
         
@@ -607,10 +625,6 @@
         
           <li>
             <a href="/2020/07/08/ctf/">安全领域资源</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/08/asm_study/">汇编，栈溢出相关教程</a>
           </li>
         
           <li>
