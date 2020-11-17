@@ -6,7 +6,6 @@ var domains_in = {
 }
 
 var domains = {
-  "lax.v2ex.com": 1,
   "hexo.io": 1,
   "www.itpm.com": 1,
   "portswigger.net": 1,

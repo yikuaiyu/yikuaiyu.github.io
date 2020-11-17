@@ -154,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/talib/" data-id="ckgfylgkm00472n7881djhg8g" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/talib/" data-id="ckhlpbtoc0048iu78gu9xw38t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -198,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/linux_disk/" data-id="ckgfylghg001t2n78hg21fw35" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/linux_disk/" data-id="ckhlpbtk1001tiu78pl4gddwt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -244,227 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/radio/" data-id="ckgfylgj200362n78rptxuv8k" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-php_bytes" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/php_bytes/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/PHP/">PHP</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/php_bytes/">PHP Bytes</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line">* byte数组与字符串转化类</span><br><span class="line">*/</span><br><span class="line">class Bytes &#123;</span><br><span class="line">/**</span><br><span class="line">* 转换一个String字符串为byte数组</span><br><span class="line">* @param $str 需要转换的字符串</span><br><span class="line">* @param $bytes 目标byte数组</span><br><span class="line">* @author Zikie</span><br><span class="line">*/</span><br><span class="line">public static function getBytes($string) &#123;</span><br><span class="line">$bytes = array();</span><br><span class="line">for($i = 0; $i &lt; strlen($string); $i++)&#123;</span><br><span class="line">$bytes[] = ord($string[$i]);</span><br><span class="line">&#125;</span><br><span class="line">return $bytes;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 将字节数组转化为String类型的数据</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $str 目标字符串</span><br><span class="line">* @return 一个String类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function toStr($bytes) &#123;</span><br><span class="line">$str = &apos;&apos;;</span><br><span class="line">foreach($bytes as $ch) &#123;</span><br><span class="line">$str .= chr($ch);</span><br><span class="line">&#125;</span><br><span class="line">return $str;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 转换一个int为byte数组</span><br><span class="line">* @param $byt 目标byte数组</span><br><span class="line">* @param $val 需要转换的字符串</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">public static function integerToBytes($val) &#123;</span><br><span class="line">$byt = array();</span><br><span class="line">$byt[0] = ($val &amp; 0xff);</span><br><span class="line">$byt[1] = ($val &gt;&gt; 8 &amp; 0xff);</span><br><span class="line">$byt[2] = ($val &gt;&gt; 16 &amp; 0xff);</span><br><span class="line">$byt[3] = ($val &gt;&gt; 24 &amp; 0xff);</span><br><span class="line">return $byt;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 从字节数组中指定的位置读取一个Integer类型的数据</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $position 指定的开始位置</span><br><span class="line">* @return 一个Integer类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function bytesToInteger($bytes, $position) &#123;</span><br><span class="line">$val = 0;</span><br><span class="line">$val = $bytes[$position + 3] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position + 2] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position + 1] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position] &amp; 0xff;</span><br><span class="line">return $val;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 转换一个shor字符串为byte数组</span><br><span class="line">* @param $byt 目标byte数组</span><br><span class="line">* @param $val 需要转换的字符串</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">public static function shortToBytes($val) &#123;</span><br><span class="line">$byt = array();</span><br><span class="line">$byt[0] = ($val &amp; 0xff);</span><br><span class="line">$byt[1] = ($val &gt;&gt; 8 &amp; 0xff);</span><br><span class="line">return $byt;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 从字节数组中指定的位置读取一个Short类型的数据。</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $position 指定的开始位置</span><br><span class="line">* @return 一个Short类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function bytesToShort($bytes, $position) &#123;</span><br><span class="line">$val = 0;</span><br><span class="line">$val = $bytes[$position + 1] &amp; 0xFF;</span><br><span class="line">$val = $val &lt;&lt; 8;</span><br><span class="line">$val |= $bytes[$position] &amp; 0xFF;</span><br><span class="line">return $val;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/php_bytes/" data-id="ckgfylgio002t2n78nlc1li5l" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-rsync" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/rsync/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/rsync/">rsync</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>rsync简介</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">rsync  version 3.1.2  protocol version 31</span><br><span class="line">Copyright (C) 1996-2015 by Andrew Tridgell, Wayne Davison, and others.</span><br><span class="line">Web site: http://rsync.samba.org/</span><br><span class="line">Capabilities:</span><br><span class="line">    64-bit files, 64-bit inums, 64-bit timestamps, 64-bit long ints,</span><br><span class="line">    socketpairs, hardlinks, symlinks, IPv6, batchfiles, inplace,</span><br><span class="line">    append, ACLs, xattrs, iconv, symtimes, prealloc</span><br><span class="line"></span><br><span class="line">rsync comes with ABSOLUTELY NO WARRANTY.  This is free software, and you</span><br><span class="line">are welcome to redistribute it under certain conditions.  See the GNU</span><br><span class="line">General Public Licence for details.</span><br><span class="line"></span><br><span class="line">rsync is a file transfer program capable of efficient remote update</span><br><span class="line">via a fast differencing algorithm.</span><br><span class="line"></span><br><span class="line">Usage: rsync [OPTION]... SRC [SRC]... DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... [USER@]HOST:DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... [USER@]HOST::DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... rsync://[USER@]HOST[:PORT]/DEST</span><br><span class="line">  or   rsync [OPTION]... [USER@]HOST:SRC [DEST]</span><br><span class="line">  or   rsync [OPTION]... [USER@]HOST::SRC [DEST]</span><br><span class="line">  or   rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]</span><br><span class="line">The &apos;:&apos; usages connect via remote shell, while &apos;::&apos; &amp; &apos;rsync://&apos; usages connect</span><br><span class="line">to an rsync daemon, and require SRC or DEST to start with a module name.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>断点续传</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rsync -e &quot;ssh -p26034&quot; -avpgolr --progress root@192.168.1.10:/root/1.tar .</span><br><span class="line">26034 为端口号</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>同步<br>rsync -av <a href="mailto:root@47.104" target="_blank" rel="noopener">root@47.104</a>.<em>.</em>:/path/dir /path/dir</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/rsync/" data-id="ckgfylgj9003b2n787zgl41iv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/git_filemode/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/GIT/">GIT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/git_filemode/">Git 权限变更忽略</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/git_filemode/" data-id="ckgfylgg2000y2n78ih04v9co" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-php_date" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/php_date/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/PHP/">PHP</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/php_date/">PHP Date</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Date</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">//今天开始时间</span><br><span class="line">       $beginToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //今天结束时间</span><br><span class="line">       $endToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)+1,date(&apos;Y&apos;))-1);</span><br><span class="line">       //昨天开始时间</span><br><span class="line">       $beginYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-1,date(&apos;Y&apos;)));</span><br><span class="line">       //昨天结束时间</span><br><span class="line">       $endYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;))-1);</span><br><span class="line">       //本周开始时间</span><br><span class="line">       $beginThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+1,date(&quot;Y&quot;)));</span><br><span class="line">       //本周结束时间</span><br><span class="line">       $endThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+7,date(&quot;Y&quot;)));</span><br><span class="line">       //上周开始时间</span><br><span class="line">       $beginLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+1-7,date(&apos;Y&apos;)));</span><br><span class="line">       //上周结束时间</span><br><span class="line">       $endLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+7-7,date(&apos;Y&apos;)));</span><br><span class="line">       //本月开始时间</span><br><span class="line">       $beginThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),1,date(&apos;Y&apos;)));</span><br><span class="line">       //本月结束时间</span><br><span class="line">       $endThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;t&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //上月开始时间</span><br><span class="line">       $beginLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;)-1,1,date(&quot;Y&quot;)));</span><br><span class="line">       //上月结束时间</span><br><span class="line">       $endLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;) ,0,date(&quot;Y&quot;)));</span><br><span class="line">       //本季度开始时间</span><br><span class="line">       $season = ceil((date(&apos;n&apos;))/3);//当前是第几季度</span><br><span class="line">       $beginThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //本季度结束时间</span><br><span class="line">       $endThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //上季度开始时间</span><br><span class="line">       $season1 = ceil((date(&apos;n&apos;))/3)-1;//上季度是第几季度</span><br><span class="line">       $beginLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season1*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //上季度结束时间</span><br><span class="line">       $endLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season1*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season1*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //本年开始时间</span><br><span class="line">       $beginThisyear=date(&quot;Y&quot;,time()).&quot;-1&quot;.&quot;-1&quot;;</span><br><span class="line">       //本年结束时间</span><br><span class="line">       $endThisyear =date(&quot;Y&quot;,time()).&quot;-12&quot;.&quot;-31&quot;;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/php_date/" data-id="ckgfylgir002w2n78ygk6bofl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-privoxy" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/privoxy/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/privoxy/">Privoxy</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>socks代理转http    privoxy<br>config 配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forward-socks5t   /   127.0.0.1:1080 .</span><br><span class="line">listen-address  127.0.0.1:8118</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/privoxy/" data-id="ckgfylgiu002y2n784llbh5n0" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/radio/" data-id="ckhlpbtma0037iu78rt89z9a1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -517,7 +297,184 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/mysql_grant/" data-id="ckgfylghz002b2n78fjrt72lz" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/mysql_grant/" data-id="ckhlpbtkn002biu78u28w7ywc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-rsync" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/rsync/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/rsync/">rsync</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>rsync简介</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">rsync  version 3.1.2  protocol version 31</span><br><span class="line">Copyright (C) 1996-2015 by Andrew Tridgell, Wayne Davison, and others.</span><br><span class="line">Web site: http://rsync.samba.org/</span><br><span class="line">Capabilities:</span><br><span class="line">    64-bit files, 64-bit inums, 64-bit timestamps, 64-bit long ints,</span><br><span class="line">    socketpairs, hardlinks, symlinks, IPv6, batchfiles, inplace,</span><br><span class="line">    append, ACLs, xattrs, iconv, symtimes, prealloc</span><br><span class="line"></span><br><span class="line">rsync comes with ABSOLUTELY NO WARRANTY.  This is free software, and you</span><br><span class="line">are welcome to redistribute it under certain conditions.  See the GNU</span><br><span class="line">General Public Licence for details.</span><br><span class="line"></span><br><span class="line">rsync is a file transfer program capable of efficient remote update</span><br><span class="line">via a fast differencing algorithm.</span><br><span class="line"></span><br><span class="line">Usage: rsync [OPTION]... SRC [SRC]... DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... [USER@]HOST:DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... [USER@]HOST::DEST</span><br><span class="line">  or   rsync [OPTION]... SRC [SRC]... rsync://[USER@]HOST[:PORT]/DEST</span><br><span class="line">  or   rsync [OPTION]... [USER@]HOST:SRC [DEST]</span><br><span class="line">  or   rsync [OPTION]... [USER@]HOST::SRC [DEST]</span><br><span class="line">  or   rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]</span><br><span class="line">The &apos;:&apos; usages connect via remote shell, while &apos;::&apos; &amp; &apos;rsync://&apos; usages connect</span><br><span class="line">to an rsync daemon, and require SRC or DEST to start with a module name.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>断点续传</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rsync -e &quot;ssh -p26034&quot; -avpgolr --progress root@192.168.1.10:/root/1.tar .</span><br><span class="line">26034 为端口号</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>同步<br>rsync -av <a href="mailto:root@47.104" target="_blank" rel="noopener">root@47.104</a>.<em>.</em>:/path/dir /path/dir</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/rsync/" data-id="ckhlpbtmg003ciu78agiqhy9h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-php_bytes" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/php_bytes/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/php_bytes/">PHP Bytes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line">* byte数组与字符串转化类</span><br><span class="line">*/</span><br><span class="line">class Bytes &#123;</span><br><span class="line">/**</span><br><span class="line">* 转换一个String字符串为byte数组</span><br><span class="line">* @param $str 需要转换的字符串</span><br><span class="line">* @param $bytes 目标byte数组</span><br><span class="line">* @author Zikie</span><br><span class="line">*/</span><br><span class="line">public static function getBytes($string) &#123;</span><br><span class="line">$bytes = array();</span><br><span class="line">for($i = 0; $i &lt; strlen($string); $i++)&#123;</span><br><span class="line">$bytes[] = ord($string[$i]);</span><br><span class="line">&#125;</span><br><span class="line">return $bytes;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 将字节数组转化为String类型的数据</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $str 目标字符串</span><br><span class="line">* @return 一个String类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function toStr($bytes) &#123;</span><br><span class="line">$str = &apos;&apos;;</span><br><span class="line">foreach($bytes as $ch) &#123;</span><br><span class="line">$str .= chr($ch);</span><br><span class="line">&#125;</span><br><span class="line">return $str;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 转换一个int为byte数组</span><br><span class="line">* @param $byt 目标byte数组</span><br><span class="line">* @param $val 需要转换的字符串</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">public static function integerToBytes($val) &#123;</span><br><span class="line">$byt = array();</span><br><span class="line">$byt[0] = ($val &amp; 0xff);</span><br><span class="line">$byt[1] = ($val &gt;&gt; 8 &amp; 0xff);</span><br><span class="line">$byt[2] = ($val &gt;&gt; 16 &amp; 0xff);</span><br><span class="line">$byt[3] = ($val &gt;&gt; 24 &amp; 0xff);</span><br><span class="line">return $byt;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 从字节数组中指定的位置读取一个Integer类型的数据</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $position 指定的开始位置</span><br><span class="line">* @return 一个Integer类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function bytesToInteger($bytes, $position) &#123;</span><br><span class="line">$val = 0;</span><br><span class="line">$val = $bytes[$position + 3] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position + 2] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position + 1] &amp; 0xff;</span><br><span class="line">$val &lt;&lt;= 8;</span><br><span class="line">$val |= $bytes[$position] &amp; 0xff;</span><br><span class="line">return $val;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 转换一个shor字符串为byte数组</span><br><span class="line">* @param $byt 目标byte数组</span><br><span class="line">* @param $val 需要转换的字符串</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">public static function shortToBytes($val) &#123;</span><br><span class="line">$byt = array();</span><br><span class="line">$byt[0] = ($val &amp; 0xff);</span><br><span class="line">$byt[1] = ($val &gt;&gt; 8 &amp; 0xff);</span><br><span class="line">return $byt;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 从字节数组中指定的位置读取一个Short类型的数据。</span><br><span class="line">* @param $bytes 字节数组</span><br><span class="line">* @param $position 指定的开始位置</span><br><span class="line">* @return 一个Short类型的数据</span><br><span class="line">*/</span><br><span class="line">public static function bytesToShort($bytes, $position) &#123;</span><br><span class="line">$val = 0;</span><br><span class="line">$val = $bytes[$position + 1] &amp; 0xFF;</span><br><span class="line">$val = $val &lt;&lt; 8;</span><br><span class="line">$val |= $bytes[$position] &amp; 0xFF;</span><br><span class="line">return $val;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/php_bytes/" data-id="ckhlpbtlu002xiu78l0shkevg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-php_date" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/php_date/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/php_date/">PHP Date</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Date</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">//今天开始时间</span><br><span class="line">       $beginToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //今天结束时间</span><br><span class="line">       $endToday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)+1,date(&apos;Y&apos;))-1);</span><br><span class="line">       //昨天开始时间</span><br><span class="line">       $beginYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-1,date(&apos;Y&apos;)));</span><br><span class="line">       //昨天结束时间</span><br><span class="line">       $endYesterday= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;),date(&apos;Y&apos;))-1);</span><br><span class="line">       //本周开始时间</span><br><span class="line">       $beginThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+1,date(&quot;Y&quot;)));</span><br><span class="line">       //本周结束时间</span><br><span class="line">       $endThisweek = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;),date(&quot;d&quot;)-date(&quot;w&quot;)+7,date(&quot;Y&quot;)));</span><br><span class="line">       //上周开始时间</span><br><span class="line">       $beginLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+1-7,date(&apos;Y&apos;)));</span><br><span class="line">       //上周结束时间</span><br><span class="line">       $endLastweek= date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;d&apos;)-date(&apos;w&apos;)+7-7,date(&apos;Y&apos;)));</span><br><span class="line">       //本月开始时间</span><br><span class="line">       $beginThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0,0,0,date(&apos;m&apos;),1,date(&apos;Y&apos;)));</span><br><span class="line">       //本月结束时间</span><br><span class="line">       $endThismonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&apos;m&apos;),date(&apos;t&apos;),date(&apos;Y&apos;)));</span><br><span class="line">       //上月开始时间</span><br><span class="line">       $beginLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(0, 0 , 0,date(&quot;m&quot;)-1,1,date(&quot;Y&quot;)));</span><br><span class="line">       //上月结束时间</span><br><span class="line">       $endLastmonth = date(&quot;Y-m-d H:i:s&quot;,mktime(23,59,59,date(&quot;m&quot;) ,0,date(&quot;Y&quot;)));</span><br><span class="line">       //本季度开始时间</span><br><span class="line">       $season = ceil((date(&apos;n&apos;))/3);//当前是第几季度</span><br><span class="line">       $beginThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //本季度结束时间</span><br><span class="line">       $endThisseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //上季度开始时间</span><br><span class="line">       $season1 = ceil((date(&apos;n&apos;))/3)-1;//上季度是第几季度</span><br><span class="line">       $beginLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(0, 0, 0,$season1*3-3+1,1,date(&apos;Y&apos;)));</span><br><span class="line">       //上季度结束时间</span><br><span class="line">       $endLastseason = date(&apos;Y-m-d H:i:s&apos;, mktime(23,59,59,$season1*3,date(&apos;t&apos;,mktime(0, 0 , 0,$season1*3,1,date(&quot;Y&quot;))),date(&apos;Y&apos;)));</span><br><span class="line">       //本年开始时间</span><br><span class="line">       $beginThisyear=date(&quot;Y&quot;,time()).&quot;-1&quot;.&quot;-1&quot;;</span><br><span class="line">       //本年结束时间</span><br><span class="line">       $endThisyear =date(&quot;Y&quot;,time()).&quot;-12&quot;.&quot;-31&quot;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/php_date/" data-id="ckhlpbtlw002ziu78l286ug1v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/git_filemode/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/git_filemode/">Git 权限变更忽略</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/git_filemode/" data-id="ckhlpbtia0010iu78hxrt7dtf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -559,7 +516,50 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/git_update/" data-id="ckgfylggq001d2n78juo324pg" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/git_update/" data-id="ckhlpbtit0017iu78gbwa2gga" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="true-privoxy" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/privoxy/" class="article-date">
+  <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/privoxy/">Privoxy</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>socks代理转http    privoxy<br>config 配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forward-socks5t   /   127.0.0.1:1080 .</span><br><span class="line">listen-address  127.0.0.1:8118</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/11/20/privoxy/" data-id="ckhlpbtm40032iu78urzyxa22" class="article-share-link">Share</a>
       
       
     </footer>
