@@ -107,6 +107,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="true-openwrt" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/24/openwrt/" class="article-date">
+  <time datetime="2019-12-24T06:41:55.636Z" itemprop="datePublished">2019-12-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/24/openwrt/">Openwrt ssh socks5转发</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>删除dropbear ssh  scp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /usr/bin/ssh #删除ssh软链接</span><br><span class="line">rm -rf /usr/bin/scp #删除scp软链接</span><br><span class="line">opkg update #更新列表</span><br><span class="line">opkg install openssh-client openssh-keygen #安装openssh客户端</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Openwrt生在ssh密钥并上传到服务器端：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -y -f ~/.ssh/id_rsa &amp;&amp; cat ~/.ssh/id_rsa.pub | ssh root@server &quot;cat - &gt;&gt; ~/.ssh/authorized_keys&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现ssh转发：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -NfD 0.0.0.0:7070 user@server</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可加入开机启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;ssh -CNfD 192.168.1.1:7070 user@server &gt;/dev/null 2&gt;&amp;1 &amp;&apos; &gt;&gt; /etc/rc.local</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果网络断开或重新拨号SSH会断开，可新建shell脚本监控ssh自动重新连接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">    while true</span><br><span class="line">    do</span><br><span class="line">        if netstat -tlnp|grep &quot;:7070&quot;</span><br><span class="line">        then</span><br><span class="line">            echo &quot;ssh is working&quot;</span><br><span class="line">        else</span><br><span class="line">            ssh -CNfD 192.168.1.1:7070 user@server &gt;/dev/null 2&gt;&amp;1 &amp;</span><br><span class="line">        fi</span><br><span class="line">    sleep 300</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>autossh</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2019/12/24/openwrt/" data-id="ckhx1uioh002mkd788tyu7q8t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="true-autossh" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/24/autossh/" class="article-date">
@@ -146,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/24/autossh/" data-id="ckhlpbthb000fiu783ioczfvj" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/24/autossh/" data-id="ckhx1uil7000fkd78p0n6in3a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -354,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/21/kubernetes/" data-id="ckhlpbtkb0021iu78y3ejfm15" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/21/kubernetes/" data-id="ckhx1uing001vkd78awdvpeyc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -406,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/21/terminal_proxy/" data-id="ckhlpbtol004ciu78ginsu46s" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/21/terminal_proxy/" data-id="ckhx1uiqx0046kd785p9czmtt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -453,7 +512,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/20/grep/" data-id="ckhlpbtj00018iu78ez9auzro" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/20/grep/" data-id="ckhx1uimi0017kd78av0fvtvg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -499,7 +558,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/19/ssh2_msg_kexinit/" data-id="ckhlpbtnu0040iu78ddqq0xsi" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/19/ssh2_msg_kexinit/" data-id="ckhx1uiq8003pkd78e0wpkmak" class="article-share-link">Share</a>
       
       
     </footer>
@@ -542,7 +601,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/06/linux_date/" data-id="ckhlpbtjy001riu78dowewh6h" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/06/linux_date/" data-id="ckhx1uin6001okd78m22b575s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -586,7 +645,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/06/find/" data-id="ckhlpbthx000tiu782o60ox1i" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/12/06/find/" data-id="ckhx1uilx000vkd78knd7lipm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -629,7 +688,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/22/iostat/" data-id="ckhlpbtk4001wiu78p22qgo8f" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/22/iostat/" data-id="ckhx1uine001tkd78und6hzbt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -678,50 +737,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/21/mongo/" data-id="ckhlpbtkh0026iu78o026x73w" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-vim" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/20/vim/" class="article-date">
-  <time datetime="2019-11-20T03:47:31.312Z" itemprop="datePublished">2019-11-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/vim/">Vim</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>.vimrc</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set tabstop=4</span><br><span class="line">set softtabstop=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set expandtab</span><br><span class="line">set autoindent</span><br><span class="line">set cindent</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/vim/" data-id="ckhlpbtou004hiu78a0uvjq35" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/21/mongo/" data-id="ckhx1uinp0023kd78mnky4qly" class="article-share-link">Share</a>
       
       
     </footer>
@@ -761,7 +777,7 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
     </div>
   </div>
 
@@ -772,6 +788,10 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/11/25/samba/">Centos Samba</a>
+          </li>
         
           <li>
             <a href="/2020/07/29/sshd_ip/">防火墙ssh白名单</a>
@@ -787,10 +807,6 @@ supported time units.</code></pre><figure class="highlight plain"><table><tr><td
         
           <li>
             <a href="/2020/07/08/ctf/">安全领域资源</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/08/asm/">汇编指令集</a>
           </li>
         
       </ul>

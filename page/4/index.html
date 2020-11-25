@@ -107,6 +107,123 @@
       <div class="outer">
         <section id="main">
   
+    <article id="true-openldap" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/13/openldap/" class="article-date">
+  <time datetime="2020-04-13T07:21:00.439Z" itemprop="datePublished">2020-04-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/13/openldap/">openldap centos7</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">centos7</span><br></pre></td></tr></table></figure>
+
+<p>2.install</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install openldap compat-openldap openldap-clients openldap-servers openldap-servers-sql openldap-devel</span><br></pre></td></tr></table></figure>
+
+<p>3.启动服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start slapd</span><br><span class="line">systemctl enable slapd</span><br></pre></td></tr></table></figure>
+
+<p>4.检查服务是否开启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -antup | grep -i 389</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tcp        0      0 0.0.0.0:389             0.0.0.0:*               LISTEN      1520/slapd</span><br><span class="line">tcp6       0      0 :::389                  :::*                    LISTEN      1520/slapd</span><br></pre></td></tr></table></figure>
+
+<p>5.设置管理员密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#生成密码 替换 ldppassword</span><br><span class="line">slappasswd -h &#123;SSHA&#125; -s ldppassword</span><br></pre></td></tr></table></figure>
+
+<p>6.配置服务端<br>vi db.ldif</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">dn: olcDatabase=&#123;2&#125;hdb,cn=config</span><br><span class="line">changetype: modify</span><br><span class="line">replace: olcSuffix</span><br><span class="line">olcSuffix: dc=itzgeek,dc=local</span><br><span class="line"></span><br><span class="line">dn: olcDatabase=&#123;2&#125;hdb,cn=config</span><br><span class="line">changetype: modify</span><br><span class="line">replace: olcRootDN</span><br><span class="line">olcRootDN: cn=ldapadm,dc=itzgeek,dc=local</span><br><span class="line"></span><br><span class="line">dn: olcDatabase=&#123;2&#125;hdb,cn=config</span><br><span class="line">changetype: modify</span><br><span class="line">replace: olcRootPW</span><br><span class="line">olcRootPW: &apos;替换为5.生成的密码&apos;</span><br></pre></td></tr></table></figure>
+
+<p>执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldapmodify -Y EXTERNAL  -H ldapi:/// -f db.ldif</span><br></pre></td></tr></table></figure>
+
+<p>vi monitor.ldif</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dn: olcDatabase=&#123;1&#125;monitor,cn=config</span><br><span class="line">changetype: modify</span><br><span class="line">replace: olcAccess</span><br><span class="line">olcAccess: &#123;0&#125;to * by dn.base=&quot;gidNumber=0+uidNumber=0,cn=peercred,cn=external, cn=auth&quot; read by dn.base=&quot;cn=ldapadm,dc=itzgeek,dc=local&quot; read by * none</span><br></pre></td></tr></table></figure>
+
+<p>执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldapmodify -Y EXTERNAL  -H ldapi:/// -f monitor.ldif</span><br></pre></td></tr></table></figure>
+
+<p>7.配置ldap数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG</span><br><span class="line">chown ldap:ldap /var/lib/ldap/*</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif</span><br><span class="line">ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif </span><br><span class="line">ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif</span><br></pre></td></tr></table></figure>
+
+<p>8.配置域名base信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">dn: dc=itzgeek,dc=local</span><br><span class="line">dc: itzgeek</span><br><span class="line">objectClass: top</span><br><span class="line">objectClass: domain</span><br><span class="line"></span><br><span class="line">dn: cn=ldapadm ,dc=itzgeek,dc=local</span><br><span class="line">objectClass: organizationalRole</span><br><span class="line">cn: ldapadm</span><br><span class="line">description: LDAP Manager</span><br><span class="line"></span><br><span class="line">dn: ou=People,dc=itzgeek,dc=local</span><br><span class="line">objectClass: organizationalUnit</span><br><span class="line">ou: People</span><br><span class="line"></span><br><span class="line">dn: ou=Group,dc=itzgeek,dc=local</span><br><span class="line">objectClass: organizationalUnit</span><br><span class="line">ou: Group</span><br></pre></td></tr></table></figure>
+
+<p>执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldapadd -x -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; -f base.ldif</span><br></pre></td></tr></table></figure>
+
+<p>9.创建用户<br>vi raj.ldif</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">dn: uid=raj,ou=People,dc=itzgeek,dc=local</span><br><span class="line">objectClass: top</span><br><span class="line">objectClass: account</span><br><span class="line">objectClass: posixAccount</span><br><span class="line">objectClass: shadowAccount</span><br><span class="line">cn: raj</span><br><span class="line">uid: raj</span><br><span class="line">uidNumber: 9999</span><br><span class="line">gidNumber: 100</span><br><span class="line">homeDirectory: /home/raj</span><br><span class="line">loginShell: /bin/bash</span><br><span class="line">gecos: Raj [Admin (at) ITzGeek]</span><br><span class="line">userPassword: &#123;crypt&#125;x</span><br><span class="line">shadowLastChange: 17058</span><br><span class="line">shadowMin: 0</span><br><span class="line">shadowMax: 99999</span><br><span class="line">shadowWarning: 7</span><br></pre></td></tr></table></figure>
+
+<p>执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldapadd -x -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; -f raj.ldif</span><br></pre></td></tr></table></figure>
+
+<p>修改密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldappasswd -s password123 -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; -x &quot;uid=raj,ou=People,dc=itzgeek,dc=local&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>验证<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldapsearch -x cn=raj -b dc=itzgeek,dc=local</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"># extended LDIF</span><br><span class="line">#</span><br><span class="line"># LDAPv3</span><br><span class="line"># base &lt;dc=itzgeek,dc=local&gt; with scope subtree</span><br><span class="line"># filter: cn=raj</span><br><span class="line"># requesting: ALL</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line"># raj, People, itzgeek.local</span><br><span class="line">dn: uid=raj,ou=People,dc=itzgeek,dc=local</span><br><span class="line">objectClass: top</span><br><span class="line">objectClass: account</span><br><span class="line">objectClass: posixAccount</span><br><span class="line">objectClass: shadowAccount</span><br><span class="line">cn: raj</span><br><span class="line">uid: raj</span><br><span class="line">uidNumber: 9999</span><br><span class="line">gidNumber: 100</span><br><span class="line">homeDirectory: /home/raj</span><br><span class="line">loginShell: /bin/bash</span><br><span class="line">gecos: Raj [Admin (at) ITzGeek]</span><br><span class="line">shadowLastChange: 17058</span><br><span class="line">shadowMin: 0</span><br><span class="line">shadowMax: 99999</span><br><span class="line">shadowWarning: 7</span><br><span class="line">userPassword:: e1NTSEF9MkE2eUhIS0pJQVRnMHBCdkpVWjR5Q3JvTkJLTzdBTWY=</span><br><span class="line"></span><br><span class="line"># search result</span><br><span class="line">search: 2</span><br><span class="line">result: 0 Success</span><br><span class="line"></span><br><span class="line"># numResponses: 2</span><br><span class="line"># numEntries: 1</span><br></pre></td></tr></table></figure>
+
+<p>删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldapdelete -W -D &quot;cn=ldapadm,dc=itzgeek,dc=local&quot; &quot;uid=raj,ou=People,dc=itzgeek,dc=local&quot;</span><br></pre></td></tr></table></figure>
+
+<p>11.防火墙</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-service=ldap</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>12.开启日志<br>vi /etc/rsyslog.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#增加</span><br><span class="line">local4.* /var/log/ldap.log</span><br><span class="line">#执行</span><br><span class="line">systemctl restart rsyslog</span><br></pre></td></tr></table></figure>
+
+<ol start="13">
+<li>客户端配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install -y openldap-clients nss-pam-ldapd</span><br><span class="line">authconfig --enableldap --enableldapauth --ldapserver=192.168.1.10 --ldapbasedn=&quot;dc=itzgeek,dc=local&quot; --enablemkhomedir --update</span><br><span class="line">systemctl restart  nslcd</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>14.验证</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getent passwd raj</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raj:x:9999:100:Raj [Admin (at) ITzGeek]:/home/raj:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>15.<br>原文: <a href="https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html" target="_blank" rel="noopener">https://www.itzgeek.com/how-tos/linux/centos-how-tos/step-step-openldap-server-configuration-centos-7-rhel-7.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/04/13/openldap/" data-id="ckhx1uio9002hkd78pqrgntfx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="true-ssh_yes" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/04/13/ssh_yes/" class="article-date">
@@ -139,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/13/ssh_yes/" data-id="ckhlpbto90045iu78810o0z54" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/13/ssh_yes/" data-id="ckhx1uiqs0042kd787v47pusg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -198,7 +315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/04/09/brew/" data-id="ckhlpbthn000kiu78u8ovex3o" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/04/09/brew/" data-id="ckhx1uim80010kd78xy1z9tim" class="article-share-link">Share</a>
       
       
     </footer>
@@ -250,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/03/19/composer/" data-id="ckhlpbthu000qiu780hr2ub12" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/03/19/composer/" data-id="ckhx1uilh000kkd783jpqrm6q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -296,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/03/12/git_proxy/" data-id="ckhlpbtie0013iu788q915uqh" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/03/12/git_proxy/" data-id="ckhx1uimd0013kd78szcp19lr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -350,7 +467,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/03/05/php_ptrace_input/" data-id="ckhlpbtn7003tiu78lsgcgvus" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/03/05/php_ptrace_input/" data-id="ckhx1uisx005ckd78n43roge2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -398,7 +515,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/03/05/wget/" data-id="ckhlpbtpd004uiu78e013rapk" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/03/05/wget/" data-id="ckhx1uiru004okd782qf0oygm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -447,7 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/02/05/docker/" data-id="ckhlpbti6000yiu782xnqazg0" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/02/05/docker/" data-id="ckhx1uilr000rkd78ue3lr9vi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -488,7 +605,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/01/17/7zip/" data-id="ckhlpbtet0000iu78kfkfcm8o" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/01/17/7zip/" data-id="ckhx1uijf0001kd789ggaru59" class="article-share-link">Share</a>
       
       
     </footer>
@@ -566,66 +683,7 @@ print_r(json_decode($ret,true)</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2020/01/07/curl/" data-id="ckhlpbthp000miu78v6bwxg1t" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="true-openwrt" class="article article-type-true" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/24/openwrt/" class="article-date">
-  <time datetime="2019-12-24T06:41:55.636Z" itemprop="datePublished">2019-12-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/24/openwrt/">Openwrt ssh socks5转发</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>删除dropbear ssh  scp</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /usr/bin/ssh #删除ssh软链接</span><br><span class="line">rm -rf /usr/bin/scp #删除scp软链接</span><br><span class="line">opkg update #更新列表</span><br><span class="line">opkg install openssh-client openssh-keygen #安装openssh客户端</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Openwrt生在ssh密钥并上传到服务器端：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -y -f ~/.ssh/id_rsa &amp;&amp; cat ~/.ssh/id_rsa.pub | ssh root@server &quot;cat - &gt;&gt; ~/.ssh/authorized_keys&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>实现ssh转发：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -NfD 0.0.0.0:7070 user@server</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>可加入开机启动：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;ssh -CNfD 192.168.1.1:7070 user@server &gt;/dev/null 2&gt;&amp;1 &amp;&apos; &gt;&gt; /etc/rc.local</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果网络断开或重新拨号SSH会断开，可新建shell脚本监控ssh自动重新连接：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">    while true</span><br><span class="line">    do</span><br><span class="line">        if netstat -tlnp|grep &quot;:7070&quot;</span><br><span class="line">        then</span><br><span class="line">            echo &quot;ssh is working&quot;</span><br><span class="line">        else</span><br><span class="line">            ssh -CNfD 192.168.1.1:7070 user@server &gt;/dev/null 2&gt;&amp;1 &amp;</span><br><span class="line">        fi</span><br><span class="line">    sleep 300</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>autossh</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/12/24/openwrt/" data-id="ckhlpbtll002piu78p4ofdttv" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2020/01/07/curl/" data-id="ckhx1uilt000skd78fdlv3fzw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -665,7 +723,7 @@ print_r(json_decode($ret,true)</code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
     </div>
   </div>
 
@@ -676,6 +734,10 @@ print_r(json_decode($ret,true)</code></pre>
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/11/25/samba/">Centos Samba</a>
+          </li>
         
           <li>
             <a href="/2020/07/29/sshd_ip/">防火墙ssh白名单</a>
@@ -691,10 +753,6 @@ print_r(json_decode($ret,true)</code></pre>
         
           <li>
             <a href="/2020/07/08/ctf/">安全领域资源</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/08/asm/">汇编指令集</a>
           </li>
         
       </ul>

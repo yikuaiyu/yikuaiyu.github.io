@@ -5,19 +5,20 @@
   
 
   
-  <title>Category: 中间件 | H博客</title>
+  <title>Centos Samba | H博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="编程博客">
+  <meta name="description" content="server 1yum install samba samba-client -y  client 1yum install samba-client cifs-utils -y  server conf /etc/samba/smb.conf 1234567891011workgroup = WORKGROUP   windows工作组模式hosts allow = 192.168.254.1">
 <meta name="keywords" content="c++ java mysql shell linux h博客 android docker git laravel php python javascript python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="H博客">
-<meta property="og:url" content="https://blog.newtao.vip/categories/中间件/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Centos Samba">
+<meta property="og:url" content="https://blog.newtao.vip/2020/11/25/samba/index.html">
 <meta property="og:site_name" content="H博客">
-<meta property="og:description" content="编程博客">
+<meta property="og:description" content="server 1yum install samba samba-client -y  client 1yum install samba-client cifs-utils -y  server conf /etc/samba/smb.conf 1234567891011workgroup = WORKGROUP   windows工作组模式hosts allow = 192.168.254.1">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-11-25T06:51:00.219Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="H博客">
-<meta name="twitter:description" content="编程博客">
+<meta name="twitter:title" content="Centos Samba">
+<meta name="twitter:description" content="server 1yum install samba samba-client -y  client 1yum install samba-client cifs-utils -y  server conf /etc/samba/smb.conf 1234567891011workgroup = WORKGROUP   windows工作组模式hosts allow = 192.168.254.1">
   
     <link rel="alternate" href="/atom.xml" title="H博客" type="application/atom+xml">
   
@@ -105,40 +106,86 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-true">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/12/rocketmq/" class="archive-article-date">
-  <time datetime="2020-05-12T12:28:44.396Z" itemprop="datePublished">May 12</time>
+        <section id="main"><article id="true-samba" class="article article-type-true" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/25/samba/" class="article-date">
+  <time datetime="2020-11-25T06:51:00.219Z" itemprop="datePublished">2020-11-25</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/运维/">运维</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/12/rocketmq/">RocketMQ</a>
+    <h1 class="article-title" itemprop="name">
+      Centos Samba
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>server</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install samba samba-client -y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>client</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install samba-client cifs-utils -y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>server conf /etc/samba/smb.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">workgroup = WORKGROUP   windows工作组模式</span><br><span class="line">hosts allow = 192.168.254.1    白名单</span><br><span class="line">[share]</span><br><span class="line">    comment = share                 描述信息</span><br><span class="line">    path =  /share                  共享文件路径</span><br><span class="line">    browseable = no                 是否可以浏览查看该samba服务</span><br><span class="line">    read list = samba1              只读samba用户列表</span><br><span class="line">    write list = samba2             读写samba用户列表</span><br><span class="line">    writable = no                   默认所有用户是只读模式</span><br><span class="line">    printable = no                  是否是打印设备，如果是yes那么文件夹内容不能查看</span><br><span class="line">    public = no                     是否公开，如果公开不需要samba用户也是访问共享文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建samba用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useradd samba1</span><br><span class="line">useradd samba2</span><br><span class="line">smbpasswd -a samba1</span><br><span class="line">smbpasswd -a samba2</span><br><span class="line"></span><br><span class="line">pdbedit -L 查看samba用户</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启用服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable smb</span><br><span class="line">setenforce 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>防火墙设置</p>
+</li>
+<li><p>新建/share目录，并设置权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /share</span><br><span class="line">chmod o+w /share</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>smbclient -L 查看服务是否开启</p>
+</li>
+<li><p>手动挂载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -t cifs //192.168.254.1/share /mnt/share -o username=samba2,password=123</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自动挂载 /etc/fstab</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//192.168.254.1/share /mnt/share	cifs	auto,username=samba2,password=123	0	0</span><br><span class="line">or</span><br><span class="line">//192.168.254.1/share /mnt/cifs cifs credentials=/root/namepass.txt,defaults 0 0</span><br><span class="line"></span><br><span class="line">//172.20.4.189/home /mnt/myspace cifs defaults,rw,uid=1000,gid=1000,credentials=/etc/samba/credentials 0 0</span><br><span class="line"></span><br><span class="line">echo &apos;username=samba2</span><br><span class="line">password=123&apos; &gt; /root/namepass.txt</span><br><span class="line"></span><br><span class="line">mount -a</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.newtao.vip/2020/11/25/samba/" data-id="ckhx1uip50035kd78abbchmxc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/29/sshd_ip/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">防火墙ssh白名单</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         
