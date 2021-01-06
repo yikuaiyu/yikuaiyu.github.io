@@ -107,14 +107,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="true-git_filemode" class="article article-type-true" itemscope itemprop="blogPost">
+    <article id="true-linux_disk" class="article article-type-true" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/20/git_filemode/" class="article-date">
+    <a href="/2019/11/20/linux_disk/" class="article-date">
   <time datetime="2019-11-20T03:47:31.311Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -125,7 +125,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/git_filemode/">Git 权限变更忽略</a>
+      <a class="article-title" href="/2019/11/20/linux_disk/">disk分区扩容</a>
     </h1>
   
 
@@ -133,13 +133,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="设置ss"><a href="#设置ss" class="headerlink" title="设置ss"></a>设置ss</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false  			// 当前版本库</span><br><span class="line">git config --global core.fileMode false 		// 所有版本库</span><br></pre></td></tr></table></figure>
-
+        <p>本文提供了如何使用growpart和resize2fs工具完成Linux系统盘分区扩容及文件系统扩展的操作指导。</p>
+<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>本文的操作步骤适用于以下分区和文件系统格式的云盘：</p>
+<pre><code>- 分区格式支持mbr、gpt
+- 文件系统支持ext*、xfs、btrfs</code></pre><p>准备工作<br>    1.创建</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/11/20/git_filemode/" data-id="ckhx1uilz000wkd78waxwj2oa" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/11/20/linux_disk/" data-id="ckjkwidlu001scy78iujwgjq9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -182,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/07/12/serial/" data-id="ckhx1uipf003dkd7821rng7xh" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/12/serial/" data-id="ckjkwidoh003hcy782adtgzpa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -357,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/07/12/android_id/" data-id="ckhx1uiku0008kd78kne8kpp4" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/12/android_id/" data-id="ckjkwidij0008cy78byixv186" class="article-share-link">Share</a>
       
       
     </footer>
@@ -406,7 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/07/12/android_full/" data-id="ckhx1uik60004kd78jirhtj2h" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/12/android_full/" data-id="ckjkwidi50005cy782f7sol3k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -461,7 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/07/12/adb/" data-id="ckhx1uik00003kd784g6fkh8k" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/12/adb/" data-id="ckjkwidhp0003cy784cd1zflh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -510,7 +512,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/07/12/aliyun_maven/" data-id="ckhx1uikp0005kd78wlpa0z6t" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/12/aliyun_maven/" data-id="ckjkwidi00004cy78e35nzx3n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -555,7 +557,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/07/12/android_gradle/" data-id="ckhx1uiks0007kd78darol80f" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/12/android_gradle/" data-id="ckjkwidif0007cy782homongt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -610,7 +612,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/07/05/ip/" data-id="ckhx1uin2001kkd7876yonecs" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/05/ip/" data-id="ckjkwidla001hcy78fhcrn0ta" class="article-share-link">Share</a>
       
       
     </footer>
@@ -653,7 +655,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/07/03/paging/" data-id="ckhx1uiok002okd78ybthbn0h" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/03/paging/" data-id="ckjkwidni002xcy78pz9wc4g8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -702,7 +704,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.newtao.vip/2019/07/02/pygmentize/" data-id="ckhx1uip00030kd78e4wagwfj" class="article-share-link">Share</a>
+      <a data-url="https://blog.newtao.vip/2019/07/02/pygmentize/" data-id="ckjkwido10037cy78cngi6xsv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -786,7 +788,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020 anonymous<br>
+      &copy; 2021 anonymous<br>
       Powered by <a href="https://baike.baidu.com/item/%E5%8C%BF%E5%90%8D%E8%80%85%E9%BB%91%E5%AE%A2%E7%BB%84%E7%BB%87/8378313?fromtitle=Anonymous&fromid=7157039&fr=aladdin" target="_blank">H</a>
       <a href="http://beian.miit.gov.cn">鲁ICP备18014570号</a>
     </div>
